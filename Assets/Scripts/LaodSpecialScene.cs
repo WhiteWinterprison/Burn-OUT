@@ -1,3 +1,4 @@
+//Isabel because i dont get Jane script to work
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,9 @@ public class LaodSpecialScene : MonoBehaviour
 
  [SerializeField]
  private int UI;
+
+ [SerializeField]
+ private int Feet;
      public void LoadRay()
     {
         SceneManager.LoadScene(RayCast);
@@ -25,6 +29,11 @@ public class LaodSpecialScene : MonoBehaviour
      public void LoadImage()
     {
         SceneManager.LoadScene(ImageTracking);
+    }
+
+     public void LoadFeet()
+    {
+        SceneManager.LoadScene(Feet);
     }
 
 }
