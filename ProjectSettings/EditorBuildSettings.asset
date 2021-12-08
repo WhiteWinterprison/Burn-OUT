@@ -5,23 +5,23 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: "Assets/Jan\xE9/Scenes/Menu.unity"
+  - enabled: 0
+    path: Assets/Scenes/Menu.unity
     guid: 1b9b293bde2b6594fb35f0cafe99035c
-  - enabled: 1
-    path: "Assets/Jan\xE9/Scenes/MenuLevel.unity"
+  - enabled: 0
+    path: Assets/Scenes/MenuLevel.unity
     guid: eb5c0a0036bb5684e975e5ee85cd5ae8
-  - enabled: 1
-    path: "Assets/Jan\xE9/Scenes/LoadingScreen.unity"
+  - enabled: 0
+    path: Assets/Scenes/LoadingScreen.unity
     guid: ad3681b6fa20b7640b3295c18ead0b1c
-  - enabled: 1
-    path: "Assets/Jan\xE9/Scenes/UiScene.unity"
+  - enabled: 0
+    path: Assets/Scenes/UiScene.unity
     guid: fff27771efbe70045b0c44785c377c75
-  - enabled: 1
-    path: "Assets/Jan\xE9/Scenes/proto.unity"
+  - enabled: 0
+    path: Assets/Scenes/proto.unity
     guid: 047305aa8b83fb24cb209f8bd12cc759
   - enabled: 1
-    path: Assets/Marje/ARPlane_etc.unity
+    path: Assets/Scenes/ARPlane_etc.unity
     guid: f69f404f52328684aa8a8023a3836a13
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 19cc934cd5f22a547aedc5759f74409c, type: 2}
