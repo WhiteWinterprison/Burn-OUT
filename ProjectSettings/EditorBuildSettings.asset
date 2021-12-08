@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RayCast.unity
     guid: daf854cd481d69142931a0591a250ea8
+  - enabled: 1
+    path: Assets/Scenes/FeetTracking.unity
+    guid: 56603eccd3876e44a94ef22273e9210f
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 19cc934cd5f22a547aedc5759f74409c, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: feb3b5bbff9a99043a812a6d718db417, type: 2}
