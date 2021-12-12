@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FootCollision : MonoBehaviour
 {
     public imageTracking tracking;
     bool canDie = false;
+    [SerializeField]
+    private int EndGame;
 
     void OnCollisionEnter(Collision collisioninfo)
     {
@@ -21,7 +24,8 @@ public class FootCollision : MonoBehaviour
         if (collisioninfo.collider.tag == "Goo" && canDie == true)
         {
             tracking.enabled = false;
-            FindObjectOfType<GameManager>().EndGame();
+            SceneManager.LoadScene(EndGame);
+            //FindObjectOfType<GameManager>().EndGame();
 
         }
     }
