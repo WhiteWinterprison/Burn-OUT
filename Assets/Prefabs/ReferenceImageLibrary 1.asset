@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
-  m_Name: ReferenceImageLibrary
+  m_Name: ReferenceImageLibrary 1
   m_EditorClassIdentifier: 
-  m_GuidLow: 5438110646187990596
-  m_GuidHigh: 5728144887587020179
+  m_GuidLow: 5706012586877192723
+  m_GuidHigh: 10165960525456778381
   m_Images:
   - m_SerializedGuid:
-      m_GuidLow: 4934253680542973069
-      m_GuidHigh: 300977628443095455
-    m_SerializedTextureGuid:
-      m_GuidLow: 11372822139028437172
-      m_GuidHigh: 13268128071533749626
-    m_Size: {x: 0.25, y: 0.25}
-    m_SpecifySize: 1
-    m_Name: thejpgrightfootwo
-    m_Texture: {fileID: 2800000, guid: ca7cf8b4617a9dd47a6528fa2edc21b8, type: 3}
-  - m_SerializedGuid:
-      m_GuidLow: 5524600846877448041
-      m_GuidHigh: 726618987917101188
+      m_GuidLow: 5528578770965327171
+      m_GuidHigh: 457752413180489896
     m_SerializedTextureGuid:
       m_GuidLow: 17326575847145532188
       m_GuidHigh: 3487899150211485658
-    m_Size: {x: 0.25, y: 0.25}
+    m_Size: {x: 0.14, y: 0.14}
     m_SpecifySize: 1
-    m_Name: thejpgrightfoot
+    m_Name: Footleft
     m_Texture: {fileID: 2800000, guid: cef8eb1c5ceef074da0fbe24cc816730, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4682955929530238569
+      m_GuidHigh: 11597637787339561384
+    m_SerializedTextureGuid:
+      m_GuidLow: 11372822139028437172
+      m_GuidHigh: 13268128071533749626
+    m_Size: {x: 0.14, y: 0.14}
+    m_SpecifySize: 1
+    m_Name: Footright
+    m_Texture: {fileID: 2800000, guid: ca7cf8b4617a9dd47a6528fa2edc21b8, type: 3}
