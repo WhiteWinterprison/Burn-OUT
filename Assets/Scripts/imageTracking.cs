@@ -20,7 +20,7 @@ public class imageTracking : MonoBehaviour
 
         foreach(GameObject prefab in placablePrefabs)
         {
-            GameObject newPrefab = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+            GameObject newPrefab = Instantiate(prefab, new Vector3(100f, 100f, 100f)/* need to fix this right now just spawn feet far enough away for noone to see but thats no good Vector3.zero*/, Quaternion.identity);
             newPrefab.name = prefab.name;
             spawnedPrefabs.Add(prefab.name, newPrefab);
         }
@@ -62,12 +62,12 @@ public class imageTracking : MonoBehaviour
         prefab.transform.position = position;
         prefab.SetActive(true);
 
-        foreach(GameObject go in spawnedPrefabs.Values)
+        /*foreach(GameObject go in spawnedPrefabs.Values)
         {
             if(go.name != name)
             {
                 go.SetActive(false); //if we look at new image all other prefabs are back to be set hidden
             }
-        }
+        }*/ //would work just once for one image and then never show it again after spawning the other
     }
 }

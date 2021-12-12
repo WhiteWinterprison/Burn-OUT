@@ -21,7 +21,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 17326575847145532188
       m_GuidHigh: 3487899150211485658
-    m_Size: {x: 0.08, y: 0.08}
+    m_Size: {x: 0.14, y: 0.14}
     m_SpecifySize: 1
     m_Name: Footleft
     m_Texture: {fileID: 2800000, guid: cef8eb1c5ceef074da0fbe24cc816730, type: 3}
@@ -31,7 +31,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 11372822139028437172
       m_GuidHigh: 13268128071533749626
-    m_Size: {x: 0.1, y: 0.1}
+    m_Size: {x: 0.14, y: 0.14}
     m_SpecifySize: 1
     m_Name: Footright
     m_Texture: {fileID: 2800000, guid: ca7cf8b4617a9dd47a6528fa2edc21b8, type: 3}

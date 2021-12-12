@@ -5,7 +5,8 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
 
-    public GameObject Goal;
+    public GameObject Goo;
+    public GameObject collisionT;
     private Cursor cursor;
     public GameObject Cursorr;
     public GameObject spawnStone;
@@ -23,7 +24,8 @@ public class Spawner : MonoBehaviour
         {
             if (hasSpawned == false)
             {
-                GameObject obj = Instantiate(Goal, new Vector3(cursor.transform.position.x, cursor.transform.position.y, cursor.transform.position.z), cursor.transform.rotation);
+                GameObject obj = Instantiate(Goo, new Vector3(cursor.transform.position.x, cursor.transform.position.y, cursor.transform.position.z), cursor.transform.rotation);
+                GameObject ojb = Instantiate(collisionT, new Vector3(cursor.transform.position.x, cursor.transform.position.y+0.7f, cursor.transform.position.z), cursor.transform.rotation);
                 Cursorr.SetActive(false);
 
                 hasSpawned = true;
