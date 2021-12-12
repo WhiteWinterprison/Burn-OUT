@@ -16,6 +16,9 @@ public class LaodSpecialScene : MonoBehaviour
 
  [SerializeField]
  private int Feet;
+
+ [SerializeField]
+ private int Sample;
      public void LoadRay()
     {
         SceneManager.LoadScene(RayCast);
@@ -34,6 +37,11 @@ public class LaodSpecialScene : MonoBehaviour
      public void LoadFeet()
     {
         SceneManager.LoadScene(Feet);
+    }
+
+       public void LoadSample()
+    {
+        SceneManager.LoadScene(Sample);
     }
 
 }
