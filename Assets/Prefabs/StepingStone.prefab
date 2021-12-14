@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 515724310281768372}
   - component: {fileID: 3497013303642669585}
   - component: {fileID: 1685213069602404059}
+  - component: {fileID: 2312009385839421580}
+  - component: {fileID: 6628710079683769282}
   m_Layer: 0
   m_Name: StepingStone
   m_TagString: Untagged
@@ -81,3 +83,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2312009385839421580
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892812424792545038}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.012072522, y: 0.003251143, z: 0.007856367}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &6628710079683769282
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892812424792545038}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.012072526, y: 0.008339384, z: 0.007856367}
+  m_Center: {x: 0, y: -0.0007250503, z: 0}
