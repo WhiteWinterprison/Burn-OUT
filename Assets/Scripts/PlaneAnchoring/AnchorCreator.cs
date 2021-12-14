@@ -23,7 +23,7 @@ public class AnchorCreator : MonoBehaviour
         get => m_AnchorPrefab;
         set => m_AnchorPrefab = value;
     }
-
+#region Remove Anchores
     // Removes all the anchors that have been created.
     public void RemoveAllAnchors()
     {
@@ -33,6 +33,7 @@ public class AnchorCreator : MonoBehaviour
         }
         m_AnchorPoints.Clear();
     }
+#endregion
 
     // On Awake(), we obtains a reference to all the required components.
     // The ARRaycastManager allows us to perform raycasts so that we know where to place an anchor.
@@ -56,7 +57,7 @@ public class AnchorCreator : MonoBehaviour
         if (touch.phase != TouchPhase.Began)
             return;
 
-        if (m_RaycastManager.Raycast(touch.position, s_Hits, TrackableType.PlaneWithinPolygon))
+        if (m_RaycastManager.Raycast(touch.position, s_Hits, TrackableType.PlaneWithinPolygon)) //if we detect a Raycast hit on a plane
         {
             // Raycast hits are sorted by distance, so the first one
             // will be the closest hit.
@@ -69,7 +70,16 @@ public class AnchorCreator : MonoBehaviour
             // This prefab instance is parented to the anchor to make sure the position of the prefab is consistent
             // with the anchor, since an anchor attached to an ARPlane will be updated automatically by the ARAnchorManager as the ARPlane's exact position is refined.
             var anchor = m_AnchorManager.AttachAnchor(hitPlane, hitPose);
-            Instantiate(m_AnchorPrefab, anchor.transform);
+           Instantiate(m_AnchorPrefab, anchor.transform);
+           //check if a Prefab already spawned
+            // if(m_AnchorPrefab == null)
+            // {
+            //     Instantiate(m_AnchorPrefab, anchor.transform);
+            // }
+            // else{
+            //     m_AnchorPrefab.transform.position =hitPose.position ;
+            // }
+
 
             if (anchor == null)
             {
@@ -80,6 +90,7 @@ public class AnchorCreator : MonoBehaviour
                 // Stores the anchor so that it may be removed later.
                 m_AnchorPoints.Add(anchor);
             }
+            
         }
     }
 
