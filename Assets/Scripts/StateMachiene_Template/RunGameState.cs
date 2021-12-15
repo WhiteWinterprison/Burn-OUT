@@ -7,7 +7,6 @@
 
 public class RunGameState : IState 
 {
-    private float SpawnTime = 1;
     private float CurrentSpawnTime;
     private float LastSpawnTime;
 
