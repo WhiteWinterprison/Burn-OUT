@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d8bdebe08bea074a89b7e81eeceaac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Goo: {fileID: 4716451900772460804, guid: 3e503b160ccbcc648b6baf750b1e7128, type: 3}
+  Goo: {fileID: 6839913562510695257, guid: ea14215db1ea5c14e859a204a8778785, type: 3}
   collisionT: {fileID: 4073850419076988057, guid: f28e3aa089f0da64089d013fded4ba5d, type: 3}
   Goal: {fileID: 1611321048}
   Cursorr: {fileID: 925296433}
@@ -1132,7 +1132,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d3eeeeb09fea3844ab464555cd2da9ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 35cf8a2a33c2b4542ba1997d13781880, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
