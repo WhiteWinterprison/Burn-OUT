@@ -518,7 +518,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -118, y: 127}
+  m_AnchoredPosition: {x: -118, y: 148}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &731110860
@@ -707,6 +707,7 @@ MonoBehaviour:
   ImageTracking: 5
   UI: 3
   Feet: 0
+  Sample: 0
 --- !u!4 &770985014
 Transform:
   m_ObjectHideFlags: 0
@@ -829,6 +830,7 @@ GameObject:
   - component: {fileID: 1388516729}
   - component: {fileID: 1388516732}
   - component: {fileID: 1388516731}
+  - component: {fileID: 1388516733}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -891,6 +893,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlanePrefab: {fileID: 4986680475629485870, guid: db084299a2ddd6044b5d955e8968d5a9, type: 3}
   m_DetectionMode: -1
+--- !u!114 &1388516733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388516728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728ad7fae8e460a4ba41265c7308d757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AnchorPrefab: {fileID: 0}
 --- !u!1 &1499743678
 GameObject:
   m_ObjectHideFlags: 0
