@@ -39,9 +39,10 @@ public class FootCollision : MonoBehaviour
 
         if (collisioninfo.collider.tag == "Goo")
         {
-            
+
             //FindObjectOfType<GameManager>().EndGame();
 
         }
     }
 }
+
