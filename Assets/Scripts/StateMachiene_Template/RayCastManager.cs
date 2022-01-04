@@ -1,26 +1,31 @@
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-//public class RayCastManager : MonoBehaviour
-//{
-//    // Start is called before the first frame update
+//--------TEMPLATE--------------------------
+//-----NO Funktionalty so DONT USE----------
+// ------------------------------------------
+//This is wher you will call your state && load new states 
+
+public class RayCastManager : MonoBehaviour
+{
+   // Start is called before the first frame update
     
-//    IState currentState;
-//    #region GameSates
-//   public GameStartedState GameStarted = new GameStartedState();
+   IState currentState;
 
-//   public RunGameState RunGame =new RunGameState();
+   #region GameSates
+   //Do this with ALL YOUR STATES so you can use them
+  public GameStartedState GameStarted = new GameStartedState();
    
-//   #endregion
-//    void Start()
-//    {
+  #endregion
+   void Start()
+   {
         
-//    }
+   }
 
-//    // Update is called once per frame
-//    void Update()
-//    {
+   // Update is called once per frame
+   void Update()
+   {
         
-//    }
-//}
+   }
+}
