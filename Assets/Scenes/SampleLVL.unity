@@ -770,11 +770,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d8bdebe08bea074a89b7e81eeceaac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Goo: {fileID: 0}
+  Goo: {fileID: 6422441651058056440, guid: 40d7703600835c54c8938e45667d50f7, type: 3}
   collisionT: {fileID: 0}
   Goal: {fileID: 1122936402523253689, guid: a212204767a1caa408631d6b947e9a8a, type: 3}
   Cursorr: {fileID: 429758956}
-  spawnStone: {fileID: 892812424792545038, guid: d3241d821f0a038469cc6f49da10c0f5, type: 3}
+  spawnStone: {fileID: 0}
 --- !u!4 &670201658
 Transform:
   m_ObjectHideFlags: 0
