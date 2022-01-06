@@ -1,47 +1,40 @@
-//Isabel because i dont get Jane script to work
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class LaodSpecialScene : MonoBehaviour
 {
- [SerializeField]
- private int RayCast;
- [SerializeField]
- private int ImageTracking;
+    //public UnityEvent OnSceneFinishLoad;
+    // private static LaodSpecialScene _instance; //for singelton
 
- [SerializeField]
- private int UI;
-
- [SerializeField]
- private int Feet;
-
- [SerializeField]
- private int Sample;
-     public void LoadRay()
+    // public static LaodSpecialScene Instance { get { return _instance; } }
+    void Awake()
     {
-        SceneManager.LoadScene(RayCast);
+    //    DontDestroyOnLoad(transform.gameObject);
+
+    //      if(_instance != null && _instance  != this) //singelton pattern
+    //      {
+    //          Destroy(this.gameObject);
+    //      }else
+    //      {
+    //          _instance = this;
+    //      }
+        
     }
 
-     public void LoadUi()
-    {
-        SceneManager.LoadScene(UI);
-    }
+    public void LoadScene(Object newScene){
 
-     public void LoadImage()
-    {
-        SceneManager.LoadScene(ImageTracking);
+        string sceneName = newScene ? newScene.name : "Tutorial";
+        SceneManager.LoadScene(sceneName); //kein string t????
     }
-
-     public void LoadFeet()
-    {
-        SceneManager.LoadScene(Feet);
-    }
-
-       public void LoadSample()
-    {
-        SceneManager.LoadScene(Sample);
-    }
-
 }
+
+
+  //single so only one scene is loaded
+
+        //SceneManager.LoadScene("Menu");  //klappt
+        //OnSceneFinishLoad.Invoke();
+        //string testString = newScene.name;
