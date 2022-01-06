@@ -938,10 +938,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42bf801ae9c2bd4dbc6eeb17424ec69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PlaneManager: {fileID: 424334247}
   image: {fileID: 350698601}
-  OnInitialized:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &1437939960
 Transform:
   m_ObjectHideFlags: 0

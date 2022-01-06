@@ -7,34 +7,29 @@ using UnityEngine.Events;
 
 public class LaodSpecialScene : MonoBehaviour
 {
-    //public UnityEvent OnSceneFinishLoad;
-    // private static LaodSpecialScene _instance; //for singelton
+    public UnityEvent OnSceneFinishLoad;
+    private static LaodSpecialScene _instance; //for singelton
 
-    // public static LaodSpecialScene Instance { get { return _instance; } }
     void Awake()
     {
-    //    DontDestroyOnLoad(transform.gameObject);
+        DontDestroyOnLoad(transform.gameObject);
 
-    //      if(_instance != null && _instance  != this) //singelton pattern
+         #region Singelton
+     //      if(_instance != null && _instance  != this) //singelton pattern
     //      {
     //          Destroy(this.gameObject);
     //      }else
     //      {
     //          _instance = this;
     //      }
+        #endregion
         
     }
 
-    public void LoadScene(Object newScene){
+    public void LoadScene(Object newScene)
+    {
 
         string sceneName = newScene ? newScene.name : "Tutorial";
-        SceneManager.LoadScene(sceneName); //kein string t????
+        SceneManager.LoadScene(sceneName); 
     }
 }
-
-
-  //single so only one scene is loaded
-
-        //SceneManager.LoadScene("Menu");  //klappt
-        //OnSceneFinishLoad.Invoke();
-        //string testString = newScene.name;

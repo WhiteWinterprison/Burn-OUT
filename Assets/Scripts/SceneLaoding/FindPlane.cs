@@ -12,22 +12,34 @@ public class FindPlane : MonoBehaviour
     
 {
 
-
-    private ARPlaneManager m_PlaneManager;
+    [SerializeField]
+    ARPlaneManager m_PlaneManager;
+    
+    public ARPlaneManager planeManager
+    {
+        get => m_PlaneManager;
+        set => m_PlaneManager = value;
+    }
     [SerializeField]
     private Image image;
 
-    [SerializeField]
-    private UnityEvent OnInitialized;
-
-    private bool initDone = false;
+    private bool PlanesFound() {
+        if(m_PlaneManager.trackables.count > 0)
+        {   
+            Application.Quit();
+            return true;
+        }
+        else{
+            return false;
+            }
+ 
+    }
 
 
     // Start is called before the first frame update
     void Start()
     {
         m_PlaneManager = GetComponent<ARPlaneManager>();
-        m_PlaneManager.planesChanged += MyAction;
     
 
     }
@@ -35,23 +47,7 @@ public class FindPlane : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- 
+        bool asdf = PlanesFound();
     }
 
-    void MyAction(ARPlanesChangedEventArgs args)
-    {
-        SceneManager.LoadScene("Menu");
-    //    if(!initDone)
-    //    {
-    //        init();
-    //    }
-        
-    }
-
-    void init()
-    {   
-        image.enabled = false;
-        OnInitialized?.Invoke();
-        initDone = true;
-    }
 }
