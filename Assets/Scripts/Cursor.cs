@@ -13,7 +13,7 @@ public class Cursor : MonoBehaviour
     {
         //get components
         rayManager = FindObjectOfType<ARRaycastManager>();
-        visual = transform.GetChild(0).gameObject;
+        visual = transform.GetChild(0).gameObject; //Symbol for the Cursor
 
         //hide Cursor
         visual.SetActive(false);
@@ -35,8 +35,5 @@ public class Cursor : MonoBehaviour
                 visual.SetActive(true); //enables visual
         }
 
-
-
-        
     }
 }

@@ -13,14 +13,21 @@ public class StonePlacingState : StoneStates
         //enable Cursor Once
         gameState.EnableCursor();
         StonePlaced = false;  
+        gameState.DebugLOG.text = "Placing";
 
     }
      public override void react (StoneManager gameState)
     {
-       StonePlaced = gameState.IsStonePlaced;
+        
+         gameState.SpawnStone();
+    
+    
+    //    StonePlaced = gameState.IsStonePlaced;
 
-       if( StonePlaced == true)
+       if( gameState.IsStonePlaced == true) //If a stone is placed we go into the switch statement
        {
+           gameState.DebugLOG.text = "StonePlaced";
+
             if(gameState.ButtonRemain <= 0)
             {
                 //No stones left go to dead
@@ -39,7 +46,14 @@ public class StonePlacingState : StoneStates
     {
         //Disable Cursor once
         gameState.DisableCursor();
+        //Importatn so only one plant spawns in each itteration
         gameState.IsStonePlaced =false;
+
+        gameState.ButtonPressed =false;
+        //Waiting time, makes stuff smoother 
+        gameState.DebugLOG.text = "Waiting for Change";
+        gameState.Waiting();
+
     }
 
     

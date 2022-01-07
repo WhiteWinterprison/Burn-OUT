@@ -47,6 +47,7 @@ public class Spawner : MonoBehaviour
                 //Set SpawnedTrue so only one set of enviroment can be spawned
                 PlayAreaSpawned = true;
             }
+           
 
         }
         //Moved to Better Neighbourhood :) (StoneManager)

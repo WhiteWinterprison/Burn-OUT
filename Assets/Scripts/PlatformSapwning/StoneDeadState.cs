@@ -10,7 +10,7 @@ public class StoneDeadState: StoneStates
 {
   public override void enter (StoneManager gameState)
   {
-
+    gameState.DebugLOG.text = "Dead";
   }
  public override void react (StoneManager gameState)
  {
@@ -23,6 +23,8 @@ public class StoneDeadState: StoneStates
   public override void exit (StoneManager gameState)
   {
      gameState.LeafButton.GetComponent<Button>().interactable =true;
+     gameState.DebugLOG.text = "Waiting for Change";
+     gameState.Waiting();
   }  
     
 }

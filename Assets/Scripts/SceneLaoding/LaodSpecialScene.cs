@@ -32,4 +32,13 @@ public class LaodSpecialScene : MonoBehaviour
         string sceneName = newScene ? newScene.name : "Tutorial";
         SceneManager.LoadScene(sceneName); 
     }
+
+    //Notlöung für Scene loading 
+    //lädt scene via der Position die es im Buildeditor hat 
+    public void LoadSceneWithInt(int WantedScene)
+    {
+        SceneManager.LoadScene(WantedScene);
+    }
+
+
 }

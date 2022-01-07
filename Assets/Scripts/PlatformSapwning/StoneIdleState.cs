@@ -8,21 +8,26 @@ public class StoneIdleState : StoneStates
 {
     public override void enter (StoneManager gameState)
     {
-
+        gameState.Cursor.SetActive(false);
+        gameState.DebugLOG.text = "Idel";
     }
      public override void react (StoneManager gameState)
     {
         if(gameState.ButtonPressed == true)
         {
-            gameState.switchState(gameState.StonePlacing);
+
+           gameState.switchState(gameState.StonePlacing);
         }
     }
      public override void exit (StoneManager gameState)
     {
-        //Button wird nicht mehr gedrückt
+        // //Button wird nicht mehr gedrückt
         gameState.ButtonPressed =false;
         //Button funktion Disable still be shown
-        gameState.LeafButton.GetComponent<Button>().interactable =false;
+        gameState.LeafButton.interactable =false; //klappt nicht
+        //Waiting makes it work smoother
+        gameState.DebugLOG.text = "Waiting for Change";
+        gameState.Waiting();
     }
 
     

@@ -22,14 +22,15 @@ public class StoneManager : MonoBehaviour
     Image[] images = new Image[3];
 
     private Spawner m_ObjectSpawner;
-    
-    
+
+    public  Text DebugLOG;
 
     [Header ("Stone Placement")]
     private Cursor cursor;
     public GameObject SteppingStone;
     [HideInInspector] 
     public bool IsStonePlaced; 
+     public GameObject ojb;
 
     #endregion
 
@@ -43,18 +44,24 @@ public class StoneManager : MonoBehaviour
 //------------------------------------------------------------------------
     void Start()
     {
+        //DebugLOG
+        DebugLOG.text = "DebugLOG: ";
+
         currentState = StoneIdle;
         currentState.enter(this);
 
         //--------------Button--------------
         Button btn = LeafButton.GetComponent<Button>();
-        btn.onClick.AddListener(ButtonClicked);         
+        btn.onClick.AddListener(ButtonClicked);   //Code variant anstatt code zum button Inspector      
         cursor = FindObjectOfType<Cursor>();  
+
+        IsStonePlaced = false;
 
     }
     void Update()
     {
         currentState.react(this);
+       
     }
 
 
@@ -76,9 +83,10 @@ public class StoneManager : MonoBehaviour
     {
         //reduce Button energy
         ButtonRemain -= 1 ;
+        DebugLOG.text = "ButtonReamin:" + ButtonRemain.ToString();
         //Disable 1 Leaf Icon
-        images[ButtonRemain].enabled = false;
-        //return Button Pressed
+        images[ButtonRemain].enabled = false; //2 verschwinden
+
         ButtonPressed = true;
     }
     public void EnableCursor()
@@ -93,15 +101,29 @@ public class StoneManager : MonoBehaviour
 
 //Placing Object
 
-        void SpawnStone()
+        public void SpawnStone()
         {
-            //Spawn Stone prefab
-            GameObject ojb = Instantiate(SteppingStone, new Vector3(cursor.transform.position.x, cursor.transform.position.y, cursor.transform.position.z), cursor.transform.rotation); //locals above first spawned block(maybe some to the left on rope so i can fall;; also spawn rope )
-            IsStonePlaced = true;
-            //-------------------Platform ?---------------------------------
-            //spawns the rope now just needs to rotate and have block as child (can under child(1) (which is 2nd child cause 0=1) access cube and make rotations freeze //either let it spawn once or destroy after using 
-            //GameObject job = Instantiate(platform, new Vector3(cursor.transform.position.x, cursor.transform.position.y + 0.9345f, cursor.transform.position.z), cursor.transform.rotation); 
+            if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began && IsStonePlaced == false) //only spawn something if I touched && if IsStonePlaced is false
+            {
+                DebugLOG.text = "Touched";
+                //Spawn Stone prefab
+                Object ojb = Instantiate(SteppingStone, new Vector3(cursor.transform.position.x, cursor.transform.position.y, cursor.transform.position.z), cursor.transform.rotation); //locals above first spawned block(maybe some to the left on rope so i can fall;; also spawn rope )
+                IsStonePlaced = true;
+                DebugLOG.text ="Is Spawned";
+                //-------------------Platform ?---------------------------------
+                //spawns the rope now just needs to rotate and have block as child (can under child(1) (which is 2nd child cause 0=1) access cube and make rotations freeze //either let it spawn once or destroy after using 
+                //GameObject job = Instantiate(platform, new Vector3(cursor.transform.position.x, cursor.transform.position.y + 0.9345f, cursor.transform.position.z), cursor.transform.rotation); 
+            }
         }
+
+//waiting
+        public IEnumerator Waiting()
+        {
+            yield return new WaitForSeconds(2);
+        }
+
+//Debug Code
+
 
 //--------------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------------
