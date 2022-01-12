@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR.ARFoundation;
 
 public class StoneManager : MonoBehaviour
 {
     #region Variables 
     [Space]
-     [SerializeField]
+    //------------------------Curosr------------------------
     public  GameObject Cursor;
-
+    
+    //------------------------Buttons------------------------
     [Space]
     [Header("ButtonRemain & Image Array Size need to be the")]
     [Header ("---Buttons---")]
@@ -19,21 +21,22 @@ public class StoneManager : MonoBehaviour
     
     public int ButtonRemain = 3;
     [SerializeField]
-    Image[] images = new Image[3];
+    Image[] images = new Image[3]; 
 
-    private Spawner m_ObjectSpawner;
-
-    public  Text DebugLOG;
+    //------------------------Spawn------------------------
 
     [Header ("Stone Placement")]
     private Cursor cursor;
     public GameObject SteppingStone;
     [HideInInspector] 
     public bool IsStonePlaced; 
-     public GameObject ojb;
 
     #endregion
 
+    //------------------------Debug----------------------
+    public  Text DebugLOG;
+    
+    //------------------------States---------------------
     StoneStates currentState;
     
     public  StonePlacingState StonePlacing = new StonePlacingState();
@@ -47,7 +50,7 @@ public class StoneManager : MonoBehaviour
         //DebugLOG
         DebugLOG.text = "DebugLOG: ";
 
-        currentState = StoneIdle;
+        currentState = StoneIdle; //erste state der aufgerufen werden soll
         currentState.enter(this);
 
         //--------------Button--------------
@@ -60,6 +63,7 @@ public class StoneManager : MonoBehaviour
     }
     void Update()
     {
+        //Nur diesn script im Update. 
         currentState.react(this);
        
     }
@@ -107,12 +111,11 @@ public class StoneManager : MonoBehaviour
             {
                 DebugLOG.text = "Touched";
                 //Spawn Stone prefab
-                Object ojb = Instantiate(SteppingStone, new Vector3(cursor.transform.position.x, cursor.transform.position.y, cursor.transform.position.z), cursor.transform.rotation); //locals above first spawned block(maybe some to the left on rope so i can fall;; also spawn rope )
+                GameObject SpawnedObject = Instantiate(SteppingStone, Cursor.transform.position, Cursor.transform.rotation);
+
                 IsStonePlaced = true;
                 DebugLOG.text ="Is Spawned";
-                //-------------------Platform ?---------------------------------
-                //spawns the rope now just needs to rotate and have block as child (can under child(1) (which is 2nd child cause 0=1) access cube and make rotations freeze //either let it spawn once or destroy after using 
-                //GameObject job = Instantiate(platform, new Vector3(cursor.transform.position.x, cursor.transform.position.y + 0.9345f, cursor.transform.position.z), cursor.transform.rotation); 
+
             }
         }
 
