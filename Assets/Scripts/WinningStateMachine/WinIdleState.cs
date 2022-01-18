@@ -12,7 +12,7 @@ public class WinIdleState : WState
     }
     public override void react(WinningManager gameState)
     {
-        gameState.switchState(gameState.ColAnimState);
+        gameState.switchState(gameState.ColAnim);
     }
     public override void exit(WinningManager gameState)
     {

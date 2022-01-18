@@ -10,20 +10,21 @@ public class DeadState : WState
     }
     public override void react(WinningManager gameState)
     {
-         // gameState.switchState(gameState.ColAnimState);  end state
+        // gameState.switchState(gameState.ColAnimState);  end state
     }
     public override void exit(WinningManager gameState)
     {
 
         // Start is called before the first frame update
         void Start()
-    {
-        
-    }
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
     }
 }

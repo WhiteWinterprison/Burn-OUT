@@ -10,16 +10,16 @@ public class WinningManager : MonoBehaviour
 
     public GameObject GoalCollider;
 
-    public WinningIdleState WinIdleState = new WinningIdleState();  //first state
+    public  WinIdleState  WinIdle = new WinIdleState();  //first state
 
-    public CollisionAnimState ColAnimState = new CollisionAnimState(); // second state  
+    public  ColAnimState ColAnim = new ColAnimState(); // second state  
         
-    public DeadGameState DeadState = new DeadGameState(); // end state 
+    public  DeadState  Dead = new DeadState(); // end state 
 
 
     void Start()
     {
-        currentState = WinIdleState; //erste state der aufgerufen werden soll
+        currentState = WinIdle; //erste state der aufgerufen werden soll
         currentState.enter(this);
     }
     void Update()
