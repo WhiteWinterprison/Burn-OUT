@@ -1,47 +1,44 @@
-//Isabel because i dont get Jane script to work
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class LaodSpecialScene : MonoBehaviour
 {
- [SerializeField]
- private int RayCast;
- [SerializeField]
- private int ImageTracking;
+    public UnityEvent OnSceneFinishLoad;
+    private static LaodSpecialScene _instance; //for singelton
 
- [SerializeField]
- private int UI;
-
- [SerializeField]
- private int Feet;
-
- [SerializeField]
- private int Sample;
-     public void LoadRay()
+    void Awake()
     {
-        SceneManager.LoadScene(RayCast);
+        DontDestroyOnLoad(transform.gameObject);
+
+         #region Singelton
+     //      if(_instance != null && _instance  != this) //singelton pattern
+    //      {
+    //          Destroy(this.gameObject);
+    //      }else
+    //      {
+    //          _instance = this;
+    //      }
+        #endregion
+        
     }
 
-     public void LoadUi()
+    public void LoadScene(Object newScene)
     {
-        SceneManager.LoadScene(UI);
+
+        string sceneName = newScene ? newScene.name : "Tutorial";
+        SceneManager.LoadScene(sceneName); 
     }
 
-     public void LoadImage()
+    //Notlöung für Scene loading 
+    //lädt scene via der Position die es im Buildeditor hat 
+    public void LoadSceneWithInt(int WantedScene)
     {
-        SceneManager.LoadScene(ImageTracking);
+        SceneManager.LoadScene(WantedScene);
     }
 
-     public void LoadFeet()
-    {
-        SceneManager.LoadScene(Feet);
-    }
-
-       public void LoadSample()
-    {
-        SceneManager.LoadScene(Sample);
-    }
 
 }
