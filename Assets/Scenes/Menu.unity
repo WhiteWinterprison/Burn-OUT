@@ -810,6 +810,18 @@ MonoBehaviour:
           m_StringArgument: LevelSelect
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2538165884197542827, guid: 6922d217fde654d44b058dd8b9d2de9c, type: 3}
+        m_TargetAssemblyTypeName: LaodSpecialScene, Assembly-CSharp
+        m_MethodName: LoadSceneWithInt
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &984941534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,6 +1079,18 @@ MonoBehaviour:
           m_StringArgument: LevelSelect
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2538165884197542827, guid: 6922d217fde654d44b058dd8b9d2de9c, type: 3}
+        m_TargetAssemblyTypeName: LaodSpecialScene, Assembly-CSharp
+        m_MethodName: LoadSceneWithInt
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1232227665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1277,6 +1301,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: LoadingScreen
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2538165884197542827, guid: 6922d217fde654d44b058dd8b9d2de9c, type: 3}
+        m_TargetAssemblyTypeName: LaodSpecialScene, Assembly-CSharp
+        m_MethodName: LoadSceneWithInt
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1477627394
@@ -1686,6 +1722,18 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 102900000, guid: 1b9b293bde2b6594fb35f0cafe99035c, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2538165884197542827, guid: 6922d217fde654d44b058dd8b9d2de9c, type: 3}
+        m_TargetAssemblyTypeName: LaodSpecialScene, Assembly-CSharp
+        m_MethodName: LoadSceneWithInt
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
