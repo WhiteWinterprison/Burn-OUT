@@ -10,9 +10,10 @@ public class Spawner : MonoBehaviour
     public GameObject Goal;
     private Cursor cursor;
     public GameObject Cursorr;
-    public GameObject SteppingStone;
-    [HideInInspector] //So it dose not clutter the inspector windo
-    public bool StoneSpawned; //used in StoneManager//StoneStates to check if extra Stone alreasy Spawned
+    
+    //Needed for Stepping Stones Not used at Moment
+    //[HideInInspector] //So it dose not clutter the inspector windo
+    //public bool StoneSpawned; //used in StoneManager//StoneStates to check if extra Stone alreasy Spawned
     private bool PlayAreaSpawned = false;
    
    
