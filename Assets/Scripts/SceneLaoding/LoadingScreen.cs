@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-// script für bestimmte scene
+// script fuer bestimmte scene
 
 public class LoadingScreen : MonoBehaviour
 {
