@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class WinningManager : MonoBehaviour
 {
+    public bool gameAnimationFinish;
+
+    public bool gameCollision;
+
+    public Animation anim; 
+
     // Start is called before the first frame update
 
     WState currentState; // state in der wir uns befinden 
@@ -21,6 +27,8 @@ public class WinningManager : MonoBehaviour
     {
         currentState = WinIdle; //erste state der aufgerufen werden soll
         currentState.enter(this);
+
+        anim = GetComponent<Animation>(); // oder unten bei void anim? 
     }
     void Update()
     {
@@ -28,7 +36,7 @@ public class WinningManager : MonoBehaviour
         currentState.react(this);
 
     }
-    public void switchState(ColAnimState nextState)
+    public void switchState(WState nextState)  //erlaubt szenenn switch
     {
         currentState.exit(this);
         currentState = nextState;
@@ -41,4 +49,22 @@ public class WinningManager : MonoBehaviour
 
 
    //////////////////// game logic ////////////////
+  
+
+    public void OnCollisionEnter()
+    {
+        // coliisssion definieren 
+        gameCollision = true; 
+    }
+
+    public void winAnimation()
+    {
+        // spiel animation ab 
+        anim.Play("BiggerBox");   
+        gameAnimationFinish = true; // letzte line
+    }
+    // game logic collision -> next state -> animation blume 
+
+   //  public void PlayMusic()#
+   // public void Music stop
 }
