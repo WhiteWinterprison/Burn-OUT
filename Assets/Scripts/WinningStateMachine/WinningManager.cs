@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine.XR.ARFoundation;
 using UnityEngine;
 
 public class WinningManager : MonoBehaviour
@@ -22,6 +24,10 @@ public class WinningManager : MonoBehaviour
         
     public  DeadState  Dead = new DeadState(); // end state 
 
+    public Button winButton;
+    public bool ButtonPressed = false;
+
+
 
     void Start()
     {
@@ -29,11 +35,20 @@ public class WinningManager : MonoBehaviour
         currentState.enter(this);
 
         anim = GetComponent<Animation>(); // oder unten bei void anim? 
+
+        Button btn = winButton.GetComponent<Button>();
+
+        btn.onClick.AddListener(ButtonClicked);
+
+    
     }
     void Update()
     {
         //Nur diesn script im Update. 
         currentState.react(this);
+
+
+       
 
     }
     public void switchState(WState nextState)  //erlaubt szenenn switch
@@ -51,11 +66,23 @@ public class WinningManager : MonoBehaviour
    //////////////////// game logic ////////////////
   
 
-    public void OnCollisionEnter()
+    public void OnCollisionEnter(Collision collision)
     {
-        // coliisssion definieren 
-        gameCollision = true; 
+        if (collision.gameObject.name == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene  //question: name bigger box or need other collision name? 
+        {
+            Debug.Log("Collision hits"); 
+            gameCollision = true;
+        }
     }
+
+
+    
+    public void ButtonClicked()
+    {
+        ButtonPressed = true;
+        Debug.Log("ButtonIsPressed");
+    }
+   
 
     public void winAnimation()
     {
