@@ -10,13 +10,20 @@ public class WinningManager : MonoBehaviour
 
     public bool gameCollision;
 
-    public Animation anim; 
+    public Animation anim;
+
+    public GameObject GoalCollider;
+
+    public Button winButton;
+    public bool ButtonPressed = false;
 
     // Start is called before the first frame update
 
-    WState currentState; // state in der wir uns befinden 
+    // //////////////////////////////////  STATES //////////////////////////////////////////////////
 
-    public GameObject GoalCollider;
+
+   WState currentState; // state in der wir uns befinden 
+
 
     public  WinIdleState  WinIdle = new WinIdleState();  //first state
 
@@ -24,11 +31,9 @@ public class WinningManager : MonoBehaviour
         
     public  DeadState  Dead = new DeadState(); // end state 
 
-    public Button winButton;
-    public bool ButtonPressed = false;
-
-
-
+    
+     //////////////////////////////////////////////////
+    
     void Start()
     {
         currentState = WinIdle; //erste state der aufgerufen werden soll
@@ -37,7 +42,6 @@ public class WinningManager : MonoBehaviour
         anim = GetComponent<Animation>(); // oder unten bei void anim? 
 
         Button btn = winButton.GetComponent<Button>();
-
         btn.onClick.AddListener(ButtonClicked);
 
     
@@ -46,9 +50,6 @@ public class WinningManager : MonoBehaviour
     {
         //Nur diesn script im Update. 
         currentState.react(this);
-
-
-       
 
     }
     public void switchState(WState nextState)  //erlaubt szenenn switch
@@ -66,14 +67,14 @@ public class WinningManager : MonoBehaviour
    //////////////////// game logic ////////////////
   
 
-    public void OnCollisionEnter(Collision collision)
+   /* public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene  //question: name bigger box or need other collision name? 
         {
             Debug.Log("Collision hits"); 
             gameCollision = true;
         }
-    }
+    } */
 
 
     
@@ -83,7 +84,7 @@ public class WinningManager : MonoBehaviour
         Debug.Log("ButtonIsPressed");
     }
    
-
+    // animation blume taucht auf 
     public void winAnimation()
     {
         // spiel animation ab 
