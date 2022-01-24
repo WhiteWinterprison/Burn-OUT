@@ -7,3 +7,4 @@ public abstract class WState
     public abstract void exit(WinningManager gameState);
 }
 
+// FERTIG

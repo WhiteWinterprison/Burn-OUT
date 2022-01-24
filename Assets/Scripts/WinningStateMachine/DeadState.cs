@@ -15,16 +15,5 @@ public class DeadState : WState
     public override void exit(WinningManager gameState)
     {
 
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }
