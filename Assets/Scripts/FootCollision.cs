@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class FootCollision : MonoBehaviour
 {
-    public imageTracking tracking;
+    public imageTracking tracking; 
     bool canDie = false;
     [SerializeField]
     private int EndGame;
@@ -23,7 +23,7 @@ public class FootCollision : MonoBehaviour
 
         if (collisioninfo.collider.tag == "Goo" && canDie == true)
         {
-            tracking.enabled = false;
+            tracking.enabled = false; //disable feet tracking to disable user movement (as game over logic)
             SceneManager.LoadScene(EndGame);
             //FindObjectOfType<GameManager>().EndGame();
 

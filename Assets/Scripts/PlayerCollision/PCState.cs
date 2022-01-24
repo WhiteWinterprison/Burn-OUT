@@ -2,17 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PCState : MonoBehaviour //PlayerCollision State
+public abstract class PCState //PlayerCollision State
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+     public abstract void enter(PCManager gameState); //NameManager Script
+     public abstract void react(PCManager gameState);
+     public abstract void exit(PCManager gameState);
 }
