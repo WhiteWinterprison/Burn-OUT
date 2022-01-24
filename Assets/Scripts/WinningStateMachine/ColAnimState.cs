@@ -5,16 +5,22 @@ using UnityEngine;
 
 public class ColAnimState : WState  // collision animation state 
 {
-    
+
     public override void enter(WinningManager gameState)
     {
+        Debug.Log("EnterAnimState");
 
+       
     }
     public override void react(WinningManager gameState)
     {
-        gameState.winAnimation(); //
 
-       // gameState.PlayMusic(); spiel musik ab 
+        gameState.DebugLog.text = "Won";
+
+
+
+       // gameState.winAnimation(); //
+        // gameState.PlayMusic(); spiel musik ab 
 
         if (gameState.gameAnimationFinish == true)
         {

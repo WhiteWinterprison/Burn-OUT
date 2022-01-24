@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 /// <summary>
@@ -15,9 +16,14 @@ public class DeadState : WState
     public override void react(WinningManager gameState)
     {
         // gameState.switchState(gameState.ColAnimState);  end state
+        // scene zu wingame 
+      //  gameState.LoadScene();
+
     }
     public override void exit(WinningManager gameState)
     {
 
     }
+
+ 
 }

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Animations;
+using UnityEngine.Audio;
+
 
 public class WinningManager : MonoBehaviour
 {
@@ -10,19 +14,32 @@ public class WinningManager : MonoBehaviour
 
     public bool gameCollision;
 
-    public Animation anim;
+ //   public Animator anim;
 
     public GameObject GoalCollider;
 
     public Button winButton;
     public bool ButtonPressed = false;
 
+
+
+    public AudioSource myAudio;
+
+    bool audioPlay;
+    bool a_ToggleChange;
+
+
+    public Text DebugLog;
+
+
+    // public Animation BiggerBox;
+
     // Start is called before the first frame update
 
     // //////////////////////////////////  STATES //////////////////////////////////////////////////
 
 
-   WState currentState; // state in der wir uns befinden 
+    WState currentState; // state in der wir uns befinden 
 
 
     public  WinIdleState  WinIdle = new WinIdleState();  //first state
@@ -39,12 +56,16 @@ public class WinningManager : MonoBehaviour
         currentState = WinIdle; //erste state der aufgerufen werden soll
         currentState.enter(this);
 
-        anim = GetComponent<Animation>(); // oder unten bei void anim? 
+      // anim = GetComponent<Animator>(); // oder unten bei void anim? 
 
         Button btn = winButton.GetComponent<Button>();
         btn.onClick.AddListener(ButtonClicked);
 
-    
+        myAudio = GetComponent<AudioSource>();
+        audioPlay = true;
+
+
+        
     }
     void Update()
     {
@@ -67,15 +88,15 @@ public class WinningManager : MonoBehaviour
    //////////////////// game logic ////////////////
   
 
-   /* public void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collisionInfo)
     {
-        if (collision.gameObject.name == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene  //question: name bigger box or need other collision name? 
+        if (collisionInfo.gameObject.tag == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene 
         {
-            Debug.Log("Collision hits"); 
+            Debug.Log("Collision hits");
+
             gameCollision = true;
         }
-    } */
-
+    } 
 
     
     public void ButtonClicked()
@@ -85,14 +106,28 @@ public class WinningManager : MonoBehaviour
     }
    
     // animation blume taucht auf 
-    public void winAnimation()
+    /* public void winAnimation()
     {
+
         // spiel animation ab 
-        anim.Play("BiggerBox");   
+
+        anim.Play("IsBigger");
         gameAnimationFinish = true; // letzte line
-    }
+    } */
+
+
+  
+
+
     // game logic collision -> next state -> animation blume 
 
-   //  public void PlayMusic()#
-   // public void Music stop
+    //  public void PlayMusic()#
+    // public void Music stop
+
+    /* public void LoadScene(string SceneName)
+     {
+         SceneManager.LoadScene("GameOver");
+
+     }*/
+
 }
