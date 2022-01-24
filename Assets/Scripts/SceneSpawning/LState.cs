@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class LState 
+public abstract class LState //Level
 {
 
     public abstract void enter(LManager gameState);

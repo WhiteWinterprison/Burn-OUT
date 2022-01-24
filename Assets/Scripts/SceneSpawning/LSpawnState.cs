@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LSpawnState : LState
+public class LSpawnState : LState //Level
 {
     public override void enter(LManager gameState)
     {

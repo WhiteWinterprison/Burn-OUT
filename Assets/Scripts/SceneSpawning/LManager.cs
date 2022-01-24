@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LManager : MonoBehaviour
+public class LManager : MonoBehaviour //Level
 {
     //------------------------Variablen------------------------
     public bool Fun;
@@ -29,7 +29,7 @@ public class LManager : MonoBehaviour
         currentState = IdleState;
         currentState.enter(this);
 
-        cursor = FindObjectOfType<GameObject>();
+        //cursor = FindObjectOfType<GameObject>();
     }
 
     // Update is called once per frame
