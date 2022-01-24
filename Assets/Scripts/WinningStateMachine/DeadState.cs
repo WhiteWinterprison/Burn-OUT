@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// state für opening book am ende gatcha 
+/// </summary>
+
 public class DeadState : WState
 {
     public override void enter(WinningManager gameState)
