@@ -22,7 +22,9 @@ public class PCDetectState : PCState
         else if (gameState.isDead == true)
         {
 
-            //gameState.switchState(gameState.GameOverState);
+            gameState.switchState(gameState.GameOverState);
+
+            gameState.Debuglog.text = "you ded";
         }
         
 

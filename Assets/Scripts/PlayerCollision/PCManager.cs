@@ -73,14 +73,19 @@ public class PCManager : MonoBehaviour
         if (collisioninfo.collider.tag == "Stone") //maybe coroutine so player cant die when entering collision (think its bc it only on enter and then back to dying)
         {
             isSafe = true;
+
+            Debuglog.text = "Stone";
+
         }
-       
+
 
         if (collisioninfo.collider.tag == "Goo" && isSafe == false)
         {
 
             //SceneManager.LoadScene(EndGame);
             isDead = true;
+
+            Debuglog.text = "Goo";
             //FindObjectOfType<GameManager>().EndGame();
 
         }

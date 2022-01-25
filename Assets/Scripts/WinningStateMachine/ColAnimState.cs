@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 // collision hits -> animation starts 
 
 public class ColAnimState : WState  // collision animation state 
@@ -27,6 +28,7 @@ public class ColAnimState : WState  // collision animation state
             gameState.switchState(gameState.Dead);
         }
 
+        SceneManager.LoadScene("WinScreen");
         
 
     }
