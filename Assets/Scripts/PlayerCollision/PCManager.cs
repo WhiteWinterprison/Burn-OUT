@@ -9,6 +9,15 @@ public class PCManager : MonoBehaviour
 {
     public Button Bubble;
 
+    public Text Debuglog;
+
+    [HideInInspector]
+    public float currentTime = 0f;
+    float startingTime = 10f;
+
+    [SerializeField] Text Counter;
+
+
     [HideInInspector]
     public bool pressedButton = false;
 
@@ -34,6 +43,8 @@ public class PCManager : MonoBehaviour
     {
         currentState = DetectState;
         currentState.enter(this);
+
+        currentTime = startingTime;
 
         Button btn = Bubble.GetComponent<Button>();
         btn.onClick.AddListener(buttonClicked);
@@ -90,6 +101,17 @@ public class PCManager : MonoBehaviour
     public void buttonClicked()
     {
         pressedButton = true;
+    }
+
+    public void PlayerTimer()
+    {
+        currentTime -= 1 * Time.deltaTime;
+        Counter.text = currentTime.ToString("0");
+
+        if (currentTime <= 0)
+        {
+            currentTime = 0;
+        }
     }
 
 }

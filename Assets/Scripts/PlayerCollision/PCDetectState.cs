@@ -6,7 +6,7 @@ public class PCDetectState : PCState
 {
     public override void enter(PCManager gameState)
     {
-
+        gameState.Debuglog.text = "Detected";
     }
     public override void react(PCManager gameState)
     {
@@ -16,11 +16,13 @@ public class PCDetectState : PCState
         if(gameState.pressedButton == true)
         {
             gameState.switchState(gameState.MovementState);
+            Debug.Log("kkeoroierueiweesfsyd<fhiouywjior");
+
         }
         else if (gameState.isDead == true)
         {
 
-            gameState.switchState(gameState.GameOverState);
+            //gameState.switchState(gameState.GameOverState);
         }
         
 
