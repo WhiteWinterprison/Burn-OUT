@@ -9,6 +9,8 @@ public class Cursor : MonoBehaviour
     private ARRaycastManager rayManager;
     private GameObject visual;
 
+    public GameObject RoomScan;
+
     void Start()
     {
         //get components
@@ -17,6 +19,7 @@ public class Cursor : MonoBehaviour
 
         //hide Cursor
         visual.SetActive(false);
+        RoomScan.SetActive(true);
     }
 
     void Update()
@@ -33,6 +36,7 @@ public class Cursor : MonoBehaviour
 
             if (!visual.activeInHierarchy)
                 visual.SetActive(true); //enables visual
+                RoomScan.SetActive(false);
         }
 
     }

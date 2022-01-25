@@ -25,7 +25,7 @@ public class PCManager : MonoBehaviour
     public bool isDead;
 
     [SerializeField]
-    public bool isSafe = true;
+    public bool isSafe = false;
 
     [SerializeField]
     [Tooltip ("get Nr of Scene From Scene Manager")]

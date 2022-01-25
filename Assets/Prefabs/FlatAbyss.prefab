@@ -414,7 +414,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4452524663566274608}
-  - component: {fileID: 3050310358462968866}
   m_Layer: 0
   m_Name: abysswmaterialfshaderUV
   m_TagString: BiggerBox
@@ -478,19 +477,6 @@ Transform:
   m_Father: {fileID: 7251328735826442987}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!65 &3050310358462968866
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4452524663566274597}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.025914103, y: 0.15261482, z: 0.26393414}
-  m_Center: {x: -0.13635813, y: 0.06485804, z: -0.030255964}
 --- !u!1 &4452524663566274598
 GameObject:
   m_ObjectHideFlags: 0
@@ -3531,5 +3517,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1456066, y: 0.1698571, z: 1.9397984}
-  m_Center: {x: -0.0070326924, y: 0.04669223, z: 1.5553823}
+  m_Size: {x: 1.1456066, y: 0.1698571, z: 2.0624125}
+  m_Center: {x: -0.0070326924, y: 0.04669223, z: 1.4940752}
