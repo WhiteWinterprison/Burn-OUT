@@ -21,6 +21,7 @@ public class StoneManager : MonoBehaviour
     
     public int ButtonRemain = 3;
     [SerializeField]
+    [Tooltip ("The UI leafs Drag and Drop")]
     Image[] images = new Image[3]; 
 
     //------------------------Spawn------------------------
