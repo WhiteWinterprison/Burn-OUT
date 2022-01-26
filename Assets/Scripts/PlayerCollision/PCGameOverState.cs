@@ -13,10 +13,14 @@ public class PCGameOverState : PCState
     public override void react(PCManager gameState)
     {
         SceneManager.LoadScene("GameOver");
-
     }
     public override void exit(PCManager gameState)
     {
+        
+    }
 
+    IEnumerator WaitingForAnimation()
+    {
+        yield return new WaitForSeconds(5);
     }
 }

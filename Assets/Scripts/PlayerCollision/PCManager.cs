@@ -30,6 +30,7 @@ public class PCManager : MonoBehaviour
     [SerializeField]
     [Tooltip ("get Nr of Scene From Scene Manager")]
     private int EndGame;
+
     #region state
     //-----------------------States-----------------------------
 

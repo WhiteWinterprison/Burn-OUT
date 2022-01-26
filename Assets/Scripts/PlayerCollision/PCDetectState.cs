@@ -8,6 +8,7 @@ public class PCDetectState : PCState
     {
         gameState.Debuglog.text = "Detected";
     }
+        
     public override void react(PCManager gameState)
     {
         
@@ -24,13 +25,12 @@ public class PCDetectState : PCState
 
             gameState.switchState(gameState.GameOverState);
 
-            gameState.Debuglog.text = "you ded";
+           // gameState.Debuglog.text = "you ded";
         }
         
 
     }
 
-   
     public override void exit(PCManager gameState)
     {
 

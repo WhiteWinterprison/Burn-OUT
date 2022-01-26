@@ -9,7 +9,7 @@ public class StoneIdleState : StoneStates
     public override void enter (StoneManager gameState)
     {
         gameState.Cursor.SetActive(false);
-        gameState.DebugLOG.text = "Idel";
+        gameState.DebugLOG.text = "Platform Log:Idel";
     }
      public override void react (StoneManager gameState)
     {
