@@ -10,22 +10,28 @@ EditorBuildSettings:
     guid: 1b9b293bde2b6594fb35f0cafe99035c
   - enabled: 1
     path: Assets/Scenes/Menu.unity
-    guid: bf150d350e6c6ba478012828670879e0
-  - enabled: 1
-    path: Assets/Scenes/LoadingScreen.unity
-    guid: ad3681b6fa20b7640b3295c18ead0b1c
+    guid: 32e158099297d8b47be134c2baf5d29e
   - enabled: 1
     path: Assets/Scenes/LevelSelect.unity
     guid: 047305aa8b83fb24cb209f8bd12cc759
   - enabled: 1
-    path: Assets/Scenes/UiScene.unity
+    path: Assets/Scenes/Tutorial.unity
+    guid: e9b69aa7bad2127468a0b0ecade18b37
+  - enabled: 1
+    path: Assets/Scenes/LoadingScreen.unity
+    guid: ad3681b6fa20b7640b3295c18ead0b1c
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
     guid: fff27771efbe70045b0c44785c377c75
   - enabled: 1
-    path: Assets/Scenes/ARPlane_etc.unity
+    path: Assets/Scenes/Marje_ImageTracking.unity
     guid: f69f404f52328684aa8a8023a3836a13
   - enabled: 1
-    path: Assets/Scenes/SampleLVL.unity
+    path: Assets/Scenes/Isabel_SampleLVL.unity
     guid: 9008bfd77f984fe4894b72fc52e2a9c9
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 6251533437bde004fa9f309e163e1ec9
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 8ca6dfe0f603f7b41820bac4f434f22f
