@@ -11,7 +11,7 @@ public class DeadState : WState
 {
     public override void enter(WinningManager gameState)
     {
-
+        Debug.Log("EnterDeadState");
     }
     public override void react(WinningManager gameState)
     {

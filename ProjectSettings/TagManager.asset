@@ -7,6 +7,7 @@ TagManager:
   - Goo
   - Stone
   - BiggerBox
+  - Ui
   layers:
   - Default
   - TransparentFX

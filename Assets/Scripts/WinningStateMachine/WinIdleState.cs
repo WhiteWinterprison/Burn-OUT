@@ -15,8 +15,8 @@ public class WinIdleState : WState
 
         if (gameState.gameCollision == true)
         {
-            gameState.switchState(gameState.ColAnim);
-            Debug.Log("Collision is true");
+            gameState.switchState(gameState.Button);
+           // Debug.Log("Collision is true");
         }
     }
     public override void exit(WinningManager gameState)
