@@ -12,17 +12,21 @@ public class WinningManager : MonoBehaviour
 {
     public bool gameCollision;
 
-    public GameObject GoalCollider;
+    public GameObject GoalCollider; 
 
     public GameObject PlantButton;
 
     public Text DebugLog;
 
+   
 
     //  public Button winButton;
 
-    // public Button PlantBtn;
-    //  public bool ButtonPressed = false;
+     public Button PlantBtn;
+      public bool ButtonPressed = false;
+
+
+    public GameObject[] GameUiParts;
 
 
 
@@ -58,11 +62,11 @@ public class WinningManager : MonoBehaviour
 
         //anim = GetComponent<Animator>(); // oder unten bei void anim? 
 
-        // Button btn = PlantBtn.GetComponent<Button>();
-        //  btn.onClick.AddListener(ButtonClicked);
+        Button btn = PlantBtn.GetComponent<Button>();
+        btn.onClick.AddListener(ButtonClicked);
         PlantButton.gameObject.SetActive(false);  // Button ist nicht angezeigt bzw nicht da 
 
-
+        GameUiParts = GameObject.FindGameObjectsWithTag("Ui");
 
     }
     void Update()
@@ -97,7 +101,7 @@ public class WinningManager : MonoBehaviour
         }
     }
 
-
+    // ////////// BUTTON ////////////
 
     public void enableButton()  // works
     {
@@ -106,17 +110,36 @@ public class WinningManager : MonoBehaviour
         Debug.Log("Button");
     }
 
-    public void disappearUi()  //ui muss mit tag gesetzt werden zum zerstören //works
+  /*  public void disappearUi( ) //ui muss mit tag gesetzt werden zum zerstören //works  // wenn man auf buton drückt und next state kommt 
     {
-        Destroy(GameObject.FindWithTag("Ui"));
+       /* GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(tag);
+        foreach(GameObject target in gameObjects)
+        {
+            GameObject.Destroy(target);
+        } 
+       
+         Destroy(GameObject.FindWithTag("Ui"));
+        
+    } */
+
+
+    public void disableGameUi()
+    {
+        GameUiParts = GameObject.FindGameObjectsWithTag("Ui");
+
+        foreach (GameObject GameUi in GameUiParts)
+        {
+            GameUi.SetActive(false);
+
+        }
     }
 
-    /*  public void ButtonClicked()   // later for button to plant
+     public void ButtonClicked()   // later for button to plant
       {
-
+         
           ButtonPressed = true;
           Debug.Log("ButtonIsPressed");
-      } */
+      } 
 
 
     ////////////////////////// ANIMATION /////////////////////////

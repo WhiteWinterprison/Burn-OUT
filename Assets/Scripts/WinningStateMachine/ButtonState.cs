@@ -15,7 +15,7 @@ public class ButtonState : WState
     public override void enter(WinningManager gameState)
     {
         Debug.Log("EnterButtonState");
-        gameState.disappearUi();
+        gameState.disableGameUi();
 
 
 
@@ -26,12 +26,12 @@ public class ButtonState : WState
         gameState.DebugLog.text = "Won";
 
 
-        // if button is clicked true then switch state 
-        /*   if (gameState.ButtonPressed == true)
+        // if button is clicked true then switch state // works 
+           if (gameState.ButtonPressed == true)
             {
                 gameState.switchState(gameState.Anim);
 
-            } */
+            } 
 
     }
     public override void exit(WinningManager gameState)

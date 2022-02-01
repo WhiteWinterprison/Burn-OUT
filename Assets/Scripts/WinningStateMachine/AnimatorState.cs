@@ -21,12 +21,10 @@ public class AnimatorState : WState  // collision animation state
         //anim.Play("IsBigger");
 
 
-
-
         // gameState.winAnimation(); //
         // gameState.PlayMusic(); spiel musik ab 
 
-        if (gameState.gameAnimationFinish == true)
+        if (gameState.gameAnimationFinish == true)    // für später wenn anim fertig abgespielt ist 
         {
             gameState.switchState(gameState.Dead);
 
