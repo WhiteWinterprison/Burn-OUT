@@ -10,26 +10,24 @@ using UnityEngine.Audio;
 
 public class WinningManager : MonoBehaviour
 {
-    public bool gameAnimationFinish;
-
     public bool gameCollision;
-
- //   public Animator anim;
 
     public GameObject GoalCollider;
 
-    public Button winButton;
-    public bool ButtonPressed = false;
-
-
-
-    public AudioSource myAudio;
-
-    bool audioPlay;
-    bool a_ToggleChange;
-
+    public GameObject PlantButton;
 
     public Text DebugLog;
+
+
+    //  public Button winButton;
+
+    // public Button PlantBtn;
+    //  public bool ButtonPressed = false;
+
+
+
+    public bool gameAnimationFinish;
+
 
 
     // public Animation BiggerBox;
@@ -42,30 +40,30 @@ public class WinningManager : MonoBehaviour
     WState currentState; // state in der wir uns befinden 
 
 
-    public  WinIdleState  WinIdle = new WinIdleState();  //first state
+    public WinIdleState WinIdle = new WinIdleState();  //first state
 
-    public  ColAnimState ColAnim = new ColAnimState(); // second state  
-        
-    public  DeadState  Dead = new DeadState(); // end state 
+    public ButtonState Button = new ButtonState(); // second state  
 
-    
-     //////////////////////////////////////////////////
-    
+    public AnimatorState Anim = new AnimatorState(); // third state  
+
+    public DeadState Dead = new DeadState(); // end state 
+
+
+    //////////////////////////////////////////////////
+
     void Start()
     {
         currentState = WinIdle; //erste state der aufgerufen werden soll
         currentState.enter(this);
 
-      // anim = GetComponent<Animator>(); // oder unten bei void anim? 
+        //anim = GetComponent<Animator>(); // oder unten bei void anim? 
 
-        Button btn = winButton.GetComponent<Button>();
-        btn.onClick.AddListener(ButtonClicked);
-
-        myAudio = GetComponent<AudioSource>();
-        audioPlay = true;
+        // Button btn = PlantBtn.GetComponent<Button>();
+        //  btn.onClick.AddListener(ButtonClicked);
+        PlantButton.gameObject.SetActive(false);  // Button ist nicht angezeigt bzw nicht da 
 
 
-        
+
     }
     void Update()
     {
@@ -85,39 +83,58 @@ public class WinningManager : MonoBehaviour
 
 
 
-   //////////////////// game logic ////////////////
-  
+    //////////////////// game logic ////////////////
 
-    public void OnCollisionEnter(Collision collisionInfo)
+    /// ////////////////////// Collision switch state ////////////////////
+    public void OnCollisionEnter(Collision collisionInfo)  //Works
     {
         if (collisionInfo.gameObject.tag == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene 
         {
             Debug.Log("Collision hits");
 
             gameCollision = true;
-        }
-    } 
 
-    
-    public void ButtonClicked()
-    {
-        ButtonPressed = true;
-        Debug.Log("ButtonIsPressed");
+        }
     }
-   
+
+
+
+    public void enableButton()  // works
+    {
+
+        PlantButton.gameObject.SetActive(true);
+        Debug.Log("Button");
+    }
+
+    public void disappearUi()  //ui muss mit tag gesetzt werden zum zerstören //works
+    {
+        Destroy(GameObject.FindWithTag("Ui"));
+    }
+
+    /*  public void ButtonClicked()   // later for button to plant
+      {
+
+          ButtonPressed = true;
+          Debug.Log("ButtonIsPressed");
+      } */
+
+
+    ////////////////////////// ANIMATION /////////////////////////
+
     // animation blume taucht auf 
-    /* public void winAnimation()
+    public void winAnimation()
     {
 
         // spiel animation ab 
 
-        anim.Play("IsBigger");
+        //anim.Play("IsBigger");
+
         gameAnimationFinish = true; // letzte line
-    } */
+    }
 
 
-  
 
+    /////////////// Music (when win a sound should drop)////////////////////7
 
     // game logic collision -> next state -> animation blume 
 
@@ -131,3 +148,8 @@ public class WinningManager : MonoBehaviour
      }*/
 
 }
+
+
+
+
+

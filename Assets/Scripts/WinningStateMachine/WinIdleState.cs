@@ -15,13 +15,18 @@ public class WinIdleState : WState
 
         if (gameState.gameCollision == true)
         {
-            gameState.switchState(gameState.ColAnim);
-            Debug.Log("Collision is true");
+            gameState.switchState(gameState.Button);
+            // Debug.Log("Collision is true");
         }
     }
     public override void exit(WinningManager gameState)
     {
         // alles was man haben will bevor die nächste szene geladen wird zb musik stoppen oder grafik ausblenden 
-    } 
+    }
 
 }
+
+
+
+
+
