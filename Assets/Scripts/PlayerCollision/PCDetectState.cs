@@ -6,18 +6,19 @@ public class PCDetectState : PCState
 {
     public override void enter(PCManager gameState)
     {
-        gameState.Debuglog.text = "Detected";
+        gameState.Debuglog.text = "Collision: Scanning";
+        gameState.isDead =false;
+        gameState.isWinning =false;
     }
         
     public override void react(PCManager gameState)
     {
-        
-
+        gameState.PlayerRaycastHit();
         
         if(gameState.pressedButton == true)
         {
             gameState.switchState(gameState.MovementState);
-            Debug.Log("kkeoroierueiweesfsyd<fhiouywjior");
+            Debug.Log("Collision: ScreenPressed");
 
         }
         else if (gameState.isDead == true)

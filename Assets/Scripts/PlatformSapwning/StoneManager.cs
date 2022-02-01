@@ -49,7 +49,7 @@ public class StoneManager : MonoBehaviour
     void Start()
     {
         //DebugLOG
-        DebugLOG.text = "Platform Log: ";
+        DebugLOG.text = "PlatformLog: ";
 
         currentState = StoneIdle; //erste state der aufgerufen werden soll
         currentState.enter(this);

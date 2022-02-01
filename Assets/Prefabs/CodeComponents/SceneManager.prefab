@@ -45,6 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fun: 0
   DebugLog: {fileID: 0}
-  Level: {fileID: 919132149155446097, guid: f6f30039ca31dc548a8c99ce7ef10c3e, type: 3}
+  Level: {fileID: 0}
   cursor: {fileID: 0}
   PlayAreaSpawned: 0

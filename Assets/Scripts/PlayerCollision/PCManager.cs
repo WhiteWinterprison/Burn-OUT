@@ -3,42 +3,45 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+//code by: Marje & Isabel
 
 
 public class PCManager : MonoBehaviour
 {
+    //---------UI-------
     public Button Bubble;
-
     public Text Debuglog;
 
-    [HideInInspector]
-    public float currentTime = 0f;
+    [SerializeField] Text Counter;
+    [HideInInspector] public float currentTime = 0f;
     float startingTime = 10f;
 
-    [SerializeField] Text Counter;
+    //--------Logic-------
 
+    [HideInInspector] public bool pressedButton = false;
 
-    [HideInInspector]
-    public bool pressedButton = false;
+    [HideInInspector] public bool isDead;
+    [HideInInspector] public bool isWinning;
 
-    [SerializeField]
-    public bool isDead;
-
-    [SerializeField]
-    public bool isSafe = false;
+    [HideInInspector ] public bool isSafe = false;
 
     [SerializeField]
     [Tooltip ("get Nr of Scene From Scene Manager")]
     private int EndGame;
+    [Tooltip ("Pull in MainCamera von AR, Ray will start from here")]
+    [SerializeField] private Camera Camera;
 
-    #region state
+    #region states 
     //-----------------------States-----------------------------
-
     PCState currentState;
     public PCDetectState DetectState = new PCDetectState();
     public PCMovementState MovementState = new PCMovementState();
     public PCGameOverState GameOverState = new PCGameOverState();
+
     #endregion
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,15 +49,18 @@ public class PCManager : MonoBehaviour
         currentState.enter(this);
 
         currentTime = startingTime;
-
+        //--------Get Components & listeners----------
         Button btn = Bubble.GetComponent<Button>();
         btn.onClick.AddListener(buttonClicked);
+        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         currentState.react(this);
+       
     }
 
     public void switchState(PCState nextState)
@@ -64,6 +70,7 @@ public class PCManager : MonoBehaviour
         nextState.enter(this);
 
     }
+    
 
     //---------------------------------------------------------------------
     //------------------------Game Logic--------------------------------
@@ -119,5 +126,29 @@ public class PCManager : MonoBehaviour
             currentTime = 0;
         }
     }
+
+    public void PlayerRaycastHit ()
+    {
+        RaycastHit hit; //check what you hit 
+        Vector3 DirectionRay = Vector3.down;
+
+        if(Physics.Raycast(Camera.transform.position, DirectionRay, out hit, 10)) //gives always out a bool
+        {
+            Debug.Log(hit.transform.name);
+            Debug.DrawRay(Camera.transform.position, DirectionRay, Color.red, 10);
+            
+            if(hit.collider.CompareTag("Goo"))
+            {
+                isDead = true;
+            } 
+            else if (hit.collider.CompareTag("Finish"))
+            {
+                isWinning = true;
+            }         
+            
+        }
+    }
+
+   
 
 }

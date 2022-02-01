@@ -6,7 +6,7 @@ public class PCMovementState : PCState
 {
     public override void enter(PCManager gameState)
     {
-        gameState.Debuglog.text = "MoveIt";
+        gameState.Debuglog.text = "Collision: Movement";
     }
     public override void react(PCManager gameState)
     {

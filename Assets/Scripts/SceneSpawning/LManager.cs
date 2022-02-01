@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class LManager : MonoBehaviour //Level
 {
     //------------------------Variablen------------------------
-    public bool Fun;
     public Text DebugLog;
     //------------------------States------------------------
     LState currentState;
@@ -51,13 +50,13 @@ public class LManager : MonoBehaviour //Level
         if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
         {
             //check if Game Field is already spawned if not go on
-            DebugLog.text = "Touched";
+            DebugLog.text = "LvlSpawn: Touched";
 
             //Game Field
 
             GameObject obj = Instantiate(Level, cursor.transform.position, cursor.transform.rotation);
 
-            DebugLog.text = "Spawned";
+            DebugLog.text = "LvlSpawn: Spawned";
             //Set SpawnedTrue so only one set of enviroment can be spawned
             PlayAreaSpawned = true;
 
