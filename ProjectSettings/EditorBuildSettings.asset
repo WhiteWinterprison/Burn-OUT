@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 8ca6dfe0f603f7b41820bac4f434f22f
+  - enabled: 1
+    path: Assets/Scenes/Jane_Winning.unity
+    guid: d49106e89e5ca6243a0718f0a5039b64
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 19cc934cd5f22a547aedc5759f74409c, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: feb3b5bbff9a99043a812a6d718db417, type: 2}

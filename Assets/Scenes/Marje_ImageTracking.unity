@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -402,6 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08686e090257804d828cfdaade56ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RoomScan: {fileID: 0}
 --- !u!4 &925296435
 Transform:
   m_ObjectHideFlags: 0
@@ -1149,6 +1150,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footright
       objectReference: {fileID: 0}
+    - target: {fileID: 1325009254318053867, guid: 480be914c560aa448b64244610e3b0ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1620046703263849947, guid: 480be914c560aa448b64244610e3b0ce, type: 3}
       propertyPath: EndGame
       value: 9
@@ -1263,6 +1268,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footleft
       objectReference: {fileID: 0}
+    - target: {fileID: 3397228553598846555, guid: 243b0d691f493e34f8d4f0df1d4ceaa6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6982112003940054436, guid: 243b0d691f493e34f8d4f0df1d4ceaa6, type: 3}
       propertyPath: EndGame
       value: 9
@@ -1289,6 +1298,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneManager
       objectReference: {fileID: 0}
+    - target: {fileID: 463439939469376620, guid: af9cc32f389a3e1478612fee3db83938, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 463439939469376621, guid: af9cc32f389a3e1478612fee3db83938, type: 3}
+      propertyPath: Level
+      value: 
+      objectReference: {fileID: 8122874960089005211, guid: 84e69fb460e92874da46960e19a3030c, type: 3}
     - target: {fileID: 463439939469376621, guid: af9cc32f389a3e1478612fee3db83938, type: 3}
       propertyPath: cursor
       value: 

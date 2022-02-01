@@ -10,7 +10,7 @@ public class StoneDeadState: StoneStates
 {
   public override void enter (StoneManager gameState)
   {
-    gameState.DebugLOG.text = "Dead";
+    gameState.DebugLOG.text = "Platform Log: No Stones";
   }
  public override void react (StoneManager gameState)
  {

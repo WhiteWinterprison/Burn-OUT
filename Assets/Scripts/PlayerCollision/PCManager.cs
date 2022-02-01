@@ -9,6 +9,15 @@ public class PCManager : MonoBehaviour
 {
     public Button Bubble;
 
+    public Text Debuglog;
+
+    [HideInInspector]
+    public float currentTime = 0f;
+    float startingTime = 10f;
+
+    [SerializeField] Text Counter;
+
+
     [HideInInspector]
     public bool pressedButton = false;
 
@@ -16,11 +25,12 @@ public class PCManager : MonoBehaviour
     public bool isDead;
 
     [SerializeField]
-    public bool isSafe = true;
+    public bool isSafe = false;
 
     [SerializeField]
     [Tooltip ("get Nr of Scene From Scene Manager")]
     private int EndGame;
+
     #region state
     //-----------------------States-----------------------------
 
@@ -34,6 +44,8 @@ public class PCManager : MonoBehaviour
     {
         currentState = DetectState;
         currentState.enter(this);
+
+        currentTime = startingTime;
 
         Button btn = Bubble.GetComponent<Button>();
         btn.onClick.AddListener(buttonClicked);
@@ -62,14 +74,19 @@ public class PCManager : MonoBehaviour
         if (collisioninfo.collider.tag == "Stone") //maybe coroutine so player cant die when entering collision (think its bc it only on enter and then back to dying)
         {
             isSafe = true;
+
+            Debuglog.text = "Stone";
+
         }
-       
+
 
         if (collisioninfo.collider.tag == "Goo" && isSafe == false)
         {
 
             //SceneManager.LoadScene(EndGame);
             isDead = true;
+
+            Debuglog.text = "Goo";
             //FindObjectOfType<GameManager>().EndGame();
 
         }
@@ -90,6 +107,17 @@ public class PCManager : MonoBehaviour
     public void buttonClicked()
     {
         pressedButton = true;
+    }
+
+    public void PlayerTimer()
+    {
+        currentTime -= 1 * Time.deltaTime;
+        Counter.text = currentTime.ToString("0");
+
+        if (currentTime <= 0)
+        {
+            currentTime = 0;
+        }
     }
 
 }

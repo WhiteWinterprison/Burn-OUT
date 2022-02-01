@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5761675214804891589}
   - component: {fileID: 5477043007044590921}
   - component: {fileID: 1280561724546121663}
+  - component: {fileID: 44854093244856191}
   m_Layer: 0
   m_Name: Leaf
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,8 +92,21 @@ MeshCollider:
   m_GameObject: {fileID: 3980509805361385720}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &44854093244856191
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3980509805361385720}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.7429314, y: 11.248791, z: 6.6439104}
+  m_Center: {x: -0.063634515, y: -0.98576784, z: -1.0892977}

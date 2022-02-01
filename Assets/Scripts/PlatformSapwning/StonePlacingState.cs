@@ -13,7 +13,7 @@ public class StonePlacingState : StoneStates
         //enable Cursor Once
         gameState.EnableCursor();
         StonePlaced = false;  
-        gameState.DebugLOG.text = "Placing";
+        gameState.DebugLOG.text = "Platform Log:Placing";
 
     }
      public override void react (StoneManager gameState)
@@ -26,7 +26,7 @@ public class StonePlacingState : StoneStates
 
        if( gameState.IsStonePlaced == true) //If a stone is placed we go into the switch statement
        {
-           gameState.DebugLOG.text = "StonePlaced";
+           gameState.DebugLOG.text = "Platform Log:StonePlaced";
 
             if(gameState.ButtonRemain <= 0)
             {

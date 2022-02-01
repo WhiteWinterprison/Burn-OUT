@@ -49,7 +49,7 @@ public class StoneManager : MonoBehaviour
     void Start()
     {
         //DebugLOG
-        DebugLOG.text = "DebugLOG: ";
+        DebugLOG.text = "Platform Log: ";
 
         currentState = StoneIdle; //erste state der aufgerufen werden soll
         currentState.enter(this);
@@ -88,7 +88,7 @@ public class StoneManager : MonoBehaviour
     {
         //reduce Button energy
         ButtonRemain -= 1 ;
-        DebugLOG.text = "ButtonReamin:" + ButtonRemain.ToString();
+        //DebugLOG.text = "ButtonReamin:" + ButtonRemain.ToString();
         //Disable 1 Leaf Icon
         images[ButtonRemain].enabled = false; //2 verschwinden
 
@@ -110,12 +110,12 @@ public class StoneManager : MonoBehaviour
         {
             if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began && IsStonePlaced == false) //only spawn something if I touched && if IsStonePlaced is false
             {
-                DebugLOG.text = "Touched";
+                //DebugLOG.text = "Touched";
                 //Spawn Stone prefab
                 GameObject SpawnedObject = Instantiate(SteppingStone, Cursor.transform.position, Cursor.transform.rotation);
 
                 IsStonePlaced = true;
-                DebugLOG.text ="Is Spawned";
+                //DebugLOG.text ="Is Spawned";
 
             }
         }
