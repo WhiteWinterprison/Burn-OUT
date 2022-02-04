@@ -14,23 +14,27 @@ public class WinningManager : MonoBehaviour
 
     public GameObject GoalCollider; 
 
+    public Text DebugLog; // for state info 
+
+
+     public Button PlantBtn;  // for button appear
+     public bool ButtonPressed = false;
+
     public GameObject PlantButton;
 
-    public Text DebugLog;
 
-   
+    public GameObject[] GameUiParts;  // for ui disappear
 
-    //  public Button winButton;
+    public GameObject[] Leafleft; /// how many leafs are left for counting in scene to change state 
 
-     public Button PlantBtn;
-      public bool ButtonPressed = false;
+    public GameObject[] LeafsUi;   // ui von den leafs verschwinden lasasen 
 
-
-    public GameObject[] GameUiParts;
+   // animation disable and enable at state????
 
 
 
-    public bool gameAnimationFinish;
+
+    public bool gameAnimationFinish;   // for animation finish change scene
 
 
 
@@ -48,6 +52,12 @@ public class WinningManager : MonoBehaviour
 
     public ButtonState Button = new ButtonState(); // second state  
 
+    public Lvl0PlantState Lvl0 = new Lvl0PlantState();
+    public Lvl1PlantState Lvl1 = new Lvl1PlantState();
+    public Lvl2PlantState Lvl2 = new Lvl2PlantState();
+    public Lvl3PlantState Lvl3 = new Lvl3PlantState();
+
+    
     public AnimatorState Anim = new AnimatorState(); // third state  
 
     public DeadState Dead = new DeadState(); // end state 
@@ -67,6 +77,8 @@ public class WinningManager : MonoBehaviour
         PlantButton.gameObject.SetActive(false);  // Button ist nicht angezeigt bzw nicht da 
 
         GameUiParts = GameObject.FindGameObjectsWithTag("Ui");
+        LeafsUi = GameObject.FindGameObjectsWithTag("Leaf");
+
 
     }
     void Update()
@@ -110,20 +122,9 @@ public class WinningManager : MonoBehaviour
         Debug.Log("Button");
     }
 
-  /*  public void disappearUi( ) //ui muss mit tag gesetzt werden zum zerstören //works  // wenn man auf buton drückt und next state kommt 
-    {
-       /* GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(tag);
-        foreach(GameObject target in gameObjects)
-        {
-            GameObject.Destroy(target);
-        } 
-       
-         Destroy(GameObject.FindWithTag("Ui"));
-        
-    } */
+/// /////// DISABLE UI /////// 
 
-
-    public void disableGameUi()
+    public void disableGameUi() // works 
     {
         GameUiParts = GameObject.FindGameObjectsWithTag("Ui");
 
@@ -133,8 +134,19 @@ public class WinningManager : MonoBehaviour
 
         }
     }
+    
+    public void disableLeafUi() // works 
+    {
+        GameUiParts = GameObject.FindGameObjectsWithTag("Leaf");
 
-     public void ButtonClicked()   // later for button to plant
+        foreach (GameObject Leaf in LeafsUi)
+        {
+            Leaf.SetActive(false);
+
+        }
+    }
+
+     public void ButtonClicked()   // button clicked change scene to animation 
       {
          
           ButtonPressed = true;
@@ -144,16 +156,41 @@ public class WinningManager : MonoBehaviour
 
     ////////////////////////// ANIMATION /////////////////////////
 
+
+   /* public void AnimationWithTag()    // iwas mit finde den tag und dann spiel auf deisem object wo tag ist die animation ab 
+    {
+       if( GameObject.FindGameObjectsWithTag("AnimationPlant") == true)
+        {
+            anim.play("PlantAnimLvl3");
+        }
+    } */
     // animation blume taucht auf 
-    public void winAnimation()
+   /* public void winAnimation()
     {
 
         // spiel animation ab 
 
         //anim.Play("IsBigger");
 
-        gameAnimationFinish = true; // letzte line
-    }
+        /*if(GameObject.FindGameObjectsWithTag("Leaf").Length < 3)  // depending how many leafs are left play anim // < less than 3 leafs // or = 3 and = 2 and = 1?  
+        {
+            // play this anim 
+        } */
+
+
+        //creating extra state
+        // will be detected but when button is pressed ui disappear so then at the end no leafs will be left hmmm
+       /* if (GameObject.FindGameObjectsWithTag("Leaf").Length < 3)
+        {
+            // play lvl 3 plant
+            Debug.Log("all Leafes left");
+        }
+
+        // depending on leaf left specific anim will be played 
+        // if one leaf left play this anim etc 
+
+      //  gameAnimationFinish = true; // letzte line
+    } */
 
 
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 // collision hits -> animation starts 
 
-public class AnimatorState : WState  // collision animation state 
+public class Lvl1PlantState : WState  // collision animation state 
 {
 
 
@@ -16,17 +16,11 @@ public class AnimatorState : WState  // collision animation state
     }
     public override void react(WinningManager gameState)
     {
-
-        //anim.Play("IsBigger");
-
-
-        // gameState.winAnimation(); //
-        // gameState.PlayMusic(); spiel musik ab 
-
-        if (gameState.gameAnimationFinish == true)    // für später wenn anim fertig abgespielt ist 
+        if (GameObject.FindGameObjectsWithTag("Leaf").Length == 1)
         {
-            gameState.switchState(gameState.Dead);
-
+            // play lvl 1 plant
+            Debug.Log("1 Leafes left");
+            gameState.disableLeafUi();
         }
 
 
@@ -38,6 +32,8 @@ public class AnimatorState : WState  // collision animation state
         // gamestate.musicstop
     }
 }
+
+
 
 
 
