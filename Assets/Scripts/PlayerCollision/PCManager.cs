@@ -72,10 +72,12 @@ public class PCManager : MonoBehaviour
     }
     
 
-    //---------------------------------------------------------------------
-    //------------------------Game Logic--------------------------------
-    //---------------------------------------------------------------------
+//---------------------------------------------------------------------
+//------------------------Game Logic--------------------------------
+//---------------------------------------------------------------------
 
+
+#region Collision
     public void OnCollisionEnter(Collision collisioninfo)
     {
         if (collisioninfo.collider.tag == "Stone") //maybe coroutine so player cant die when entering collision (think its bc it only on enter and then back to dying)
@@ -110,11 +112,15 @@ public class PCManager : MonoBehaviour
         //{//if(Collision == "Goo") == dead
         //}
     }
+    #endregion
+
 
     public void buttonClicked()
     {
         pressedButton = true;
     }
+
+ //-----------------------------MoveTimer--------------------------
 
     public void PlayerTimer()
     {
@@ -127,6 +133,10 @@ public class PCManager : MonoBehaviour
         }
     }
 
+
+  #region Raycast
+
+ //-----------------------------Raycast-----------------------------
     public void PlayerRaycastHit ()
     {
         RaycastHit hit; //check what you hit 
@@ -148,6 +158,7 @@ public class PCManager : MonoBehaviour
             
         }
     }
+  #endregion
 
    
 
