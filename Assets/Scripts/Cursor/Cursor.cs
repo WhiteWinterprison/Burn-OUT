@@ -10,6 +10,7 @@ public class Cursor : MonoBehaviour
     private GameObject visual;
 
     public GameObject RoomScan;
+    public bool FloorIsFound;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class Cursor : MonoBehaviour
         //hide Cursor
         visual.SetActive(false);
         RoomScan.SetActive(true);
+        FloorIsFound = false;
     }
 
     void Update()
@@ -35,8 +37,11 @@ public class Cursor : MonoBehaviour
             transform.rotation = hits[0].pose.rotation;
 
             if (!visual.activeInHierarchy)
+            {
                 visual.SetActive(true); //enables visual
                 RoomScan.SetActive(false);
+                FloorIsFound = true;
+            }
         }
 
     }

@@ -9,6 +9,8 @@ public class LManager : MonoBehaviour //Level
     public Text DebugLog;
     //------------------------States------------------------
     LState currentState;
+    
+    public LScanningState ScanningState = new LScanningState();
     public LIdleState IdleState = new LIdleState();
     public LSpawnState SpawnState = new LSpawnState();
 
@@ -25,10 +27,11 @@ public class LManager : MonoBehaviour //Level
     // Start is called before the first frame update
     void Start()
     {
-        currentState = IdleState;
+        currentState = ScanningState;
         currentState.enter(this);
 
         //cursor = FindObjectOfType<GameObject>();
+
     }
 
     // Update is called once per frame

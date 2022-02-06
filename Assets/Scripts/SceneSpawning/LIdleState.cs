@@ -10,7 +10,7 @@ public class LIdleState : LState //Level
     public override void enter(LManager gameState)
     {
         gameState.EnableCursor();
-        gameState.DebugLog.text = "LvlSpawn: Scanning";
+        gameState.DebugLog.text = "LvlSpawn: Wait for tap";
         //gameState.DebugLog.text = stuffHappened.ToString();
     }
     public override void react(LManager gameState)

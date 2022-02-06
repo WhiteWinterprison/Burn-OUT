@@ -700,6 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoomScan: {fileID: 0}
+  FloorIsFound: 0
 --- !u!4 &429758958
 Transform:
   m_ObjectHideFlags: 0
@@ -1648,6 +1649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoomScan: {fileID: 1451936797}
+  FloorIsFound: 0
 --- !u!4 &1496075602
 Transform:
   m_ObjectHideFlags: 0
