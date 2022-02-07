@@ -6,9 +6,11 @@ TagManager:
   tags:
   - Goo
   - Stone
-  - BiggerBox
   - Ui
   - Leaf
+  - AnimPlant
+  - BiggerBox
+  - Background
   layers:
   - Default
   - TransparentFX

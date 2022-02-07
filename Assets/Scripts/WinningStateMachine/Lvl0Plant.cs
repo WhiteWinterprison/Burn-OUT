@@ -19,8 +19,10 @@ public class Lvl0PlantState : WState  // collision animation state
         {
             // play lvl basic plant 
             Debug.Log("0 Leafes left");
-            gameState.switchState(gameState.Anim); // needs to define which anim // or anim will be already played idk 
+            
             gameState.disableLeafUi();
+            gameState.disableBackground();
+            gameState.Level0Play();
         }
     }
 

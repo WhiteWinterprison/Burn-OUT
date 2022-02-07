@@ -12,6 +12,7 @@ public class WinningManager : MonoBehaviour
 {
     public bool gameCollision;
 
+
     public GameObject GoalCollider; 
 
     public Text DebugLog; // for state info 
@@ -25,20 +26,18 @@ public class WinningManager : MonoBehaviour
 
     public GameObject[] GameUiParts;  // for ui disappear
 
-    public GameObject[] Leafleft; /// how many leafs are left for counting in scene to change state 
-
     public GameObject[] LeafsUi;   // ui von den leafs verschwinden lasasen 
 
-   // animation disable and enable at state????
+    public GameObject[] Background; // leaf ui background
+
+    public bool gameAnimationFinish = false;
+
+
+    [SerializeField] private  Animator myAnimPlantController;  // animator will be shown in inspector
+    // [SerializeField] private AnimationClip clip;
 
 
 
-
-    public bool gameAnimationFinish;   // for animation finish change scene
-
-
-
-    // public Animation BiggerBox;
 
     // Start is called before the first frame update
 
@@ -57,11 +56,8 @@ public class WinningManager : MonoBehaviour
     public Lvl2PlantState Lvl2 = new Lvl2PlantState();
     public Lvl3PlantState Lvl3 = new Lvl3PlantState();
 
-    
-    public AnimatorState Anim = new AnimatorState(); // third state  
 
     public DeadState Dead = new DeadState(); // end state 
-
 
     //////////////////////////////////////////////////
 
@@ -70,16 +66,21 @@ public class WinningManager : MonoBehaviour
         currentState = WinIdle; //erste state der aufgerufen werden soll
         currentState.enter(this);
 
-        //anim = GetComponent<Animator>(); // oder unten bei void anim? 
+       // anim = GetComponent<Animator>(); // oder unten bei void anim? 
 
         Button btn = PlantBtn.GetComponent<Button>();
         btn.onClick.AddListener(ButtonClicked);
         PlantButton.gameObject.SetActive(false);  // Button ist nicht angezeigt bzw nicht da 
 
-        GameUiParts = GameObject.FindGameObjectsWithTag("Ui");
-        LeafsUi = GameObject.FindGameObjectsWithTag("Leaf");
+        GameUiParts = GameObject.FindGameObjectsWithTag("Ui");  // ui verschwinden 
+        LeafsUi = GameObject.FindGameObjectsWithTag("Leaf"); // blätter verschwinden 
+        Background = GameObject.FindGameObjectsWithTag("Background"); // background verschwinden
 
+        //   float length = myAnimPlantController.animator.clip.length;
+        // float length = myAnimPlantController.["BiggerBox"].clip.length;
+        //float length = GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.length;
 
+       // float length = gameObject.animator.clip.length;
     }
     void Update()
     {
@@ -115,7 +116,7 @@ public class WinningManager : MonoBehaviour
 
     // ////////// BUTTON ////////////
 
-    public void enableButton()  // works
+    public void enableButton()  // works    // button show after state change 
     {
 
         PlantButton.gameObject.SetActive(true);
@@ -124,7 +125,7 @@ public class WinningManager : MonoBehaviour
 
 /// /////// DISABLE UI /////// 
 
-    public void disableGameUi() // works 
+    public void disableGameUi() // works   // game ui will be disabled after collision hits
     {
         GameUiParts = GameObject.FindGameObjectsWithTag("Ui");
 
@@ -135,7 +136,7 @@ public class WinningManager : MonoBehaviour
         }
     }
     
-    public void disableLeafUi() // works 
+    public void disableLeafUi() // works    // after button pressed leafs will disappear
     {
         GameUiParts = GameObject.FindGameObjectsWithTag("Leaf");
 
@@ -144,68 +145,95 @@ public class WinningManager : MonoBehaviour
             Leaf.SetActive(false);
 
         }
+    } 
+    
+    public void disableBackground() // works    // after button pressed leafs will disappear
+    {
+        GameUiParts = GameObject.FindGameObjectsWithTag("Background");
+
+        foreach (GameObject BackgroundUi in Background)
+        {
+            BackgroundUi.SetActive(false);
+
+        }
     }
 
-     public void ButtonClicked()   // button clicked change scene to animation 
+     public void ButtonClicked()   // button clicked change scene to animation levels // works
       {
          
           ButtonPressed = true;
           Debug.Log("ButtonIsPressed");
-      } 
+      }
 
 
     ////////////////////////// ANIMATION /////////////////////////
-
-
-   /* public void AnimationWithTag()    // iwas mit finde den tag und dann spiel auf deisem object wo tag ist die animation ab 
+    // WORKS//////////////////
+    public void Level3Play()     // animation for level 3 play
     {
-       if( GameObject.FindGameObjectsWithTag("AnimationPlant") == true)
+        if (ButtonPressed == true)
         {
-            anim.play("PlantAnimLvl3");
+            myAnimPlantController.SetBool("IsBigger", true);
+        }
+        
+        if (ButtonPressed == false)
+        {
+            myAnimPlantController.SetBool("IsBigger", false);
+        }
+    }
+    /*  public void Level2Play()   // animation for level 2 play
+    {
+        if (ButtonPressed == true)
+        {
+            myAnimPlantController.SetBool("IsBigger", true);
+        }
+        
+        if (ButtonPressed == false)
+        {
+            myAnimPlantController.SetBool("IsBigger", false);
+        }
+    } 
+      public void Level1Play()  // animation for level 1 play
+    {
+        if (ButtonPressed == true)
+        {
+            myAnimPlantController.SetBool("IsBigger", true);
+        }
+        
+        if (ButtonPressed == false)
+        {
+            myAnimPlantController.SetBool("IsBigger", false);
         }
     } */
-    // animation blume taucht auf 
-   /* public void winAnimation()
+
+    public void Level0Play()  // animation f0r level 0 play 
+    {
+        if (ButtonPressed == true)
+        {
+            myAnimPlantController.SetBool("IsSideMove", true);
+        }
+        
+        if (ButtonPressed == false)
+        {
+            myAnimPlantController.SetBool("IsSideMove", false);
+        }
+    }
+
+    public void GameAnimFinish()
     {
 
-        // spiel animation ab 
-
-        //anim.Play("IsBigger");
-
-        /*if(GameObject.FindGameObjectsWithTag("Leaf").Length < 3)  // depending how many leafs are left play anim // < less than 3 leafs // or = 3 and = 2 and = 1?  
+        /*if(myAnimPlantController.GetBool("IsBigger"))
         {
-            // play this anim 
+            myAnimPlantController.SetBool("IsBigger", false);
+        gameAnimationFinish = true;
+        }*/
+
+       /* if(GameObject.FindGameObjectsWithTag("BiggerBox").clip.length ==  100 )
+        {
+            gameAnimationFinish = true;
         } */
+    }
 
-
-        //creating extra state
-        // will be detected but when button is pressed ui disappear so then at the end no leafs will be left hmmm
-       /* if (GameObject.FindGameObjectsWithTag("Leaf").Length < 3)
-        {
-            // play lvl 3 plant
-            Debug.Log("all Leafes left");
-        }
-
-        // depending on leaf left specific anim will be played 
-        // if one leaf left play this anim etc 
-
-      //  gameAnimationFinish = true; // letzte line
-    } */
-
-
-
-    /////////////// Music (when win a sound should drop)////////////////////7
-
-    // game logic collision -> next state -> animation blume 
-
-    //  public void PlayMusic()#
-    // public void Music stop
-
-    /* public void LoadScene(string SceneName)
-     {
-         SceneManager.LoadScene("GameOver");
-
-     }*/
+   
 
 }
 
