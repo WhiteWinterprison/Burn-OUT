@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR.ARFoundation;
 
 public class LManager : MonoBehaviour //Level
 {
@@ -22,6 +23,13 @@ public class LManager : MonoBehaviour //Level
     //public GameObject Cursorr;
     [HideInInspector]
     public bool PlayAreaSpawned = false;
+
+    [HideInInspector] public  GameObject spawnedOBJ; //need to be public so i can use it in RescaleLvl
+
+    // //----------------------MoveScene----------------------
+    // private Vector3  offest = new Vector3(0,1,0);
+    // private Vector3 size = new Vector3(1,1,1);
+    // public Text UpDown ;
 
 
     // Start is called before the first frame update
@@ -57,7 +65,7 @@ public class LManager : MonoBehaviour //Level
 
             //Game Field
 
-            GameObject obj = Instantiate(Level, cursor.transform.position, cursor.transform.rotation);
+            spawnedOBJ = Instantiate(Level, cursor.transform.position, cursor.transform.rotation);
 
             DebugLog.text = "LvlSpawn: Spawned";
             //Set SpawnedTrue so only one set of enviroment can be spawned
@@ -74,4 +82,19 @@ public class LManager : MonoBehaviour //Level
     {
         cursor.SetActive(false);
     }
+
+    //   public void MoveUp ()
+    // {
+    //     UpDown.text ="moveUp";
+    //     spawnedOBJ.gameObject.transform.position += offest;       
+    //    // spawnedOBJ.gameObject.transform.localScale -=size;   //to make the size still fitting for the hight (doesn really work though)
+    // }
+
+    //    public void MoveDown()
+    // {
+    //     spawnedOBJ.gameObject.transform.position -= offest; 
+    //    // spawnedOBJ.gameObject.transform.localScale +=size;
+    // }
+      
+    
 }

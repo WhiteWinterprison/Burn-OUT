@@ -29,6 +29,7 @@ public class StoneManager : MonoBehaviour
     [Header ("Stone Placement")]
     private Cursor cursor;
     public GameObject SteppingStone;
+    [HideInInspector] public GameObject SpawnedObject; //is used in RescaleLvl
     [HideInInspector] 
     public bool IsStonePlaced; 
 
@@ -112,7 +113,7 @@ public class StoneManager : MonoBehaviour
             {
                 //DebugLOG.text = "Touched";
                 //Spawn Stone prefab
-                GameObject SpawnedObject = Instantiate(SteppingStone, Cursor.transform.position, Cursor.transform.rotation);
+                SpawnedObject = Instantiate(SteppingStone, Cursor.transform.position, Cursor.transform.rotation);
 
                 IsStonePlaced = true;
                 //DebugLOG.text ="Is Spawned";
