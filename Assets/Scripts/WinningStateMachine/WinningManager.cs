@@ -17,11 +17,10 @@ public class WinningManager : MonoBehaviour
 
     public Text DebugLog; // for state info 
 
-
-     public Button PlantBtn;  // for button appear
-     public bool ButtonPressed = false;
-
     public GameObject PlantButton;
+    public Button PlantBtn;  // for button appear
+    public bool ButtonPressed = false;
+
 
 
     public GameObject[] GameUiParts;  // for ui disappear
@@ -34,10 +33,16 @@ public class WinningManager : MonoBehaviour
 
 
     [SerializeField] private  Animator myAnimPlantController;  // animator will be shown in inspector
-    // [SerializeField] private AnimationClip clip;
+                                                               // [SerializeField] private AnimationClip clip;
 
 
+    public GameObject TextObj;   // text: accomplished
+    float TextShown;
+    float TextTime = 8.0f;  // text soll nach 10 sec angezeigt werden weil anim so lange geht
 
+    public GameObject SceneChangeButton;
+    public Button SceneChangeBtn;
+   // public bool SceneButtonPressed = false;
 
     // Start is called before the first frame update
 
@@ -68,6 +73,8 @@ public class WinningManager : MonoBehaviour
 
        // anim = GetComponent<Animator>(); // oder unten bei void anim? 
 
+
+        // plant Button
         Button btn = PlantBtn.GetComponent<Button>();
         btn.onClick.AddListener(ButtonClicked);
         PlantButton.gameObject.SetActive(false);  // Button ist nicht angezeigt bzw nicht da 
@@ -76,6 +83,15 @@ public class WinningManager : MonoBehaviour
         LeafsUi = GameObject.FindGameObjectsWithTag("Leaf"); // blätter verschwinden 
         Background = GameObject.FindGameObjectsWithTag("Background"); // background verschwinden
 
+
+        // accomplish text 
+        TextObj.SetActive(false);
+        TextShown = Time.time;
+
+        // sceneChange Button
+        Button Scenebtn = SceneChangeBtn.GetComponent<Button>();
+        Scenebtn.onClick.AddListener(ButtonClicked);
+        SceneChangeButton.gameObject.SetActive(false);   // noch nicht angezeigt
         //   float length = myAnimPlantController.animator.clip.length;
         // float length = myAnimPlantController.["BiggerBox"].clip.length;
         //float length = GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.length;
@@ -122,8 +138,33 @@ public class WinningManager : MonoBehaviour
         PlantButton.gameObject.SetActive(true);
         Debug.Log("Button");
     }
+    public void ButtonClicked()   // button clicked change scene to animation levels // works
+    {
 
-/// /////// DISABLE UI /////// 
+        ButtonPressed = true;
+        Debug.Log("ButtonIsPressed");
+    }
+
+
+    // Button für sceneChange
+    public void enableSceneButton()  // works    // button show after state change 
+    {
+        if (Time.time > TextShown + TextTime) // button soll da seinw enn text da ist 
+        {
+
+            SceneChangeButton.gameObject.SetActive(true);
+        }
+
+        Debug.Log("Button");
+    }
+ /*   public void SceneButtonClicked()   // button clicked change scene to animation levels // works
+    {
+
+        SceneButtonPressed = true;
+        Debug.Log("ButtonIsPressed");
+    }
+ */
+    /// /////// DISABLE UI /////// 
 
     public void disableGameUi() // works   // game ui will be disabled after collision hits
     {
@@ -158,14 +199,7 @@ public class WinningManager : MonoBehaviour
         }
     }
 
-     public void ButtonClicked()   // button clicked change scene to animation levels // works
-      {
-         
-          ButtonPressed = true;
-          Debug.Log("ButtonIsPressed");
-      }
-
-
+   
     ////////////////////////// ANIMATION /////////////////////////
     // WORKS//////////////////
     public void Level3Play()     // animation for level 3 play
@@ -234,7 +268,13 @@ public class WinningManager : MonoBehaviour
     }
 
    
-
+    public void TextShownViaTime()
+    {
+        if(Time.time > TextShown + TextTime)
+        {
+            TextObj.SetActive(true);
+        }
+    }
 }
 
 
