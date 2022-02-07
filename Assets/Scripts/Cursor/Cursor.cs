@@ -7,7 +7,8 @@ using UnityEngine.XR.ARSubsystems;
 public class Cursor : MonoBehaviour
 {
     private ARRaycastManager rayManager;
-    private GameObject visual;
+    [HideInInspector] public GameObject visual;
+    //private GameObject visual;
 
     public GameObject RoomScan;
     public bool FloorIsFound;

@@ -49,6 +49,7 @@ public class PCManager : MonoBehaviour
         currentState.enter(this);
 
         currentTime = startingTime;
+
         //--------Get Components & listeners----------
         Button btn = Bubble.GetComponent<Button>();
         btn.onClick.AddListener(buttonClicked);
@@ -78,46 +79,54 @@ public class PCManager : MonoBehaviour
 
 
 #region Collision
-    public void OnCollisionEnter(Collision collisioninfo)
-    {
-        if (collisioninfo.collider.tag == "Stone") //maybe coroutine so player cant die when entering collision (think its bc it only on enter and then back to dying)
-        {
-            isSafe = true;
+    // public void OnCollisionEnter(Collision collisioninfo)
+    // {
+    //     if (collisioninfo.collider.tag == "Stone") //maybe coroutine so player cant die when entering collision (think its bc it only on enter and then back to dying)
+    //     {
+    //         isSafe = true;
 
-            Debuglog.text = "Stone";
+    //         Debuglog.text = "Stone";
 
-        }
+    //     }
 
 
-        if (collisioninfo.collider.tag == "Goo" && isSafe == false)
-        {
+    //     if (collisioninfo.collider.tag == "Goo" && isSafe == false)
+    //     {
 
-            //SceneManager.LoadScene(EndGame);
-            isDead = true;
+    //         //SceneManager.LoadScene(EndGame);
+    //         isDead = true;
 
-            Debuglog.text = "Goo";
-            //FindObjectOfType<GameManager>().EndGame();
+    //         Debuglog.text = "Goo";
+    //         //FindObjectOfType<GameManager>().EndGame();
 
-        }
-    }
+    //     }
+    // }
 
-    public void OnCollisionExit(Collision collisioninfo)
-    {
-        if (collisioninfo.collider.tag == "Stone") //maybe coroutine so player cant die when entering collision (think its bc it only on enter and then back to dying)
-        {
-            isSafe = false;
-        }
+    // public void OnCollisionExit(Collision collisioninfo)
+    // {
+    //     if (collisioninfo.collider.tag == "Stone") //maybe coroutine so player cant die when entering collision (think its bc it only on enter and then back to dying)
+    //     {
+    //         isSafe = false;
+    //     }
 
-        //if (collisioninfo.collider.tag == "Goo")
-        //{//if(Collision == "Goo") == dead
-        //}
-    }
+    //     //if (collisioninfo.collider.tag == "Goo")
+    //     //{//if(Collision == "Goo") == dead
+    //     //}
+    // }
     #endregion
 
 
     public void buttonClicked()
     {
         pressedButton = true;
+    }
+
+    public void ScreenPressed()
+    {
+        if (Input.touchCount > 1 && Input.touches[0].phase == TouchPhase.Moved)
+        {
+            pressedButton =true;
+        }
     }
 
  //-----------------------------MoveTimer--------------------------

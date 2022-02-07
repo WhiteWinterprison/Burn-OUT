@@ -14,7 +14,8 @@ public class PCDetectState : PCState
     public override void react(PCManager gameState)
     {
         gameState.PlayerRaycastHit();
-        
+        gameState.ScreenPressed();
+
         if(gameState.pressedButton == true)
         {
             gameState.switchState(gameState.MovementState);
