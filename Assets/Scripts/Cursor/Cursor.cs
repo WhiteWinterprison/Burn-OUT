@@ -11,7 +11,7 @@ public class Cursor : MonoBehaviour
     //private GameObject visual;
 
     public GameObject RoomScan;
-    public bool FloorIsFound;
+    [HideInInspector]public bool FloorIsFound;
 
     void Start()
     {

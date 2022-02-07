@@ -9,8 +9,7 @@ using UnityEngine.UI;
 public class PCManager : MonoBehaviour
 {
     //---------UI-------
-    public Button Bubble;
-    public Text Debuglog;
+       public Text Debuglog;
 
     [SerializeField] Text Counter;
     [HideInInspector] public float currentTime = 0f;
@@ -48,12 +47,7 @@ public class PCManager : MonoBehaviour
         currentState = DetectState;
         currentState.enter(this);
 
-        currentTime = startingTime;
-
-        //--------Get Components & listeners----------
-        Button btn = Bubble.GetComponent<Button>();
-        btn.onClick.AddListener(buttonClicked);
-        
+        currentTime = startingTime;       
 
     }
 
@@ -116,10 +110,6 @@ public class PCManager : MonoBehaviour
     #endregion
 
 
-    public void buttonClicked()
-    {
-        pressedButton = true;
-    }
 
     public void ScreenPressed()
     {

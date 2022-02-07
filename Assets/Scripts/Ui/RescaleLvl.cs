@@ -9,13 +9,11 @@ public class RescaleLvl : MonoBehaviour
      private LManager Lvlmanager;
      private StoneManager SteppingStones;
 
-     private Cursor LeafCursor;
+     //private Cursor LeafCursor;
+     private GameObject LeafCursor;
     public Text DebugLOG;
-    private Vector3  offest = new Vector3(0,1,0);
+    private Vector3  offest = new Vector3(0,0.5f,0);    
     private Vector3 size = new Vector3(1,1,1);
-
-
-
 
   void Start()
   {
@@ -29,7 +27,7 @@ public class RescaleLvl : MonoBehaviour
         Lvlmanager = LevelManager.GetComponent<LManager>();
 
         GameObject CursorManager = GameObject.Find("LeafCursor");
-        LeafCursor = CursorManager.GetComponent<Cursor>();
+        LeafCursor = GameObject.Find("LeafIcon");
 
   }
     public void MoveUp ()
@@ -53,7 +51,7 @@ public class RescaleLvl : MonoBehaviour
       //SteppingStones.SpawnedObject.gameObject.transform.position = LeafPosition; 
 
       //move LeafSpwanCursor
-      LeafCursor.visual.gameObject.transform.position +=offest;
+      LeafCursor.transform.position += offest;
     }
 
     public void MoveDown()
@@ -79,7 +77,7 @@ public class RescaleLvl : MonoBehaviour
       //SteppingStones.SpawnedObject.gameObject.transform.position = LeafPosition; 
 
        //move LeafSpwanCursor
-      LeafCursor.visual.gameObject.transform.position -=offest;
+      LeafCursor.transform.position -= offest;
     }
 
     //-----------------------Already tried stuff for leaf movement----------------------
