@@ -30,7 +30,6 @@ public class ButtonState : WState
         // if button is clicked true then switch state // works 
         if (gameState.ButtonPressed == true)
             {
-                gameState.switchState(gameState.Anim);
             if (GameObject.FindGameObjectsWithTag("Leaf").Length == 3)
             {
                 // play lvl 3 plant

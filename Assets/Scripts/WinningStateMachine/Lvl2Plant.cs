@@ -22,6 +22,8 @@ public class Lvl2PlantState : WState  // collision animation state
             // play lvl 2 plant
             Debug.Log("2 Leafes left");
             gameState.disableLeafUi();
+            gameState.disableBackground();
+            // gameState.Level2Play();
         }
 
 
