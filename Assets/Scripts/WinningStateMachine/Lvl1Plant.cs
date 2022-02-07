@@ -22,6 +22,11 @@ public class Lvl1PlantState : WState  // collision animation state
             Debug.Log("1 Leafes left");
             gameState.disableLeafUi();
             gameState.disableBackground();
+
+            gameState.TextShownViaTime();
+            //  gameState.GameAnimFinish();
+
+            gameState.enableSceneButton();
             // gameState.Level1Play();
         }
 

@@ -20,15 +20,20 @@ public class Lvl3PlantState : WState  // collision animation state
         Debug.Log("Lvl3State");
         gameState.disableBackground();
         gameState.disableLeafUi();
-        
-       
+
+        gameState.PlantButton.SetActive(false);
+
         gameState.Level3Play();
-      //  gameState.GameAnimFinish();
-          if ( gameState.gameAnimationFinish)
+        gameState.TextShownViaTime();
+        //  gameState.GameAnimFinish();
+
+        gameState.enableSceneButton();
+
+    /*    if ( gameState.SceneButtonPressed == true)
         {
             gameState.switchState(gameState.Dead);
         }
-            
+            */
         /*
             if (gameState.gameAnimationFinish == true)    // für später wenn anim fertig abgespielt ist 
         {

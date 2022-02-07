@@ -23,6 +23,11 @@ public class Lvl0PlantState : WState  // collision animation state
             gameState.disableLeafUi();
             gameState.disableBackground();
             gameState.Level0Play();
+
+            gameState.TextShownViaTime();
+            //  gameState.GameAnimFinish();
+
+            gameState.enableSceneButton();
         }
     }
 
