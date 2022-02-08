@@ -29,17 +29,7 @@ public class Lvl3PlantState : WState  // collision animation state
 
         gameState.enableSceneButton();
 
-    /*    if ( gameState.SceneButtonPressed == true)
-        {
-            gameState.switchState(gameState.Dead);
-        }
-            */
-        /*
-            if (gameState.gameAnimationFinish == true)    // für später wenn anim fertig abgespielt ist 
-        {
-            gameState.switchState(gameState.Dead);
-
-        }*/
+  
 
     }
     public override void exit(WinningManager gameState)
