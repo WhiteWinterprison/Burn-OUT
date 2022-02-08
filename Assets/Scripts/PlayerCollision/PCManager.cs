@@ -14,6 +14,7 @@ public class PCManager : MonoBehaviour
     [SerializeField] Text Counter;
     [HideInInspector] public float currentTime = 0f;
     float startingTime = 10f;
+    public  Image UiIndicator;
 
     //--------Logic-------
 

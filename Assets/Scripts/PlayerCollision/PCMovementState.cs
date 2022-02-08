@@ -10,6 +10,7 @@ public class PCMovementState : PCState
     }
     public override void react(PCManager gameState)
     {
+        gameState.UiIndicator.color = Color.green;
         gameState.PlayerTimer();
 
        if(gameState.currentTime == 0)
