@@ -90,7 +90,7 @@ public class StoneManager : MonoBehaviour
         ButtonRemain -= 1 ;
         //DebugLOG.text = "ButtonReamin:" + ButtonRemain.ToString();
         //Disable 1 Leaf Icon
-        images[ButtonRemain].enabled = false; //2 verschwinden
+        //images[ButtonRemain].enabled = false; //2 verschwinden
 
         ButtonPressed = true;
     }

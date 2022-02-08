@@ -15,10 +15,13 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
 
+    //private Queue<GameObject> marvins; //lets try this out
+
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        //marvins = new Queue<GameObject>();
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -39,6 +42,15 @@ public class DialogueManager : MonoBehaviour
 
         DisplayNextSentence();
         Time.timeScale = 0;
+
+
+        //marvins.Clear(); //clear any marvins from the previous tutorial runthrough
+
+        //foreach (GameObject marvin in dialogue.marvins)
+        //{
+        //    marvins.Enqueue(marvin);
+        //}
+        //DisplayNextMarvin();
     }
 
     public void DisplayNextSentence()
@@ -56,6 +68,22 @@ public class DialogueManager : MonoBehaviour
         //dialogueText.text = sentence; //would just call the text at once but lez make it more fancy
         StartCoroutine(TypeSentence(sentence));
     }
+
+    //public void DisplayNextMarvin()
+    //{
+    //    if (marvins.Count == 0) //if we reached end of queue (all the sentences of the tutorial)
+    //    {
+    //        EndDialogue();
+    //        return;
+    //    }
+
+    //    GameObject marvin = marvins.Dequeue();
+
+    //    //for the ones that skip lez not make the letters animate when skipping
+    //    StopAllCoroutines();
+    //    //dialogueText.text = sentence; //would just call the text at once but lez make it more fancy
+    //    //StartCoroutine(TypeSentence(sentence));
+    //}
 
     //to make it fancy by letting each letter appear by itself
     IEnumerator TypeSentence (string sentence)
