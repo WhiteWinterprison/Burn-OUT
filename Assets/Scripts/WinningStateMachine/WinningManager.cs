@@ -12,7 +12,7 @@ public class WinningManager : MonoBehaviour
 {
     // public bool gameCollision;
 
-    [SerializeField]
+    [SerializeField]  // anderer versuch von gameCOllider
     public bool gameCollision = false;
 
 
@@ -33,9 +33,7 @@ public class WinningManager : MonoBehaviour
 
     public GameObject[] Background; // leaf ui background
 
-    public bool gameAnimationFinish = false;
-
-
+    
     [SerializeField] private  Animator myAnimPlantController;  // animator will be shown in inspector
                                                                // [SerializeField] private AnimationClip clip;
 
@@ -46,7 +44,7 @@ public class WinningManager : MonoBehaviour
 
     public GameObject SceneChangeButton;
     public Button SceneChangeBtn;
-   // public bool SceneButtonPressed = false;
+   
 
     // Start is called before the first frame update
 
@@ -66,17 +64,13 @@ public class WinningManager : MonoBehaviour
     public Lvl3PlantState Lvl3 = new Lvl3PlantState();
 
 
-    public DeadState Dead = new DeadState(); // end state 
 
     //////////////////////////////////////////////////
 
     void Start()
     {
         currentState = WinIdle; //erste state der aufgerufen werden soll
-        currentState.enter(this);
-
-       // anim = GetComponent<Animator>(); // oder unten bei void anim? 
-
+        currentState.enter(this); 
 
         // plant Button
         Button btn = PlantBtn.GetComponent<Button>();
@@ -96,11 +90,7 @@ public class WinningManager : MonoBehaviour
         Button Scenebtn = SceneChangeBtn.GetComponent<Button>();
         Scenebtn.onClick.AddListener(ButtonClicked);
         SceneChangeButton.gameObject.SetActive(false);   // noch nicht angezeigt
-        //   float length = myAnimPlantController.animator.clip.length;
-        // float length = myAnimPlantController.["BiggerBox"].clip.length;
-        //float length = GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.length;
-
-       // float length = gameObject.animator.clip.length;
+   
     }
     void Update()
     {
@@ -125,7 +115,7 @@ public class WinningManager : MonoBehaviour
     /// ////////////////////// Collision switch state ////////////////////
     public void OnCollisionEnter(Collision collisionInfo) 
     {
-        if (collisionInfo.collider.tag == "Goo")  // if collision hits bigger box then game collision true _> switch scene 
+        if (collisionInfo.collider.tag == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene 
         {
             Debug.Log("Collision hits");
 
@@ -161,13 +151,6 @@ public class WinningManager : MonoBehaviour
 
         Debug.Log("Button");
     }
- /*   public void SceneButtonClicked()   // button clicked change scene to animation levels // works
-    {
-
-        SceneButtonPressed = true;
-        Debug.Log("ButtonIsPressed");
-    }
- */
     /// /////// DISABLE UI /////// 
 
     public void disableGameUi() // works   // game ui will be disabled after collision hits
@@ -256,22 +239,7 @@ public class WinningManager : MonoBehaviour
         }
     }
 
-    public void GameAnimFinish()
-    {
 
-        /*if(myAnimPlantController.GetBool("IsBigger"))
-        {
-            myAnimPlantController.SetBool("IsBigger", false);
-        gameAnimationFinish = true;
-        }*/
-
-       /* if(GameObject.FindGameObjectsWithTag("BiggerBox").clip.length ==  100 )
-        {
-            gameAnimationFinish = true;
-        } */
-    }
-
-   
     public void TextShownViaTime()
     {
         if(Time.time > TextShown + TextTime)
