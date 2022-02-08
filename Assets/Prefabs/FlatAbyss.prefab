@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 4452524663566274608}
   m_Layer: 0
   m_Name: abysswmaterialfshaderUV
-  m_TagString: BiggerBox
+  m_TagString: Goo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3517,5 +3517,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1456066, y: 0.5440699, z: 2.3269184}
-  m_Center: {x: -0.0070326924, y: -0.18807991, z: 1.3618222}
+  m_Size: {x: 2.3718755, y: 0.5440699, z: 2.9041717}
+  m_Center: {x: 0.11063969, y: -0.1880799, z: 1.2257692}
