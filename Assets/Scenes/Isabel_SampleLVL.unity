@@ -2053,7 +2053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3150943, g: 1, b: 0.7041252, a: 1}
+  m_Color: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2179,6 +2179,10 @@ PrefabInstance:
       propertyPath: Debuglog
       value: 
       objectReference: {fileID: 1511529065}
+    - target: {fileID: 4123069839595290796, guid: bf2d74bccbaf9c84eaabcb9105bfaf98, type: 3}
+      propertyPath: UiIndicator
+      value: 
+      objectReference: {fileID: 2098549652}
     - target: {fileID: 4123069839595290797, guid: bf2d74bccbaf9c84eaabcb9105bfaf98, type: 3}
       propertyPath: m_RootOrder
       value: 8

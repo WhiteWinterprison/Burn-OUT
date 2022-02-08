@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class PCMovementState : PCState
 {
+    float time;
     public override void enter(PCManager gameState)
     {
         gameState.Debuglog.text = "Collision: Movement";
     }
     public override void react(PCManager gameState)
     {
-        gameState.UiIndicator.color = Color.green;
+         time += Time.deltaTime;
+        float percentMoving = time/ gameState.startingTime;
+        gameState.UiIndicator.color = Color.Lerp(Color.green,Color.black,percentMoving);
+
         gameState.PlayerTimer();
 
        if(gameState.currentTime == 0)
