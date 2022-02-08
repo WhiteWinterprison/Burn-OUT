@@ -754,6 +754,10 @@ PrefabInstance:
       propertyPath: DebugLog
       value: 
       objectReference: {fileID: 912999828}
+    - target: {fileID: 463439939469376621, guid: af9cc32f389a3e1478612fee3db83938, type: 3}
+      propertyPath: AbysOpening
+      value: 
+      objectReference: {fileID: 1455011315501718482, guid: d3d395517dad5d842ac342a21dd4d474, type: 3}
     - target: {fileID: 463439939469376622, guid: af9cc32f389a3e1478612fee3db83938, type: 3}
       propertyPath: m_RootOrder
       value: 9

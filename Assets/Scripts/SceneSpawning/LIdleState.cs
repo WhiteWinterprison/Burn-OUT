@@ -16,6 +16,7 @@ public class LIdleState : LState //Level
     public override void react(LManager gameState)
     {
         gameState.Spawner();
+        gameState.AbysallAniamtion();
 
         if (gameState.PlayAreaSpawned == true)
         {

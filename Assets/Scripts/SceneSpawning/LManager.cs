@@ -17,13 +17,9 @@ public class LManager : MonoBehaviour //Level
 
     //------------------------Spawn------------------------
     public GameObject Level;
-
-    [SerializeField]
-    private GameObject cursor;
+    [SerializeField]   private GameObject cursor;
     //public GameObject Cursorr;
-    [HideInInspector]
-    public bool PlayAreaSpawned = false;
-
+    [HideInInspector]  public bool PlayAreaSpawned = false;
     [HideInInspector] public  GameObject spawnedOBJ; //need to be public so i can use it in RescaleLvl
 
     // //----------------------MoveScene----------------------
@@ -67,9 +63,9 @@ public class LManager : MonoBehaviour //Level
 
             spawnedOBJ = Instantiate(Level, cursor.transform.position, cursor.transform.rotation);
 
+            AbysallAniamtion();
             DebugLog.text = "LvlSpawn: Spawned";
             //Set SpawnedTrue so only one set of enviroment can be spawned
-            PlayAreaSpawned = true;
 
         }
     }
@@ -95,6 +91,22 @@ public class LManager : MonoBehaviour //Level
     //     spawnedOBJ.gameObject.transform.position -= offest; 
     //    // spawnedOBJ.gameObject.transform.localScale +=size;
     // }
+
+    public void AbysallAniamtion()
+    {
+        Animator animator = spawnedOBJ.GetComponent<Animator>();
+            DebugLog.text="NOANIMATORFOUND";
+        if(animator != null)
+        {
+            DebugLog.text="Found";
+            bool isOpening = animator.GetBool("IsSpawned");
+            animator.SetBool("IsSpawned",true); 
+            if(animator.GetBool("IsSpawned")== true)
+            {
+                PlayAreaSpawned = true;
+            }
+        }
+    }
       
     
 }
