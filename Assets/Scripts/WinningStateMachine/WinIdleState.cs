@@ -16,7 +16,7 @@ public class WinIdleState : WState
         if (gameState.gameCollision == true)
         {
             gameState.switchState(gameState.Button);
-            gameState.DebugLog.text = "Collision";
+            gameState.DebugLogCollision.text = "Collision";
             // Debug.Log("Collision is true");
         }
     }

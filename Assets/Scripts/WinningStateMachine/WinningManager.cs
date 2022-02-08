@@ -16,10 +16,11 @@ public class WinningManager : MonoBehaviour
     public bool gameCollision = false;
 
 
-    // public GameObject GoalCollider; 
+    public GameObject GoalCollider; 
 
     public Text DebugLog; // for state info 
     public Text DebugLogCollision;
+    public Text DebugLogInCollision;
 
     public GameObject PlantButton;
     public Button PlantBtn;  // for button appear
@@ -113,13 +114,26 @@ public class WinningManager : MonoBehaviour
     //////////////////// game logic ////////////////
 
     /// ////////////////////// Collision switch state ////////////////////
-    public void OnCollisionEnter(Collision collisionInfo) 
+    public void OnCollisionEnter(Collision collisionInfo)
     {
-        if (collisionInfo.collider.tag == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene 
+        DebugLogInCollision.text = "INCollision";
+        if (collisionInfo.transform.tag == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene 
         {
             Debug.Log("Collision hits");
-
+         
             gameCollision = true;
+           
+        }
+    }  public void OnCollisionExit(Collision collisionInfo) 
+    {
+        DebugLogInCollision.text = "OutCOl";
+        if (collisionInfo.transform.tag == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene 
+        {
+            
+         
+            gameCollision = false;
+            DebugLogInCollision.text = "OutCollision";
+
 
         }
     }
