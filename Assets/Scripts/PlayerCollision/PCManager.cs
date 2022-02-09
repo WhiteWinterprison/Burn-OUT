@@ -66,8 +66,8 @@ public class PCManager : MonoBehaviour
 
         currentTime = startingTime;   
 
-        GameObject StoneManager = GameObject.Find("StoneManager");    
-        LeafManager = StoneManager.GetComponent<StoneManager>();
+        GameObject StoneManager1 = GameObject.Find("StoneManager");    
+        LeafManager = StoneManager1.GetComponent<StoneManager>();
 
         GameObject LevelManager = GameObject.Find("SceneManager");
         LvlManager = LevelManager.GetComponent<LManager>();
@@ -131,7 +131,6 @@ public class PCManager : MonoBehaviour
     //     //}
     // }
     #endregion
-
 
 
     public void ScreenPressed()

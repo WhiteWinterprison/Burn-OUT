@@ -21,7 +21,8 @@ public class PCDetectState : PCState
     {
         gameState.PlayerRaycastHit();
         gameState.ScreenPressed();
-          gameState.UiIndicator.color = Color.black;
+        gameState.UiIndicator.color = Color.black;
+
 
         if(gameState.pressedButton == true)
         {
@@ -45,6 +46,6 @@ public class PCDetectState : PCState
 
     public override void exit(PCManager gameState)
     {
-
+      
     }
 }
