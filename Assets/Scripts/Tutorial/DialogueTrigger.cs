@@ -10,7 +10,8 @@ public class DialogueTrigger : MonoBehaviour
     public GameObject leaf;
     public GameObject abyss;
     public GameObject roomScann;
-
+    public GameObject tutorialButton;
+    public GameObject marvin;
 
 
     public Dialogue dialogue;
@@ -27,5 +28,7 @@ public class DialogueTrigger : MonoBehaviour
         leaf.SetActive(false); //make a reference to the button component and set it inactive instead
         abyss.SetActive(false);//can't make the abyss not work its so hard to break this mechanic damn probs to you izzy D:
         roomScann.SetActive(false);
+        tutorialButton.SetActive(false);
+        marvin.SetActive(true);
     }
 }
