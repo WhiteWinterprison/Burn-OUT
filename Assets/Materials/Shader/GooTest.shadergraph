@@ -2,7 +2,11 @@
     "m_SGVersion": 2,
     "m_Type": "UnityEditor.ShaderGraph.GraphData",
     "m_ObjectId": "3b01f4e65d0d46f1b930c10239bc8d15",
-    "m_Properties": [],
+    "m_Properties": [
+        {
+            "m_Id": "29af0d1aeb224fcc8a3f952724303bc2"
+        }
+    ],
     "m_Keywords": [],
     "m_Nodes": [
         {
@@ -23,8 +27,8 @@
     "m_Edges": [],
     "m_VertexContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 0.0
+            "x": 576.7999877929688,
+            "y": 0.7999935746192932
         },
         "m_Blocks": [
             {
@@ -40,8 +44,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 200.0
+            "x": 577.5999755859375,
+            "y": 216.0
         },
         "m_Blocks": [
             {
@@ -104,6 +108,29 @@
     },
     "m_Labels": [],
     "m_Space": 0
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Texture2DShaderProperty",
+    "m_ObjectId": "29af0d1aeb224fcc8a3f952724303bc2",
+    "m_Guid": {
+        "m_GuidSerialized": "01281c97-f1d9-41c2-873e-5c8fd7f7335d"
+    },
+    "m_Name": "Test",
+    "m_DefaultReferenceName": "Texture2D_29af0d1aeb224fcc8a3f952724303bc2",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
+        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_Guid": ""
+    },
+    "m_Modifiable": true,
+    "m_DefaultType": 0
 }
 
 {
@@ -303,9 +330,9 @@
     "m_ShaderOutputName": "BaseColor",
     "m_StageCapability": 2,
     "m_Value": {
-        "x": 0.5,
-        "y": 0.5,
-        "z": 0.5
+        "x": 1.0,
+        "y": 0.47047486901283266,
+        "z": 0.03207540512084961
     },
     "m_DefaultValue": {
         "x": 0.0,
