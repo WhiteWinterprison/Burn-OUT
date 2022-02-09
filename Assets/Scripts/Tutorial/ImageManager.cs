@@ -19,11 +19,11 @@ public class ImageManager : MonoBehaviour
     {
         marvins.Clear(); //clear any marvins from the previous tutorial runthrough
 
-        foreach (GameObject marvin in image.marvins)
-        {
-            marvins.Enqueue(marvin);
-        }
-        DisplayNextMarvin();
+        // foreach (GameObject marvin in image.marvins)
+        // {
+        //     marvins.Enqueue(marvin);
+        // }
+        // DisplayNextMarvin();
     }
 
 
