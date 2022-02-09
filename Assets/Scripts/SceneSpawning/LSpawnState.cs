@@ -7,7 +7,7 @@ public class LSpawnState : LState //Level
     public override void enter(LManager gameState)
     {
         gameState.DisableCursor();
-        gameState.DebugLog.text = "Spawned";
+        gameState.DebugLog.text = "LvlSpawn: Spawned";
     }
     public override void react(LManager gameState)
     {

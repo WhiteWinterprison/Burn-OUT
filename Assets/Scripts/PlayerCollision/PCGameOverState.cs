@@ -7,7 +7,7 @@ public class PCGameOverState : PCState
 {
     public override void enter(PCManager gameState)
     {
-        gameState.Debuglog.text = "you ded ded";
+        gameState.Debuglog.text = "Collision: you ded ded";
 
     }
     public override void react(PCManager gameState)

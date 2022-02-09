@@ -29,6 +29,8 @@ public class StoneManager : MonoBehaviour
     [Header ("Stone Placement")]
     private Cursor cursor;
     public GameObject SteppingStone;
+    [HideInInspector] public List<GameObject>  InstantiatedLeafs = new List<GameObject>(); 
+    [HideInInspector] public GameObject SpawnedObject; //is used in RescaleLvl
     [HideInInspector] 
     public bool IsStonePlaced; 
 
@@ -49,7 +51,7 @@ public class StoneManager : MonoBehaviour
     void Start()
     {
         //DebugLOG
-        DebugLOG.text = "Platform Log: ";
+        DebugLOG.text = "PlatformLog: ";
 
         currentState = StoneIdle; //erste state der aufgerufen werden soll
         currentState.enter(this);
@@ -112,7 +114,9 @@ public class StoneManager : MonoBehaviour
             {
                 //DebugLOG.text = "Touched";
                 //Spawn Stone prefab
-                GameObject SpawnedObject = Instantiate(SteppingStone, Cursor.transform.position, Cursor.transform.rotation);
+                SpawnedObject = Instantiate(SteppingStone, Cursor.transform.position, Cursor.transform.rotation);
+
+                InstantiatedLeafs.Add(SpawnedObject); //add spawned object after creation to list
 
                 IsStonePlaced = true;
                 //DebugLOG.text ="Is Spawned";

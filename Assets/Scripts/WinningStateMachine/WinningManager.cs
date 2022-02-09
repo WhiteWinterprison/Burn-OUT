@@ -10,62 +10,82 @@ using UnityEngine.Audio;
 
 public class WinningManager : MonoBehaviour
 {
-    public bool gameAnimationFinish;
+    // public bool gameCollision; [SerializeField] private
 
-    public bool gameCollision;
+    //-------------------Debugs--------------
+    public Text DebugLog; // for state info 
+    public Text DebugLogCollision;
+    public Text DebugLogInCollision;
 
- //   public Animator anim;
+    //----------------Collision------------
+    [HideInInspector] public bool gameCollision = false;
+    public GameObject GoalCollider; 
 
-    public GameObject GoalCollider;
+    //----------ButtonRev-----------
+    public GameObject PlantButton; //WARUM 2 MAL ??
+    public Button PlantBtn;  // for button appear
+    [HideInInspector] public bool ButtonPressed = false;
+    public GameObject SceneChangeButton;
+    public Button SceneChangeBtn;
 
-    public Button winButton;
-    public bool ButtonPressed = false;
+    //-----------Ui Part Rev --------------
+    public GameObject[] GameUiParts;  // for ui disappear //WARUM " MAL ???
+    public GameObject[] LeafsUi;   // ui von den leafs verschwinden lasasen 
+    public GameObject[] Background; // leaf ui background
 
+    //------------------Rev by Isabel----------------
+    [SerializeField] private Camera ARCamera;
 
+    
+    [SerializeField] private  Animator myAnimPlantController;  // animator will be shown in inspector
+                                                               // [SerializeField] private AnimationClip clip;
 
-    public AudioSource myAudio;
+    //-----Winning UI ADDS-----------------
+    public GameObject TextObj;   // text: accomplished
+    float TextShown;
+    float TextTime = 8.0f;  // text soll nach 10 sec angezeigt werden weil anim so lange geht
 
-    bool audioPlay;
-    bool a_ToggleChange;
-
-
-    public Text DebugLog;
-
-
-    // public Animation BiggerBox;
-
-    // Start is called before the first frame update
+   
 
     // //////////////////////////////////  STATES //////////////////////////////////////////////////
-
 
     WState currentState; // state in der wir uns befinden 
 
 
-    public  WinIdleState  WinIdle = new WinIdleState();  //first state
+    public WinIdleState WinIdle = new WinIdleState();  //first state
 
-    public  ColAnimState ColAnim = new ColAnimState(); // second state  
-        
-    public  DeadState  Dead = new DeadState(); // end state 
+    public ButtonState Button = new ButtonState(); // second state  
 
-    
-     //////////////////////////////////////////////////
-    
+    public Lvl0PlantState Lvl0 = new Lvl0PlantState();
+    public Lvl1PlantState Lvl1 = new Lvl1PlantState();
+    public Lvl2PlantState Lvl2 = new Lvl2PlantState();
+    public Lvl3PlantState Lvl3 = new Lvl3PlantState();
+
+    //////////////////////////////////////////////////
+
     void Start()
     {
         currentState = WinIdle; //erste state der aufgerufen werden soll
-        currentState.enter(this);
+        currentState.enter(this); 
 
-      // anim = GetComponent<Animator>(); // oder unten bei void anim? 
-
-        Button btn = winButton.GetComponent<Button>();
+        // plant Button
+        Button btn = PlantBtn.GetComponent<Button>();
         btn.onClick.AddListener(ButtonClicked);
+        PlantButton.gameObject.SetActive(false);  // Button ist nicht angezeigt bzw nicht da 
 
-        myAudio = GetComponent<AudioSource>();
-        audioPlay = true;
+        GameUiParts = GameObject.FindGameObjectsWithTag("Ui");  // ui verschwinden 
+        LeafsUi = GameObject.FindGameObjectsWithTag("Leaf"); // blaetter verschwinden 
+        Background = GameObject.FindGameObjectsWithTag("Background"); // background verschwinden
 
+        // accomplish text 
+        TextObj.SetActive(false);
+        TextShown = Time.time;
 
-        
+        // sceneChange Button
+        Button Scenebtn = SceneChangeBtn.GetComponent<Button>();
+        Scenebtn.onClick.AddListener(ButtonClicked);
+        SceneChangeButton.gameObject.SetActive(false);   // noch nicht angezeigt
+   
     }
     void Update()
     {
@@ -80,54 +100,165 @@ public class WinningManager : MonoBehaviour
         nextState.enter(this);
     }
 
-    // dritte switch state für deadstate ? oder doch nicht?
+    // dritte switch state fï¿½r deadstate ? oder doch nicht?
 
 
+    //////////////////// game logic ////////////////
 
-
-   //////////////////// game logic ////////////////
-  
-
+    /// ////////////////////// Collision switch state ////////////////////
     public void OnCollisionEnter(Collision collisionInfo)
     {
-        if (collisionInfo.gameObject.tag == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene 
+        DebugLogInCollision.text = "INCollision";
+
+        if (collisionInfo.transform.tag == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene 
         {
             Debug.Log("Collision hits");
-
+         
             gameCollision = true;
+           
         }
-    } 
-
-    
-    public void ButtonClicked()
+    }  
+    public void OnCollisionExit(Collision collisionInfo) 
     {
+        DebugLogInCollision.text = "OutCOl";
+
+        if (collisionInfo.transform.tag == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene 
+        {
+            gameCollision = false;
+            DebugLogInCollision.text = "OutCollision";
+        }
+    }
+
+
+    //--------------RayCast Collison try----------------------
+    
+
+    // ////////// BUTTON ////////////
+
+    public void enableButton()  // works    // button show after state change 
+    {
+
+        PlantButton.gameObject.SetActive(true);
+        Debug.Log("Button");
+    }
+    public void ButtonClicked()   // button clicked change scene to animation levels // works
+    {
+
         ButtonPressed = true;
         Debug.Log("ButtonIsPressed");
     }
-   
-    // animation blume taucht auf 
-    /* public void winAnimation()
+
+
+    // Button fï¿½r sceneChange
+    public void enableSceneButton()  // works    // button show after state change 
     {
+        if (Time.time > TextShown + TextTime) // button soll da seinw enn text da ist 
+        {
 
-        // spiel animation ab 
+            SceneChangeButton.gameObject.SetActive(true);
+        }
 
-        anim.Play("IsBigger");
-        gameAnimationFinish = true; // letzte line
+        Debug.Log("Button");
+    }
+    /// /////// DISABLE UI /////// 
+
+    public void disableGameUi() // works   // game ui will be disabled after collision hits
+    {
+        GameUiParts = GameObject.FindGameObjectsWithTag("Ui");
+
+        foreach (GameObject GameUi in GameUiParts)
+        {
+            GameUi.SetActive(false);
+
+        }
+    }
+    
+    public void disableLeafUi() // works    // after button pressed leafs will disappear
+    {
+        GameUiParts = GameObject.FindGameObjectsWithTag("Leaf");
+
+        foreach (GameObject Leaf in LeafsUi)
+        {
+            Leaf.SetActive(false);
+
+        }
+    } 
+    
+    public void disableBackground() // works    // after button pressed leafs will disappear
+    {
+        GameUiParts = GameObject.FindGameObjectsWithTag("Background");
+
+        foreach (GameObject BackgroundUi in Background)
+        {
+            BackgroundUi.SetActive(false);
+
+        }
+    }
+
+   
+    ////////////////////////// ANIMATION /////////////////////////
+    // WORKS//////////////////
+    public void Level3Play()     // animation for level 3 play
+    {
+        if (ButtonPressed == true)
+        {
+            myAnimPlantController.SetBool("IsBigger", true);
+        }
+        
+        if (ButtonPressed == false)
+        {
+            myAnimPlantController.SetBool("IsBigger", false);
+        }
+    }
+    /*  public void Level2Play()   // animation for level 2 play
+    {
+        if (ButtonPressed == true)
+        {
+            myAnimPlantController.SetBool("IsBigger", true);
+        }
+        
+        if (ButtonPressed == false)
+        {
+            myAnimPlantController.SetBool("IsBigger", false);
+        }
+    } 
+      public void Level1Play()  // animation for level 1 play
+    {
+        if (ButtonPressed == true)
+        {
+            myAnimPlantController.SetBool("IsBigger", true);
+        }
+        
+        if (ButtonPressed == false)
+        {
+            myAnimPlantController.SetBool("IsBigger", false);
+        }
     } */
 
+    public void Level0Play()  // animation f0r level 0 play 
+    {
+        if (ButtonPressed == true)
+        {
+            myAnimPlantController.SetBool("IsSideMove", true);
+        }
+        
+        if (ButtonPressed == false)
+        {
+            myAnimPlantController.SetBool("IsSideMove", false);
+        }
+    }
 
-  
 
-
-    // game logic collision -> next state -> animation blume 
-
-    //  public void PlayMusic()#
-    // public void Music stop
-
-    /* public void LoadScene(string SceneName)
-     {
-         SceneManager.LoadScene("GameOver");
-
-     }*/
-
+    public void TextShownViaTime()
+    {
+        if(Time.time > TextShown + TextTime)
+        {
+            TextObj.SetActive(true);
+        }
+    }
 }
+
+
+
+
+

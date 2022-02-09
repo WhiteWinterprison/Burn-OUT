@@ -10,12 +10,13 @@ public class LIdleState : LState //Level
     public override void enter(LManager gameState)
     {
         gameState.EnableCursor();
-        gameState.DebugLog.text = "DebugText.Idle";
+        gameState.DebugLog.text = "LvlSpawn: Wait for tap";
         //gameState.DebugLog.text = stuffHappened.ToString();
     }
     public override void react(LManager gameState)
     {
         gameState.Spawner();
+        gameState.AbysallAniamtion();
 
         if (gameState.PlayAreaSpawned == true)
         {

@@ -7,9 +7,11 @@ using UnityEngine.XR.ARSubsystems;
 public class Cursor : MonoBehaviour
 {
     private ARRaycastManager rayManager;
-    private GameObject visual;
+    [HideInInspector] public GameObject visual;
+    //private GameObject visual;
 
     public GameObject RoomScan;
+    [HideInInspector]public bool FloorIsFound;
 
     void Start()
     {
@@ -20,6 +22,7 @@ public class Cursor : MonoBehaviour
         //hide Cursor
         visual.SetActive(false);
         RoomScan.SetActive(true);
+        FloorIsFound = false;
     }
 
     void Update()
@@ -35,8 +38,11 @@ public class Cursor : MonoBehaviour
             transform.rotation = hits[0].pose.rotation;
 
             if (!visual.activeInHierarchy)
+            {
                 visual.SetActive(true); //enables visual
                 RoomScan.SetActive(false);
+                FloorIsFound = true;
+            }
         }
 
     }
