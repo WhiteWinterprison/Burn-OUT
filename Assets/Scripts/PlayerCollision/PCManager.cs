@@ -31,12 +31,28 @@ public class PCManager : MonoBehaviour
     [Tooltip ("Pull in MainCamera von AR, Ray will start from here")]
     [SerializeField] private Camera Camera;
 
+    //-------------------Winning------------------ 
+    [Header ("Winning")] 
+    #if UNITY_EDITOR
+    [TextArea]
+    public string developerDiscription= " Add all UI elements that should be setActive(false) when winning occures";
+    #endif
+    public GameObject[] UiParts = new GameObject [4];
+
+    public GameObject[] UiWinParts = new GameObject[4];
+
+    [HideInInspector] public StoneManager LeafManager;
+    [HideInInspector] public LManager LvlManager;
+
+
+
     #region states 
     //-----------------------States-----------------------------
     PCState currentState;
     public PCDetectState DetectState = new PCDetectState();
     public PCMovementState MovementState = new PCMovementState();
     public PCGameOverState GameOverState = new PCGameOverState();
+    public PCWinStat WinState = new PCWinStat();
 
     #endregion
     
@@ -48,7 +64,13 @@ public class PCManager : MonoBehaviour
         currentState = DetectState;
         currentState.enter(this);
 
-        currentTime = startingTime;       
+        currentTime = startingTime;   
+
+        GameObject StoneManager = GameObject.Find("StoneManager");    
+        LeafManager = StoneManager.GetComponent<StoneManager>();
+
+        GameObject LevelManager = GameObject.Find("SceneManager");
+        LvlManager = LevelManager.GetComponent<LManager>();
 
     }
 
@@ -73,7 +95,7 @@ public class PCManager : MonoBehaviour
 //---------------------------------------------------------------------
 
 
-#region Collision
+#region Collision //by marje //revisited because of collider issues
     // public void OnCollisionEnter(Collision collisioninfo)
     // {
     //     if (collisioninfo.collider.tag == "Stone") //maybe coroutine so player cant die when entering collision (think its bc it only on enter and then back to dying)
@@ -134,7 +156,7 @@ public class PCManager : MonoBehaviour
     }
 
 
-  #region Raycast
+  #region Raycast //by Isabel based on Logic von Marje collider
 
  //-----------------------------Raycast-----------------------------
     public void PlayerRaycastHit ()
@@ -159,7 +181,11 @@ public class PCManager : MonoBehaviour
         }
     }
   #endregion
-
+public void PlanAnimation()
+{
+   // LvlManager.spawnedOBJ.GetComponentInChildren<Animator>();
+}
+  
    
 
 }

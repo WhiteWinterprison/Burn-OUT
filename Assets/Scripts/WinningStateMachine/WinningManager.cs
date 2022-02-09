@@ -10,47 +10,44 @@ using UnityEngine.Audio;
 
 public class WinningManager : MonoBehaviour
 {
-    // public bool gameCollision;
+    // public bool gameCollision; [SerializeField] private
 
-    [SerializeField]  // anderer versuch von gameCOllider
-    public bool gameCollision = false;
-
-
-    public GameObject GoalCollider; 
-
+    //-------------------Debugs--------------
     public Text DebugLog; // for state info 
     public Text DebugLogCollision;
     public Text DebugLogInCollision;
 
-    public GameObject PlantButton;
+    //----------------Collision------------
+    [HideInInspector] public bool gameCollision = false;
+    public GameObject GoalCollider; 
+
+    //----------ButtonRev-----------
+    public GameObject PlantButton; //WARUM 2 MAL ??
     public Button PlantBtn;  // for button appear
-    public bool ButtonPressed = false;
+    [HideInInspector] public bool ButtonPressed = false;
+    public GameObject SceneChangeButton;
+    public Button SceneChangeBtn;
 
-
-
-    public GameObject[] GameUiParts;  // for ui disappear
-
+    //-----------Ui Part Rev --------------
+    public GameObject[] GameUiParts;  // for ui disappear //WARUM " MAL ???
     public GameObject[] LeafsUi;   // ui von den leafs verschwinden lasasen 
-
     public GameObject[] Background; // leaf ui background
+
+    //------------------Rev by Isabel----------------
+    [SerializeField] private Camera ARCamera;
 
     
     [SerializeField] private  Animator myAnimPlantController;  // animator will be shown in inspector
                                                                // [SerializeField] private AnimationClip clip;
 
-
+    //-----Winning UI ADDS-----------------
     public GameObject TextObj;   // text: accomplished
     float TextShown;
     float TextTime = 8.0f;  // text soll nach 10 sec angezeigt werden weil anim so lange geht
 
-    public GameObject SceneChangeButton;
-    public Button SceneChangeBtn;
    
 
-    // Start is called before the first frame update
-
     // //////////////////////////////////  STATES //////////////////////////////////////////////////
-
 
     WState currentState; // state in der wir uns befinden 
 
@@ -63,8 +60,6 @@ public class WinningManager : MonoBehaviour
     public Lvl1PlantState Lvl1 = new Lvl1PlantState();
     public Lvl2PlantState Lvl2 = new Lvl2PlantState();
     public Lvl3PlantState Lvl3 = new Lvl3PlantState();
-
-
 
     //////////////////////////////////////////////////
 
@@ -79,9 +74,8 @@ public class WinningManager : MonoBehaviour
         PlantButton.gameObject.SetActive(false);  // Button ist nicht angezeigt bzw nicht da 
 
         GameUiParts = GameObject.FindGameObjectsWithTag("Ui");  // ui verschwinden 
-        LeafsUi = GameObject.FindGameObjectsWithTag("Leaf"); // blätter verschwinden 
+        LeafsUi = GameObject.FindGameObjectsWithTag("Leaf"); // blaetter verschwinden 
         Background = GameObject.FindGameObjectsWithTag("Background"); // background verschwinden
-
 
         // accomplish text 
         TextObj.SetActive(false);
@@ -106,9 +100,7 @@ public class WinningManager : MonoBehaviour
         nextState.enter(this);
     }
 
-    // dritte switch state für deadstate ? oder doch nicht?
-
-
+    // dritte switch state fï¿½r deadstate ? oder doch nicht?
 
 
     //////////////////// game logic ////////////////
@@ -117,6 +109,7 @@ public class WinningManager : MonoBehaviour
     public void OnCollisionEnter(Collision collisionInfo)
     {
         DebugLogInCollision.text = "INCollision";
+
         if (collisionInfo.transform.tag == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene 
         {
             Debug.Log("Collision hits");
@@ -124,19 +117,21 @@ public class WinningManager : MonoBehaviour
             gameCollision = true;
            
         }
-    }  public void OnCollisionExit(Collision collisionInfo) 
+    }  
+    public void OnCollisionExit(Collision collisionInfo) 
     {
         DebugLogInCollision.text = "OutCOl";
+
         if (collisionInfo.transform.tag == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene 
         {
-            
-         
             gameCollision = false;
             DebugLogInCollision.text = "OutCollision";
-
-
         }
     }
+
+
+    //--------------RayCast Collison try----------------------
+    
 
     // ////////// BUTTON ////////////
 
@@ -154,7 +149,7 @@ public class WinningManager : MonoBehaviour
     }
 
 
-    // Button für sceneChange
+    // Button fï¿½r sceneChange
     public void enableSceneButton()  // works    // button show after state change 
     {
         if (Time.time > TextShown + TextTime) // button soll da seinw enn text da ist 
