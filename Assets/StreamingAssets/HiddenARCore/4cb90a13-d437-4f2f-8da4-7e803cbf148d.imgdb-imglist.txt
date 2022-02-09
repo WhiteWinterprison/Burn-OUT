@@ -1,0 +1,2 @@
+bc276d4375194cb9a870b3fe64435a06|C:\Unity\Burn-OUT\Assets\Grafik\ImageTracking\Footleft.jpg|0.14
+46758669339b40fda89905e41e16f3a0|C:\Unity\Burn-OUT\Assets\Grafik\ImageTracking\Footright.jpg|0.14
