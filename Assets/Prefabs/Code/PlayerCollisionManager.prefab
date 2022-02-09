@@ -47,7 +47,7 @@ MonoBehaviour:
   Debuglog: {fileID: 0}
   Counter: {fileID: 0}
   currentTime: 0
-  startingTime: 10
+  startingTime: 3
   UiIndicator: {fileID: 0}
   pressedButton: 0
   isDead: 0
