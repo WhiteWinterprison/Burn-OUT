@@ -11,10 +11,16 @@ public class PCDetectState : PCState
         gameState.isDead =false;
         gameState.isWinning =false;
 
-         for(int i =0 ; i<gameState.UiWinParts.Length; i++)
+         for(int i =0 ; i<gameState.UiWinPartsPhase1.Length; i++)
         {
-            gameState.UiWinParts[i].SetActive(false);
+            gameState.UiWinPartsPhase1[i].SetActive(false);
         }
+
+        for(int i =0 ; i<gameState.UiWinPartPhase2.Length; i++)
+        {
+            gameState.UiWinPartPhase2[i].SetActive(false);
+        }
+        
     }
         
     public override void react(PCManager gameState)

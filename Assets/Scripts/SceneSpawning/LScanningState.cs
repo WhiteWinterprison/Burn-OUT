@@ -13,6 +13,16 @@ public class LScanningState : LState
         GameObject theCursor =GameObject.Find("SpawnCursor");
         CursorScript = theCursor.GetComponent<Cursor>();   
 
+        foreach(Transform child in gameState.spawnedOBJ.transform)
+        {
+            if (child.tag == "Score1" ||child.tag == "Score2"  ||child.tag == "Score3")
+            {
+                   GameObject obj =  child.GetComponent<GameObject>();
+                   obj.SetActive(false);
+            }
+          
+
+        }
         
     }
      public override void react (LManager gameState)
