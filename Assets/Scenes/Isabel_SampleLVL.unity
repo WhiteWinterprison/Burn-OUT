@@ -200,7 +200,6 @@ GameObject:
   - component: {fileID: 103983805}
   - component: {fileID: 103983804}
   - component: {fileID: 103983803}
-  - component: {fileID: 103983806}
   m_Layer: 0
   m_Name: AR Session
   m_TagString: Untagged
@@ -249,21 +248,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &103983806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103983802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83c6b2b564ac0094091ff675bed6cef4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnSceneFinishLoad:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &227452978 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8372278306195170044, guid: bb23970e23f68a74891dd78cbd0186cf, type: 3}
@@ -992,7 +976,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &984521467 stripped
 GameObject:
@@ -1053,7 +1037,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1273233346 stripped
 RectTransform:
@@ -1692,7 +1676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlanePrefab: {fileID: 0}
-  m_DetectionMode: -1
+  m_DetectionMode: 1
 --- !u!114 &2130496894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1771,7 +1755,7 @@ PrefabInstance:
       objectReference: {fileID: 1451936797}
     - target: {fileID: 904074074043681786, guid: 32b69ec459188204ba93bd27ce570b2e, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 904074074043681786, guid: 32b69ec459188204ba93bd27ce570b2e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2119,7 +2103,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4745488156951148458, guid: 4ba479bd5c6d2bc47bc8007068c38dd4, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4745488156951148458, guid: 4ba479bd5c6d2bc47bc8007068c38dd4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2207,6 +2191,14 @@ PrefabInstance:
       objectReference: {fileID: 1535922947}
     - target: {fileID: 4745488156951148459, guid: 4ba479bd5c6d2bc47bc8007068c38dd4, type: 3}
       propertyPath: UiWinParts.Array.data[1]
+      value: 
+      objectReference: {fileID: 1619578356}
+    - target: {fileID: 4745488156951148459, guid: 4ba479bd5c6d2bc47bc8007068c38dd4, type: 3}
+      propertyPath: UiWinParts.Array.data[2]
+      value: 
+      objectReference: {fileID: 1619578356}
+    - target: {fileID: 4745488156951148459, guid: 4ba479bd5c6d2bc47bc8007068c38dd4, type: 3}
+      propertyPath: UiWinParts.Array.data[3]
       value: 
       objectReference: {fileID: 1619578356}
     - target: {fileID: 4745488156951148460, guid: 4ba479bd5c6d2bc47bc8007068c38dd4, type: 3}

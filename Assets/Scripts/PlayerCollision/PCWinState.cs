@@ -7,6 +7,8 @@ public class PCWinStat : PCState
 
     public override void enter(PCManager gameState)
     {
+        gameState.Debuglog.text="LeafLeaft: " + gameState.LeafManager.ButtonRemain;
+        Debug.Log("LEAFS"+gameState.LeafManager.ButtonRemain);
         // gameState.Debuglog.text = "Collision: You Won";
         //Set game play ui inactive
         for(int i=0; i < gameState.UiParts.Length ; i++)
@@ -27,22 +29,25 @@ public class PCWinStat : PCState
     {
         LeafsLeft = gameState.LeafManager.ButtonRemain;
 
-    //    if(LeafsLeft == 0)
-    //    {
-    //        gameState.Debuglog.text = "0 leafs";
-    //    }
-    //    else if (LeafsLeft == 1)
-    //    {
-    //        gameState.Debuglog.text = "1 leafs";
-    //    }
-    //    else if (LeafsLeft == 2)
-    //    {
-    //        gameState.Debuglog.text = "2 leafs";
-    //    }
-    //    else if (LeafsLeft == 3)
-    //    {
-    //        gameState.Debuglog.text = "3 leafs";
-    //    }
+       if(LeafsLeft == 0)
+       {
+           gameState.Debuglog.text = "0 leafs";
+           gameState.Lvl1PlantAnimation();
+       }
+       else if (LeafsLeft == 1)
+       {
+           gameState.Debuglog.text = "1 leafs";
+           gameState.Lvl1PlantAnimation();
+       }
+       else if (LeafsLeft == 2)
+       {
+           gameState.Debuglog.text = "2 leafs";
+       }
+       else if (LeafsLeft == 3)
+       {
+           gameState.Debuglog.text = "3 leafs";
+       }
+
     }
 
     public override void exit(PCManager gameState)

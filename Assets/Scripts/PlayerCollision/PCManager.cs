@@ -180,9 +180,34 @@ public class PCManager : MonoBehaviour
         }
     }
   #endregion
-    public void PlanAnimation()
+    public void Lvl1PlantAnimation()
     {
         // LvlManager.spawnedOBJ.GetComponentInChildren<Animator>();
+        //LvlManager.spawnedOBJ.CompareTag("lvl1");
+        
+         foreach (Transform child in LvlManager.spawnedOBJ.transform)
+        {
+            if (child.tag == "Score1")
+            {
+                Animator animator = child.GetComponent<Animator>();
+                    
+                if(animator != null)
+                {
+                    bool isAnimating = animator.GetBool("IsGrowing");
+                    animator.SetBool("IsGrowing", true);
+                    Debuglog.text= "Animating";
+                }
+                else
+                {
+                    Debuglog.text ="NoAnimatoor";
+                }
+
+            }else
+            {
+                Debuglog.text ="No Child With this tag found";
+            }
+             
+        }
     }
   
    
