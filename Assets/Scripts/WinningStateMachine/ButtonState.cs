@@ -16,8 +16,6 @@ public class ButtonState : WState
         Debug.Log("EnterButtonState");
         gameState.disableGameUi();
 
-
-
     }
     public override void react(WinningManager gameState)
     {

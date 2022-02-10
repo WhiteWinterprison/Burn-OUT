@@ -180,10 +180,10 @@ public class PCManager : MonoBehaviour
         }
     }
   #endregion
-public void PlanAnimation()
-{
-   // LvlManager.spawnedOBJ.GetComponentInChildren<Animator>();
-}
+    public void PlanAnimation()
+    {
+        // LvlManager.spawnedOBJ.GetComponentInChildren<Animator>();
+    }
   
    
 
