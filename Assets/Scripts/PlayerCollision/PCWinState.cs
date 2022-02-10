@@ -28,13 +28,16 @@ public class PCWinStat : PCState
     {
         LeafsLeft = gameState.LeafManager.ButtonRemain;
 
-        if(gameState.PlantButtonPressed == true)
+        if(gameState.PlantButtonPressed == false)
         {
+            return; //dont go further if button no press
+        }
+        
+
             if(LeafsLeft == 0)
             {
                 gameState.Debuglog.text = "0 leafs";
-                gameState.LvlPlantAnimation("Score0","PlantAnim");
-                
+                gameState.LvlPlantAnimation($"Score{LeafsLeft}","PlantAnim");        //Numbers can be rumoved to $"Score{LeafsLeft} = 0 in this case, as if you are in this state no leafs are left.      
             }
             else if (LeafsLeft == 1)
             {
@@ -52,7 +55,7 @@ public class PCWinStat : PCState
                 gameState.LvlPlantAnimation("Score3","PlantAnim");
             }
 
-        }
+            
     
     }
 
