@@ -35,6 +35,7 @@ public class WinningManager : MonoBehaviour
 
     //------------------Rev by Isabel----------------
     [SerializeField] private Camera ARCamera;
+    [HideInInspector] public PCManager CollisionInfo;
 
     
     [SerializeField] private  Animator myAnimPlantController;  // animator will be shown in inspector
@@ -85,7 +86,10 @@ public class WinningManager : MonoBehaviour
         Button Scenebtn = SceneChangeBtn.GetComponent<Button>();
         Scenebtn.onClick.AddListener(ButtonClicked);
         SceneChangeButton.gameObject.SetActive(false);   // noch nicht angezeigt
-   
+    
+        //Isabel:
+        GameObject CollisionManager = GameObject.Find("CollisionManager");
+        CollisionInfo = CollisionManager.GetComponent<PCManager>();
     }
     void Update()
     {
@@ -106,26 +110,37 @@ public class WinningManager : MonoBehaviour
     //////////////////// game logic ////////////////
 
     /// ////////////////////// Collision switch state ////////////////////
-    public void OnCollisionEnter(Collision collisionInfo)
-    {
-        DebugLogInCollision.text = "INCollision";
+    
+    // public void OnCollisionEnter(Collision collisionInfo)
+    // {
+    //     DebugLogInCollision.text = "INCollision";
 
-        if (collisionInfo.transform.tag == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene 
-        {
-            Debug.Log("Collision hits");
+    //     if (collisionInfo.transform.tag == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene 
+    //     {
+    //         Debug.Log("Collision hits");
          
-            gameCollision = true;
+    //         gameCollision = true;
            
-        }
-    }  
-    public void OnCollisionExit(Collision collisionInfo) 
-    {
-        DebugLogInCollision.text = "OutCOl";
+    //     }
+    // }  
+    // public void OnCollisionExit(Collision collisionInfo) 
+    // {
+    //     DebugLogInCollision.text = "OutCOl";
 
-        if (collisionInfo.transform.tag == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene 
+    //     if (collisionInfo.transform.tag == "BiggerBox")  // if collision hits bigger box then game collision true _> switch scene 
+    //     {
+    //         gameCollision = false;
+    //         DebugLogInCollision.text = "OutCollision";
+    //     }
+    // }
+
+    //Isabel:
+    //Get collision infrom from PC manager
+    public void GetCollisionInfo()
+    {
+        if(CollisionInfo.isWinning == true)
         {
-            gameCollision = false;
-            DebugLogInCollision.text = "OutCollision";
+            gameCollision = true;
         }
     }
 

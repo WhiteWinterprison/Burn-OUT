@@ -7,6 +7,9 @@ TagManager:
   - Goo
   - Stone
   - BiggerBox
+  - Score1
+  - Score2
+  - Score3
   layers:
   - Default
   - TransparentFX

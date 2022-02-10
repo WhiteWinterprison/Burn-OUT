@@ -37,13 +37,16 @@ public class PCManager : MonoBehaviour
     [TextArea]
     public string developerDiscription= " Add all UI elements that should be setActive(false) when winning occures";
     #endif
-    public GameObject[] UiParts = new GameObject [4];
+    public GameObject[] UiPartsGamePlay = new GameObject [4];
 
-    public GameObject[] UiWinParts = new GameObject[4];
+    public GameObject[] UiWinPartsPhase1 = new GameObject[4];
+
+    public GameObject[] UiWinPartPhase2 = new GameObject[2];
 
     [HideInInspector] public StoneManager LeafManager;
     [HideInInspector] public LManager LvlManager;
-
+    public Button PlantButton;
+    [HideInInspector] public bool PlantButtonPressed =false;
 
 
     #region states 
@@ -66,11 +69,19 @@ public class PCManager : MonoBehaviour
 
         currentTime = startingTime;   
 
+        //Stepping Stone Manager rev
         GameObject StoneManager1 = GameObject.Find("StoneManager");    
         LeafManager = StoneManager1.GetComponent<StoneManager>();
 
+        //Lvl Manager rev
         GameObject LevelManager = GameObject.Find("SceneManager");
         LvlManager = LevelManager.GetComponent<LManager>();
+
+        //button Listen for plant plan in Winning
+        Button btn = PlantButton.GetComponent<Button>();
+        btn.onClick.AddListener(PlantPlantButtonPressed);
+
+
 
     }
 
@@ -180,11 +191,55 @@ public class PCManager : MonoBehaviour
         }
     }
   #endregion
-public void PlanAnimation()
-{
-   // LvlManager.spawnedOBJ.GetComponentInChildren<Animator>();
-}
-  
+    public void LvlPlantAnimation(string PlantTag, string AniamtionTag)
+    {
+        // LvlManager.spawnedOBJ.GetComponentInChildren<Animator>();
+        //LvlManager.spawnedOBJ.CompareTag("lvl1");
+        
+         foreach (Transform child in LvlManager.spawnedOBJ.transform)
+        {
+            if (child.tag == PlantTag)
+            {
+                child.gameObject.SetActive(true);
+                Animator animator = child.GetComponent<Animator>();
+                    
+                if(animator != null)
+                {
+                    bool isAnimating = animator.GetBool("IsGrowing");
+                    animator.SetBool("IsGrowing", true);
+                    Debuglog.text= "Animating";
+                    AnimationEnded(animator,AniamtionTag);
+                   
+                }
+                else
+                {
+                    Debuglog.text ="NoAnimatoor";
+                }
+
+            }else
+            {
+                Debuglog.text ="No Child With this tag found";
+            }
+             
+        }
+    }
+
+    public void AnimationEnded (Animator Anim, string AniamtionTag)
+    {
+        if(Anim.GetCurrentAnimatorStateInfo(0).IsTag(AniamtionTag) && Anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+        {
+           // PlantButton.GetComponent<GameObject>().SetActive(false);
+           for(int i=0; i < UiWinPartPhase2.Length ; i++)
+            {
+                UiWinPartPhase2[i].SetActive(true);
+            }
+        }
+    }
+
+    public void PlantPlantButtonPressed()
+    {
+        PlantButtonPressed = true;
+    }
    
 
 }

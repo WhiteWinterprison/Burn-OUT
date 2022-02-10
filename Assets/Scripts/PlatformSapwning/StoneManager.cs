@@ -59,6 +59,7 @@ public class StoneManager : MonoBehaviour
         //--------------Button--------------
         Button btn = LeafButton.GetComponent<Button>();
         btn.onClick.AddListener(ButtonClicked);   //Code variant anstatt code zum button Inspector      
+       
         cursor = FindObjectOfType<Cursor>();  
 
         IsStonePlaced = false;
