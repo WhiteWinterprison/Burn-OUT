@@ -7,6 +7,7 @@ public class ImageManager : MonoBehaviour
 {
 
     private Queue<GameObject> marvins; //lets try this out
+    public GameObject lastImage;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +72,6 @@ public class ImageManager : MonoBehaviour
         //Time.timeScale = 1;
         //animator.SetBool("IsOpen", false);
         Debug.Log("End of MarvinTurorial");
-
+        lastImage.SetActive(false);
     }
 }
