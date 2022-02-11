@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using JXR.Utils;
 //code by: Marje & Isabel
 
 
@@ -47,6 +48,8 @@ public class PCManager : MonoBehaviour
     [HideInInspector] public LManager LvlManager;
     public Button PlantButton;
     [HideInInspector] public bool PlantButtonPressed =false;
+    
+    public IntReference Score;
 
 
     #region states 
@@ -55,7 +58,7 @@ public class PCManager : MonoBehaviour
     public PCDetectState DetectState = new PCDetectState();
     public PCMovementState MovementState = new PCMovementState();
     public PCGameOverState GameOverState = new PCGameOverState();
-    public PCWinStat WinState = new PCWinStat();
+    public PCWinState WinState = new PCWinState();
 
     #endregion
     

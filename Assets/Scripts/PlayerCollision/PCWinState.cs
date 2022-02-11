@@ -1,13 +1,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using JXR.Utils;
 
-public class PCWinStat : PCState
+
+public class PCWinState : PCState
 {
     int LeafsLeft;
 
     public override void enter(PCManager gameState)
     {
-       
+        LeafsLeft = gameState.LeafManager.ButtonRemain;
+        
+        gameState.Score.Variable.SetValue(LeafsLeft); //scriptable object to use info in other scene
        
         //Set game play ui inactive
         for(int i=0; i < gameState.UiPartsGamePlay.Length ; i++)
@@ -20,13 +24,14 @@ public class PCWinStat : PCState
         {
             gameState.UiWinPartsPhase1[i].SetActive(true);
         }
+        gameState.Debuglog.text = gameState.Score.Variable.value.ToString();
 
     }
 
     
     public override void react(PCManager gameState)
     {
-        LeafsLeft = gameState.LeafManager.ButtonRemain;
+        
 
         if(gameState.PlantButtonPressed == false)
         {
@@ -36,22 +41,22 @@ public class PCWinStat : PCState
 
             if(LeafsLeft == 0)
             {
-                gameState.Debuglog.text = "0 leafs";
-                gameState.LvlPlantAnimation($"Score{LeafsLeft}","PlantAnim");        //Numbers can be rumoved to $"Score{LeafsLeft} = 0 in this case, as if you are in this state no leafs are left.      
+               // gameState.Debuglog.text = "0 leafs";
+                gameState.LvlPlantAnimation("Score0","PlantAnim");        //Numbers can be rumoved to $"Score{LeafsLeft} = 0 in this case, as if you are in this state no leafs are left.      
             }
             else if (LeafsLeft == 1)
             {
-                gameState.Debuglog.text = "1 leafs";
+                //gameState.Debuglog.text = "1 leafs";
                 gameState.LvlPlantAnimation("Score1","PlantAnim");
             }
             else if (LeafsLeft == 2)
             {
-                gameState.Debuglog.text = "2 leafs";
+               // gameState.Debuglog.text = "2 leafs";
                 gameState.LvlPlantAnimation("Score2","PlantAnim");
             }
             else if (LeafsLeft == 3)
             {
-                gameState.Debuglog.text = "3 leafs";
+               // gameState.Debuglog.text = "3 leafs";
                 gameState.LvlPlantAnimation("Score3","PlantAnim");
             }
 
