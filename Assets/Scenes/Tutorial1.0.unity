@@ -349,7 +349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998f24d70a975814ea9ca8d93609ec4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastImage: {fileID: 545453504}
 --- !u!4 &53916859
 Transform:
   m_ObjectHideFlags: 0
@@ -746,6 +745,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae7880c72b197f445b52b01dd7e731d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leaf: {fileID: 2070889543}
+  abyss: {fileID: 2070889543}
+  DebugInTheWay: {fileID: 799010148}
+  lastImage: {fileID: 545453504}
   nameText: {fileID: 1031902101}
   dialogueText: {fileID: 1465908339}
   animator: {fileID: 477280079}
@@ -1464,17 +1467,53 @@ MonoBehaviour:
   abyss: {fileID: 2070889543}
   roomScann: {fileID: 350698598}
   tutorialButton: {fileID: 748954055}
+  DebugInTheWay: {fileID: 799010148}
   marvin: {fileID: 545453504}
   dialogue:
     name: Marvin
     sentences:
-    - All my friends no
-    - "you have to help me get to the other side of this goo of death that brought
+    - All my friends no!
+    - "You have to help me get to the other side of this goo of death that brought
       death to all of us\r please!"
-    - If you can help me I can revive myself and everyone that had to die again.
-      You seem to lack motivation too so maybe this will help you get it back as
-      well!
-    - 'Its a promise then thank you so much! '
+    - If you can help me I can revive myself and everyone that had to die. You seem
+      to lack motivation too so maybe this will help you get it back as well!
+    - 'It''s a promise then thank you so much! '
+    - 'What do you have to do to revive me? '
+    - Easy!
+    - "You have to get over to the other side of the goo of death by leaping from
+      one stone to the\r next whilst not touching the goo."
+    - 'In your left corner you have leaves that I created with my last energy. '
+    - Tap on them and move your helpful device around then tap on the screen to place
+      them.
+    - Just like the stones you can use them to cross the goo of death.
+    - "The more you manage to save up until\r the end the more powerful my revived
+      form will be."
+    - There is also another special power I bestowed on you.
+    - Behold! If you tap on the screen of your trusty device with the combined strength
+      of two fingers you can be invincible against the goo of death!
+    - Since my power is at its limits though you can only use this power for at most
+      3 seconds.
+    - Therefore you have to be careful to get to another stone before those 3 seconds
+      run out.
+    - How will you know your time is running out?
+    - Simple! Just look at the edges of your screen.
+    - If they are green you are good to go.
+    - If they are turning black however you'll have to get to a stone quickly to
+      not die an untimely death.
+    - If you need any help just tap on me who's always in your right corner to help.
+    - If the goo of death is at a height you just can't reach I can use my power
+      to make it go down to your feet with the arrow keys.
+    - You can try a different level if this is too easy or hard for you with the
+      level select.
+    - Or you can also always leaf and take a break. Retrying later by going back
+      to the menu is not a shame. Everyone needs breaks!
+    - The reload leaf gives you the option to travel back in time right when you
+      started your adventure of getting to the other side of the goo.
+    - Sadly I don't have the power to travel back any further and save everyone.
+    - Which is why now it is on you, hero, to save us.
+    - If you make it to the other side just plant the seed of hope in the ground
+      and I will come to life again to make all the goo of death disappear.
+    - Now go and fulfill your destiny hero!
 --- !u!114 &748954058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1605,7 +1644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee11e249ba35e7f4481b7dd77ea7894e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  picture: {fileID: 0}
 --- !u!1001 &760992808
 PrefabInstance:
   m_ObjectHideFlags: 0
