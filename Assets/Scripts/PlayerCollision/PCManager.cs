@@ -229,13 +229,17 @@ public class PCManager : MonoBehaviour
 
     public void AnimationEnded (Animator Anim, string AniamtionTag)
     {
+        
+
         if(Anim.GetCurrentAnimatorStateInfo(0).IsTag(AniamtionTag) && Anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
         {
-           // PlantButton.GetComponent<GameObject>().SetActive(false);
+           PlantButton.enabled =false;
+
            for(int i=0; i < UiWinPartPhase2.Length ; i++)
             {
                 UiWinPartPhase2[i].SetActive(true);
             }
+
         }
     }
 
