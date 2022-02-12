@@ -20,18 +20,23 @@ public class ShowGacha : MonoBehaviour
         }
     }
 
-    void Start(){
-
+    void Start()
+    {
+        DebugLog.text ="lkjsefseo"+Score.Variable.value.ToString();
+        for(int i= 0; i< LockedIcons.Length; i++)
+        {
+            LockedIcons[Score.value].SetActive(true);
+        }
     }
 
-    // public void Test() //for fast debugging
-    // {
-    //      DebugLog.text ="lkjsefseo"+Score.Variable.value.ToString();
-    //     for(int i= 0; i< LockedIcons.Length; i++)
-    //     {
-    //         LockedIcons[Score.value].SetActive(true);
-    //     }
-    // }
+    public void Test() //for fast debugging
+    {
+         DebugLog.text ="lkjsefseo"+Score.Variable.value.ToString();
+        for(int i= 0; i< LockedIcons.Length; i++)
+        {
+            LockedIcons[Score.value].SetActive(true);
+        }
+    }
 
 
 }

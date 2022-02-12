@@ -45,4 +45,10 @@ public class LaodSpecialScene : MonoBehaviour
         SceneManager.LoadScene(scene.name);
     }
 
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+    }
+
+
 }

@@ -12,6 +12,8 @@ public class LScanningState : LState
         //getting Variable from Curser
         GameObject theCursor =GameObject.Find("SpawnCursor");
         CursorScript = theCursor.GetComponent<Cursor>();   
+        
+        if(!gameState.spawnedOBJ){return;}
 
         foreach(Transform child in gameState.spawnedOBJ.transform)
         {
