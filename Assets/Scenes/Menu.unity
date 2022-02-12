@@ -829,11 +829,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603174300}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -898.9785, y: -388.58167, z: -434.1444}
+  m_LocalPosition: {x: -358.97852, y: 781.41833, z: -434.1444}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 840470810}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &603174302
 MonoBehaviour:
@@ -848,9 +848,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   words:
-  - Quote1
-  - Quote2
-  - Quote3
+  - Nobody does anything without motivation
+  - "\u201CAll our dreams can come true, if we have the courage to pursue them.\u201D
+    \u2013 Walt Disney"
+  - "\u201CThe secret of getting ahead is getting started.\u201D \u2013 Mark Twain"
+  - "\u201CThe best time to plant a tree was 20 years ago. The second best time is
+    now.\u201D \u2013 Chinese Proverb"
+  - "\u201COnly the paranoid survive.\u201D \u2013 Andy Grove"
+  - "\u201CIt\u2019s hard to beat a person who never gives up.\u201D \u2013 Babe
+    Ruth"
   quote: {fileID: 1323593328}
 --- !u!1 &655883853
 GameObject:
@@ -963,7 +969,7 @@ RectTransform:
   m_Children:
   - {fileID: 1968089189}
   m_Father: {fileID: 840470810}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 3.384}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -1248,7 +1254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372278306195170045, guid: bb23970e23f68a74891dd78cbd0186cf, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8372278306195170045, guid: bb23970e23f68a74891dd78cbd0186cf, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1490,7 +1496,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 603174301}
   - {fileID: 1870432638}
   - {fileID: 1323593327}
   - {fileID: 957468355}
@@ -1498,8 +1503,8 @@ RectTransform:
   - {fileID: 984941532}
   - {fileID: 1232227663}
   - {fileID: 2458095441728662786}
-  - {fileID: 1725061415}
   - {fileID: 697044877}
+  - {fileID: 1725061415}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1938,7 +1943,7 @@ RectTransform:
   - {fileID: 712479545}
   - {fileID: 446129527}
   m_Father: {fileID: 840470810}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -2015,7 +2020,7 @@ RectTransform:
   m_Children:
   - {fileID: 2030280583}
   m_Father: {fileID: 840470810}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -2435,7 +2440,7 @@ RectTransform:
   m_Children:
   - {fileID: 1108645897}
   m_Father: {fileID: 840470810}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -2650,16 +2655,16 @@ RectTransform:
   m_GameObject: {fileID: 1323593326}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.9615, y: 2.9615, z: 2.9615}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840470810}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.8846, y: 897}
-  m_SizeDelta: {x: 193.4, y: 187.8}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 78, y: 883}
+  m_SizeDelta: {x: 777, y: 555.9}
+  m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!114 &1323593328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2682,17 +2687,17 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5e9720303b60f5c48a8c6f10e6fe1fb0, type: 3}
-    m_FontSize: 35
+    m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 65
+    m_MinSize: 0
+    m_MaxSize: 139
     m_Alignment: 4
     m_AlignByGeometry: 0
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.52
+    m_LineSpacing: 0.36
   m_Text: Nobody does anything without motivation
 --- !u!222 &1323593329
 CanvasRenderer:
@@ -2734,7 +2739,7 @@ RectTransform:
   m_Children:
   - {fileID: 655883854}
   m_Father: {fileID: 840470810}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -3212,7 +3217,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840470810}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3797,7 +3802,7 @@ RectTransform:
   - {fileID: 2458095441344954927}
   - {fileID: 274378678}
   m_Father: {fileID: 840470810}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
