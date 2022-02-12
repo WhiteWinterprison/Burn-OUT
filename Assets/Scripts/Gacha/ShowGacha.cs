@@ -13,7 +13,7 @@ public class ShowGacha : MonoBehaviour
 
     void Awake()
     {
-        DebugLog.text ="lkjsefseo"+Score.Variable.value.ToString();
+        //DebugLog.text ="lkjsefseo"+Score.Variable.value.ToString();
         for(int i= 0; i< LockedIcons.Length; i++)
         {
             LockedIcons[Score.value].SetActive(true);
@@ -22,7 +22,7 @@ public class ShowGacha : MonoBehaviour
 
     void Start()
     {
-        DebugLog.text ="lkjsefseo"+Score.Variable.value.ToString();
+        //DebugLog.text ="lkjsefseo"+Score.Variable.value.ToString();
         for(int i= 0; i< LockedIcons.Length; i++)
         {
             LockedIcons[Score.value].SetActive(true);
@@ -31,7 +31,7 @@ public class ShowGacha : MonoBehaviour
 
     public void Test() //for fast debugging
     {
-         DebugLog.text ="lkjsefseo"+Score.Variable.value.ToString();
+         DebugLog.text ="Gacha"+Score.Variable.value.ToString();
         for(int i= 0; i< LockedIcons.Length; i++)
         {
             LockedIcons[Score.value].SetActive(true);
