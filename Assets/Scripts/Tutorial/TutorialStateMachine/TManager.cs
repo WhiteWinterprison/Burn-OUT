@@ -24,10 +24,12 @@ public class TManager : MonoBehaviour
     public GameObject continueBtn;
     public GameObject startTutorial;
     public GameObject startGame;
+    public Text DebugStatesExplained;
 
     // _______________________referenzen_____________________________________________________________________
 
  [HideInInspector] public LManager levelInfo;
+ public GameObject cursorStart;
 
 
     // _______________________GameLogik_____________________________________________________________________
@@ -58,7 +60,10 @@ public class TManager : MonoBehaviour
 
         GameObject Level = GameObject.Find("SceneManager");
         levelInfo = Level.GetComponent<LManager>();
-        
+
+        //GameObject CursorRef = GameObject.Find("SpawnCursor");
+        //cursorStart = CursorRef.GetComponent<GameObject>();
+
 
     }
 

@@ -10,6 +10,7 @@ public class Dialogue
 
     [TextArea(3, 10)] //first nr minimum amount of lines text area will use, sec max nr
     public string[] sentences;
+    
 
     //public GameObject[] marvins; //mavins images
 }

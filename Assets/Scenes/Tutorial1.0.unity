@@ -1546,13 +1546,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12243e1c42518ee44bc45cec586e8761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 1482280933}
-  leaf: {fileID: 1063458850}
-  abyss: {fileID: 2070889543}
-  roomScann: {fileID: 350698598}
-  tutorialButton: {fileID: 748954055}
-  DebugInTheWay: {fileID: 799010148}
-  marvin: {fileID: 545453504}
   dialogue:
     name: Marvin
     sentences:
@@ -1646,6 +1639,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1900536339}
         m_TargetAssemblyTypeName: TManager, Assembly-CSharp
         m_MethodName: startCoolTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 748954057}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2112,7 +2117,7 @@ PrefabInstance:
     - target: {fileID: 463439939469376621, guid: af9cc32f389a3e1478612fee3db83938, type: 3}
       propertyPath: Level
       value: 
-      objectReference: {fileID: 6124126670224756734, guid: d3d395517dad5d842ac342a21dd4d474, type: 3}
+      objectReference: {fileID: 6124126670224756734, guid: f85651cd8f889ba479b5c070817cd14e, type: 3}
     - target: {fileID: 463439939469376621, guid: af9cc32f389a3e1478612fee3db83938, type: 3}
       propertyPath: cursor
       value: 
@@ -2321,11 +2326,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031902099}
   m_CullTransparentMesh: 1
---- !u!1 &1063458850 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4244302362655858760, guid: 3fb7b93721541624d99daae70ccb96fb, type: 3}
-  m_PrefabInstance: {fileID: 1611223997}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1114144238
 GameObject:
   m_ObjectHideFlags: 0
@@ -3356,6 +3356,85 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fb7b93721541624d99daae70ccb96fb, type: 3}
+--- !u!1 &1689608524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1689608525}
+  - component: {fileID: 1689608527}
+  - component: {fileID: 1689608526}
+  m_Layer: 5
+  m_Name: leafs explained
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1689608525
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689608524}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1892702986}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -275, y: 2015}
+  m_SizeDelta: {x: 608.80005, y: 254.8999}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1689608526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689608524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.57003546, g: 0.3780349, b: 0.6981132, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 79
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 202
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: yup works :))
+--- !u!222 &1689608527
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689608524}
+  m_CullTransparentMesh: 1
 --- !u!1 &1721771756
 GameObject:
   m_ObjectHideFlags: 0
@@ -3607,6 +3686,7 @@ RectTransform:
   - {fileID: 477280076}
   - {fileID: 748954056}
   - {fileID: 2023608575}
+  - {fileID: 1689608525}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3655,7 +3735,9 @@ MonoBehaviour:
   continueBtn: {fileID: 1721771756}
   startTutorial: {fileID: 748954055}
   startGame: {fileID: 2023608574}
+  DebugStatesExplained: {fileID: 1689608526}
   levelInfo: {fileID: 0}
+  cursorStart: {fileID: 1512745362}
   tutorialStarted: 0
   gameStarted: 0
   continuePress: 0
@@ -3726,13 +3808,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12243e1c42518ee44bc45cec586e8761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 1482280933}
-  leaf: {fileID: 1063458850}
-  abyss: {fileID: 2070889543}
-  roomScann: {fileID: 350698598}
-  tutorialButton: {fileID: 2023608574}
-  DebugInTheWay: {fileID: 799010148}
-  marvin: {fileID: 545453504}
   dialogue:
     name: Marvin
     sentences:

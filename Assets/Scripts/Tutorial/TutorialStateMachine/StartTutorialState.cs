@@ -11,6 +11,8 @@ public class StartTutorialState : TState
         gameState.marvinMenu.SetActive(false);
         gameState.stoneSystem.SetActive(false);
         gameState.startGame.SetActive(false);
+        gameState.cursorStart.SetActive(false);
+
 
         for (int i = 0; i < gameState.marvinExpr.Length; i++)
         {

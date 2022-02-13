@@ -15,9 +15,9 @@ public class LScanningState : LState
         
         if(!gameState.spawnedOBJ){return;}
 
-        foreach(Transform child in gameState.spawnedOBJ.transform)
+        foreach(Transform child in gameState.spawnedOBJ.transform) //setting flowers inactive
         {
-            if (child.tag == "Score1" ||child.tag == "Score2"  ||child.tag == "Score3")
+            if (child.tag == "Score1" ||child.tag == "Score2"  ||child.tag == "Score3") 
             {
                    GameObject obj =  child.GetComponent<GameObject>();
                    obj.SetActive(false);

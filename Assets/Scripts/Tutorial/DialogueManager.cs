@@ -113,11 +113,11 @@ public class DialogueManager : MonoBehaviour
         Time.timeScale = 1;
         animator.SetBool("IsOpen", false);
 
-        lastImage.SetActive(false);
-        leaf.SetActive(true); //make a reference to the button component and set it inactive instead
-        abyss.SetActive(true);//can't make the abyss not work its so hard to break this mechanic damn probs to you izzy D:
-        //roomScann.SetActive(true); //since abyss should appear b4 for the story to make sense
-        DebugInTheWay.SetActive(true);
+        //lastImage.SetActive(false);
+        //leaf.SetActive(true); //make a reference to the button component and set it inactive instead
+        //abyss.SetActive(true);//can't make the abyss not work its so hard to break this mechanic damn probs to you izzy D:
+        ////roomScann.SetActive(true); //since abyss should appear b4 for the story to make sense
+        //DebugInTheWay.SetActive(true);
 
     }
 }
