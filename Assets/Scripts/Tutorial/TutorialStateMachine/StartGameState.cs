@@ -7,7 +7,8 @@ public class StartGameState : TState
 {
     public override void enter(TManager gameState)
     {
-
+        gameState.startGame.SetActive(true);
+        gameState.marvinExpr[4].SetActive(true);
     }
 
     public override void react(TManager gameState)

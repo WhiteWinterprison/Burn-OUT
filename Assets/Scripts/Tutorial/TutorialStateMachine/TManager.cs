@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using JXR.Utils;
 
 public class TManager : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class TManager : MonoBehaviour
     public GameObject startTutorial;
     public GameObject startGame;
     public Text DebugStatesExplained;
+    public MenuSlider slideMenu;
+
 
     public int wieIchBockHab = 29;
 
@@ -35,6 +38,8 @@ public class TManager : MonoBehaviour
  public GameObject cursorStart;
     public GameObject dialogueQueue;
     public DialogueManager queueInfo;
+    public IntReference Score;
+    public PCManager collisionManagereee;
 
 
     // _______________________GameLogik_____________________________________________________________________
@@ -66,10 +71,16 @@ public class TManager : MonoBehaviour
         GameObject Level = GameObject.Find("SceneManager");
         levelInfo = Level.GetComponent<LManager>();
 
+        GameObject Player = GameObject.Find("PlayerCollisionManager");
+        collisionManagereee = Player.GetComponent<PCManager>();
+
+        GameObject Slider = GameObject.Find("SlideMenue");
+        slideMenu = Slider.GetComponent<MenuSlider>();
+
         //GameObject CursorRef = GameObject.Find("SpawnCursor");
         //cursorStart = CursorRef.GetComponent<GameObject>();
 
-        
+
         queueInfo = dialogueQueue.GetComponent<DialogueManager>();
 
     }

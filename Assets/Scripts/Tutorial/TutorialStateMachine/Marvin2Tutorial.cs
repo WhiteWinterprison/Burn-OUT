@@ -6,7 +6,7 @@ public class Marvin2Tutorial : TState
 {
     public override void enter(TManager gameState)
     {
-
+        gameState.marvinExpr[2].SetActive(true);
     }
 
     public override void react(TManager gameState)
@@ -19,6 +19,10 @@ public class Marvin2Tutorial : TState
 
     public override void exit(TManager gameState)
     {
-
+        gameState.playerInfo.SetActive(false);
+        gameState.marvinMenu.SetActive(false);
+        gameState.stoneSystem.SetActive(false);
+        gameState.startGame.SetActive(false);
+        gameState.marvinExpr[2].SetActive(false);
     }
 }

@@ -1256,6 +1256,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8372278306195170044, guid: bb23970e23f68a74891dd78cbd0186cf, type: 3}
   m_PrefabInstance: {fileID: 565844789}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &582680989 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4745488156951148459, guid: 4ba479bd5c6d2bc47bc8007068c38dd4, type: 3}
+  m_PrefabInstance: {fileID: 1249136640}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08766f6e169219e4fbd2468001a512b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &591832017
 GameObject:
   m_ObjectHideFlags: 0
@@ -3760,11 +3771,17 @@ MonoBehaviour:
   startTutorial: {fileID: 748954055}
   startGame: {fileID: 2023608574}
   DebugStatesExplained: {fileID: 1689608526}
+  slideMenu: {fileID: 497457091}
   wieIchBockHab: 0
   levelInfo: {fileID: 0}
   cursorStart: {fileID: 1512745362}
   dialogueQueue: {fileID: 748954055}
   queueInfo: {fileID: 439076764}
+  Score:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 1daea500c15fb6c4c831c356706a28e5, type: 2}
+  collisionManagereee: {fileID: 582680989}
   tutorialStarted: 0
   gameStarted: 0
   continuePress: 0

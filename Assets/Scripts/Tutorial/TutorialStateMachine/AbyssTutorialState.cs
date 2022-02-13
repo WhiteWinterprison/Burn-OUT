@@ -8,8 +8,8 @@ public class AbyssTutorialState : TState
 
     public override void enter(TManager gameState)
     {
-        gameState.marvinExpr[0].SetActive(true);
-        gameState.cursorStart.SetActive(true);
+        gameState.marvinExpr[2].SetActive(true);
+        //gameState.cursorStart.SetActive(true);
 
         //gameState.DebugStatesExplained.text = "QueueInfo: " + gameState.queueInfo.sentences.Count.ToString();
     }
@@ -24,6 +24,6 @@ public class AbyssTutorialState : TState
 
     public override void exit(TManager gameState)
     {
-
+        gameState.marvinExpr[2].SetActive(false);
     }
 }

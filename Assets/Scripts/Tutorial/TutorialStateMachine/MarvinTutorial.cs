@@ -6,7 +6,9 @@ public class MarvinTutorial : TState
 {
     public override void enter(TManager gameState)
     {
-
+        gameState.marvinMenu.SetActive(true);
+        gameState.slideMenu.ShowHideMenue();
+        gameState.marvinExpr[0].SetActive(true);
     }
 
     public override void react(TManager gameState)
@@ -19,6 +21,6 @@ public class MarvinTutorial : TState
 
     public override void exit(TManager gameState)
     {
-
+        gameState.marvinExpr[0].SetActive(false);
     }
 }
