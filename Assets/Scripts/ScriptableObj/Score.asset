@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   developerDescription: Score value defined by stepping stones left  in Stone Manager. 
     Right know indicated by the 3 leafs Ui in the left corner
-  value: 3
+  value: 0
