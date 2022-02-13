@@ -1660,6 +1660,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1900536339}
+        m_TargetAssemblyTypeName: TManager, Assembly-CSharp
+        m_MethodName: DialogueCount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &748954059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3542,6 +3554,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1900536339}
+        m_TargetAssemblyTypeName: TManager, Assembly-CSharp
+        m_MethodName: DialogueCount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1721771759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3736,8 +3760,11 @@ MonoBehaviour:
   startTutorial: {fileID: 748954055}
   startGame: {fileID: 2023608574}
   DebugStatesExplained: {fileID: 1689608526}
+  wieIchBockHab: 0
   levelInfo: {fileID: 0}
   cursorStart: {fileID: 1512745362}
+  dialogueQueue: {fileID: 748954055}
+  queueInfo: {fileID: 439076764}
   tutorialStarted: 0
   gameStarted: 0
   continuePress: 0

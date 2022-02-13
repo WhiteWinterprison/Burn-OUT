@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartGameState : TState
 {
@@ -11,7 +12,10 @@ public class StartGameState : TState
 
     public override void react(TManager gameState)
     {
-
+        if (gameState.gameStarted == true) //might as well just leave the ==
+        {
+            SceneManager.LoadScene(5);
+        }
     }
 
     public override void exit(TManager gameState)

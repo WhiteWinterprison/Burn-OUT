@@ -26,10 +26,15 @@ public class TManager : MonoBehaviour
     public GameObject startGame;
     public Text DebugStatesExplained;
 
+    public int wieIchBockHab = 29;
+
+
     // _______________________referenzen_____________________________________________________________________
 
  [HideInInspector] public LManager levelInfo;
  public GameObject cursorStart;
+    public GameObject dialogueQueue;
+    public DialogueManager queueInfo;
 
 
     // _______________________GameLogik_____________________________________________________________________
@@ -64,6 +69,8 @@ public class TManager : MonoBehaviour
         //GameObject CursorRef = GameObject.Find("SpawnCursor");
         //cursorStart = CursorRef.GetComponent<GameObject>();
 
+        
+        queueInfo = dialogueQueue.GetComponent<DialogueManager>();
 
     }
 
@@ -95,5 +102,10 @@ public class TManager : MonoBehaviour
     public void startCoolGame()
     {
         gameStarted = true;
+    }
+
+    public void DialogueCount()
+    {
+        wieIchBockHab -= 1;
     }
 }

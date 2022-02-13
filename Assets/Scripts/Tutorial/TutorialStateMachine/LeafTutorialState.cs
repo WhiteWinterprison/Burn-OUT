@@ -11,7 +11,10 @@ public class LeafTutorialState : TState
 
     public override void react(TManager gameState)
     {
-        
+        if(gameState.wieIchBockHab == 17)
+        {
+            gameState.SwitchState(gameState.movementState);
+        }
     }
 
     public override void exit(TManager gameState)

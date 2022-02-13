@@ -23,7 +23,7 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
-    private Queue<string> sentences;
+    [HideInInspector] public Queue<string> sentences;
 
     //private Queue<GameObject> marvins; //lets try this out
 
