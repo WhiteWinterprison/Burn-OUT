@@ -21,11 +21,22 @@ public class TManager : MonoBehaviour
     public GameObject marvinMenu;
     public GameObject stoneSystem;
     public GameObject[] marvinExpr;
-    public Button continueBtn;
-    public Button startTutorial;
-    public Button startGame;
+    public GameObject continueBtn;
+    public GameObject startTutorial;
+    public GameObject startGame;
 
-    // _______________________UI_____________________________________________________________________
+    // _______________________referenzen_____________________________________________________________________
+
+ [HideInInspector] public LManager levelInfo;
+
+
+    // _______________________GameLogik_____________________________________________________________________
+
+    [HideInInspector] public bool tutorialStarted = false;
+
+    [HideInInspector] public bool gameStarted = false;
+
+    [HideInInspector] public bool continuePress = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +54,12 @@ public class TManager : MonoBehaviour
 
         Button btnstartGame = startGame.GetComponent<Button>();
         btnstartGame.onClick.AddListener(startCoolGame);
+
+
+        GameObject Level = GameObject.Find("SceneManager");
+        levelInfo = Level.GetComponent<LManager>();
+        
+
     }
 
     // Update is called once per frame
@@ -62,16 +79,16 @@ public class TManager : MonoBehaviour
 
     public void ContinueText()
     {
-
+        continuePress = true;
     }
 
     public void startCoolTutorial()
     {
-
+        tutorialStarted = true;
     }
 
     public void startCoolGame()
     {
-
+        gameStarted = true;
     }
 }
