@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject leaf;
     public GameObject abyss;
     //public GameObject roomScann;
-    public GameObject DebugInTheWay;
+    public Text DebugInTheWay;
     public GameObject lastImage;
 
     //__________________________________________________________________
@@ -23,7 +23,7 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
-    [HideInInspector] public Queue<string> sentences;
+    private Queue<string> sentences;
 
     //private Queue<GameObject> marvins; //lets try this out
 
@@ -36,6 +36,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        
 
         animator.SetBool("IsOpen", true);
 
@@ -51,7 +52,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         DisplayNextSentence();
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        
 
 
         //marvins.Clear(); //clear any marvins from the previous tutorial runthrough
@@ -113,10 +115,10 @@ public class DialogueManager : MonoBehaviour
         Time.timeScale = 1;
         animator.SetBool("IsOpen", false);
 
-        //lastImage.SetActive(false);
-        //leaf.SetActive(true); //make a reference to the button component and set it inactive instead
-        //abyss.SetActive(true);//can't make the abyss not work its so hard to break this mechanic damn probs to you izzy D:
-        ////roomScann.SetActive(true); //since abyss should appear b4 for the story to make sense
+        // lastImage.SetActive(false);
+        // leaf.SetActive(true); //make a reference to the button component and set it inactive instead
+        // abyss.SetActive(true);//can't make the abyss not work its so hard to break this mechanic damn probs to you izzy D:
+        //roomScann.SetActive(true); //since abyss should appear b4 for the story to make sense
         //DebugInTheWay.SetActive(true);
 
     }

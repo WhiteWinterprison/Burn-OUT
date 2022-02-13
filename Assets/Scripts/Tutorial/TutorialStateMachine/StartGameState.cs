@@ -9,6 +9,7 @@ public class StartGameState : TState
     {
         gameState.startGame.SetActive(true);
         gameState.marvinExpr[4].SetActive(true);
+        gameState.marvinMenu.SetActive(true);
         gameState.DebugStatesExplained.text = "6";
         gameState.QueCounter.text = gameState.wieIchBockHab.ToString(); 
     }

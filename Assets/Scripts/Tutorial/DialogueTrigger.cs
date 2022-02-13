@@ -20,6 +20,7 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        Debug.Log("IsNotFreeezingStuff in Trigger Dialog");
     }
 
     //public void TurnOff() //turn off button and all the things to tap on screen (bubble,leafs,spawn abyss) //guess itll be easier to just make a state 
