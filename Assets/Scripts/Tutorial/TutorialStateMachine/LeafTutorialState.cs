@@ -6,6 +6,7 @@ public class LeafTutorialState : TState
 {
     public override void enter(TManager gameState)
     {
+        gameState.DebugStatesExplained.text = "2";
 
         gameState.marvinExpr[0].SetActive(true);
 
@@ -18,7 +19,7 @@ public class LeafTutorialState : TState
     {
 
 
-        if(gameState.wieIchBockHab == 17 && gameState.Score < 3)
+        if(gameState.wieIchBockHab <=  17 && gameState.Score < 3)
         {
             gameState.SwitchState(gameState.movementState);
         }

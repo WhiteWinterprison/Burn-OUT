@@ -26,6 +26,7 @@ public class TManager : MonoBehaviour
     public GameObject startTutorial;
     public GameObject startGame;
     public Text DebugStatesExplained;
+    public Text QueCounter;
     public MenuSlider slideMenu;
 
 

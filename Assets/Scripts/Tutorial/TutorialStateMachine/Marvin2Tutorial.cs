@@ -7,11 +7,12 @@ public class Marvin2Tutorial : TState
     public override void enter(TManager gameState)
     {
         gameState.marvinExpr[2].SetActive(true);
+        gameState.DebugStatesExplained.text = "4";
     }
 
     public override void react(TManager gameState)
     {
-        if (gameState.wieIchBockHab == 0)
+        if (gameState.wieIchBockHab <=  0)
         {
             gameState.SwitchState(gameState.startGameState);
         }

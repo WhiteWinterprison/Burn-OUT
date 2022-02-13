@@ -9,6 +9,8 @@ public class StartGameState : TState
     {
         gameState.startGame.SetActive(true);
         gameState.marvinExpr[4].SetActive(true);
+        gameState.DebugStatesExplained.text = "6";
+        gameState.QueCounter.text = gameState.wieIchBockHab.ToString(); 
     }
 
     public override void react(TManager gameState)

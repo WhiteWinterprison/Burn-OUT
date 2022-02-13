@@ -10,13 +10,14 @@ public class AbyssTutorialState : TState
     {
         gameState.marvinExpr[2].SetActive(true);
         //gameState.cursorStart.SetActive(true);
+        gameState.DebugStatesExplained.text = "1";
 
         //gameState.DebugStatesExplained.text = "QueueInfo: " + gameState.queueInfo.sentences.Count.ToString();
     }
 
     public override void react(TManager gameState)
     {
-        if(gameState.levelInfo.PlayAreaSpawned == true && gameState.wieIchBockHab == 21)
+        if(gameState.levelInfo.PlayAreaSpawned == true && gameState.wieIchBockHab <= 21)
         {
             gameState.SwitchState(gameState.leafState);
         }

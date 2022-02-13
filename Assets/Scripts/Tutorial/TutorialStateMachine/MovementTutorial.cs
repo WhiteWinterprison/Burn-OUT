@@ -8,11 +8,12 @@ public class MovementTutorial : TState
     {
         gameState.marvinExpr[1].SetActive(true);
         gameState.playerInfo.SetActive(true);
+        gameState.DebugStatesExplained.text = "3";
     }
 
     public override void react(TManager gameState)
     {
-        if (gameState.wieIchBockHab == 9 && gameState.collisionManagereee.pressedButton == true)
+        if (gameState.wieIchBockHab <=  9 && gameState.collisionManagereee.pressedButton == true)
         {
             gameState.SwitchState(gameState.marvinONEState);
         }

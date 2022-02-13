@@ -13,7 +13,8 @@ public class StartTutorialState : TState
         gameState.startGame.SetActive(false);
        // gameState.cursorStart.SetActive(false);
 
-
+        gameState.DebugStatesExplained.text = "TutorialStart";
+        gameState.QueCounter.text = gameState.wieIchBockHab.ToString(); 
 
         for (int i = 0; i < gameState.marvinExpr.Length; i++)
         {

@@ -9,11 +9,12 @@ public class MarvinTutorial : TState
         gameState.marvinMenu.SetActive(true);
         gameState.slideMenu.ShowHideMenue();
         gameState.marvinExpr[0].SetActive(true);
+        gameState.DebugStatesExplained.text = "3";
     }
 
     public override void react(TManager gameState)
     {
-        if (gameState.wieIchBockHab == 7)
+        if (gameState.wieIchBockHab <=  7)
         {
             gameState.SwitchState(gameState.marvinTWOState);
         }
