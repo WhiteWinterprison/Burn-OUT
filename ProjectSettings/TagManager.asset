@@ -10,6 +10,7 @@ TagManager:
   - Score1
   - Score2
   - Score3
+  - Score0
   layers:
   - Default
   - TransparentFX

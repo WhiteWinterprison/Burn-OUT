@@ -27,7 +27,17 @@ public class PCDetectState : PCState
     {
         gameState.PlayerRaycastHit();
         gameState.ScreenPressed();
-        gameState.UiIndicator.color = Color.black;
+
+        if(gameState.isStone== true)
+        {
+            gameState.UiIndicator.color = Color.yellow;
+            gameState.Debuglog.text ="Stone";
+        }else
+        {
+            gameState.UiIndicator.color = Color.black;
+        }
+         //gameState.UiIndicator.color = Color.black;//call mehrfach
+
 
 
         if(gameState.pressedButton == true)

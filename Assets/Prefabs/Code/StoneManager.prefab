@@ -52,5 +52,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   SteppingStone: {fileID: 3980509805361385720, guid: 711909174edf31e478da6c5e32419231, type: 3}
+  InstantiatedLeafs: []
+  SpawnedObject: {fileID: 0}
   IsStonePlaced: 0
   DebugLOG: {fileID: 0}

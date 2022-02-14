@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using JXR.Utils;
 //code by: Marje & Isabel
 
 
@@ -22,6 +23,7 @@ public class PCManager : MonoBehaviour
 
     [HideInInspector] public bool isDead;
     [HideInInspector] public bool isWinning;
+    [HideInInspector] public bool isStone;
 
     [HideInInspector ] public bool isSafe = false;
 
@@ -47,6 +49,8 @@ public class PCManager : MonoBehaviour
     [HideInInspector] public LManager LvlManager;
     public Button PlantButton;
     [HideInInspector] public bool PlantButtonPressed =false;
+    
+    public IntReference Score;
 
 
     #region states 
@@ -55,7 +59,7 @@ public class PCManager : MonoBehaviour
     public PCDetectState DetectState = new PCDetectState();
     public PCMovementState MovementState = new PCMovementState();
     public PCGameOverState GameOverState = new PCGameOverState();
-    public PCWinStat WinState = new PCWinStat();
+    public PCWinState WinState = new PCWinState();
 
     #endregion
     
@@ -186,7 +190,12 @@ public class PCManager : MonoBehaviour
             else if (hit.collider.CompareTag("Finish"))
             {
                 isWinning = true;
-            }         
+            }   
+            else if(hit.collider.CompareTag("Stone"))
+            {
+                Debuglog.text ="Stone";
+               isStone = true;
+            }      
             
         }
     }
@@ -226,13 +235,17 @@ public class PCManager : MonoBehaviour
 
     public void AnimationEnded (Animator Anim, string AniamtionTag)
     {
+        
+
         if(Anim.GetCurrentAnimatorStateInfo(0).IsTag(AniamtionTag) && Anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
         {
-           // PlantButton.GetComponent<GameObject>().SetActive(false);
+           PlantButton.enabled =false;
+
            for(int i=0; i < UiWinPartPhase2.Length ; i++)
             {
                 UiWinPartPhase2[i].SetActive(true);
             }
+
         }
     }
 

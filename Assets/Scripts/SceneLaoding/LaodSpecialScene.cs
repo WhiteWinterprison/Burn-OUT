@@ -39,6 +39,16 @@ public class LaodSpecialScene : MonoBehaviour
     {
         SceneManager.LoadScene(WantedScene);
     }
+    public void Reload()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+    }
 
 
 }

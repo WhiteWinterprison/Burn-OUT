@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
+using JXR.Utils;
 
 public class StoneManager : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class StoneManager : MonoBehaviour
     public bool ButtonPressed = false; //does this work ??
     
     public int ButtonRemain = 3;
+    
     [SerializeField]
     [Tooltip ("The UI leafs Drag and Drop")]
     Image[] images = new Image[3]; 
