@@ -36,7 +36,7 @@ public class PCDetectState : PCState
         {
             gameState.UiIndicator.color = Color.black;
         }
-         gameState.UiIndicator.color = Color.black;//call mehrfach
+         //gameState.UiIndicator.color = Color.black;//call mehrfach
 
 
 
