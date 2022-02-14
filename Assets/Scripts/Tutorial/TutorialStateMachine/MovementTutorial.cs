@@ -9,6 +9,7 @@ public class MovementTutorial : TState
         gameState.marvinExpr[1].SetActive(true);
         gameState.playerInfo.SetActive(true);
         gameState.DebugStatesExplained.text = "3";
+        gameState.QueCounter.text = gameState.wieIchBockHab.ToString(); 
     }
 
     public override void react(TManager gameState)

@@ -23,6 +23,7 @@ public class PCManager : MonoBehaviour
 
     [HideInInspector] public bool isDead;
     [HideInInspector] public bool isWinning;
+    [HideInInspector] public bool isStone;
 
     [HideInInspector ] public bool isSafe = false;
 
@@ -189,7 +190,12 @@ public class PCManager : MonoBehaviour
             else if (hit.collider.CompareTag("Finish"))
             {
                 isWinning = true;
-            }         
+            }   
+            else if(hit.collider.CompareTag("Stone"))
+            {
+                Debuglog.text ="Stone";
+               isStone = true;
+            }      
             
         }
     }

@@ -7,6 +7,7 @@ public class LeafTutorialState : TState
     public override void enter(TManager gameState)
     {
         gameState.DebugStatesExplained.text = "2";
+        gameState.QueCounter.text = gameState.wieIchBockHab.ToString(); 
 
         gameState.marvinExpr[0].SetActive(true);
 

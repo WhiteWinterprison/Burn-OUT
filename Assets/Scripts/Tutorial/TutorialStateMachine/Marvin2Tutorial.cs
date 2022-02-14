@@ -8,6 +8,7 @@ public class Marvin2Tutorial : TState
     {
         gameState.marvinExpr[2].SetActive(true);
         gameState.DebugStatesExplained.text = "4";
+        gameState.QueCounter.text = gameState.wieIchBockHab.ToString(); 
     }
 
     public override void react(TManager gameState)

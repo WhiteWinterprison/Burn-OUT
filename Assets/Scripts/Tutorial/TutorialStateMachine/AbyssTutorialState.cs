@@ -11,6 +11,7 @@ public class AbyssTutorialState : TState
         gameState.marvinExpr[2].SetActive(true);
         //gameState.cursorStart.SetActive(true);
         gameState.DebugStatesExplained.text = "1";
+        gameState.QueCounter.text = gameState.wieIchBockHab.ToString(); 
 
         //gameState.DebugStatesExplained.text = "QueueInfo: " + gameState.queueInfo.sentences.Count.ToString();
     }

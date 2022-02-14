@@ -119,5 +119,6 @@ public class TManager : MonoBehaviour
     public void DialogueCount()
     {
         wieIchBockHab -= 1;
+        
     }
 }
